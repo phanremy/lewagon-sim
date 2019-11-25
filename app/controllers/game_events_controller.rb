@@ -18,6 +18,5 @@ class GameEventsController < ApplicationController
 
   def game_event_params
     params.permit(:game_id)
-
   end
 end
