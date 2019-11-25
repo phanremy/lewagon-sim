@@ -1,5 +1,8 @@
 
 <div class="main-container">
   <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+  <p>Find me in app/views/pages/home.html.erb</p>
+  <%= simple_form_for [@user, @game] do |t|%>
+    <%= t.submit "créer une nouvelle game" %>
+  <% end %>
 </div>
