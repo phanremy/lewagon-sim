@@ -1,13 +1,13 @@
 class GamesController < ApplicationController
   def create
-    @game = Game.new(game_params)
-    @game.save
-    redirect_to game_game_event_path(@game_event)
+    @game = Game.new
+    @game.user = current_user
+    if @game.save
+      flash[:alert] = "Your game has been created."
+      redirect_to game_rules_path(@game)
+    else
+      render :new
+    end
   end
 
-  private
-
-  def game_params
-    params.require(:game).permit(:user_id)
-  end
 end
