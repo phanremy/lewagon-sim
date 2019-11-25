@@ -26,6 +26,8 @@
 # event_choice_2.save
 
 # -----------------------------------------------------------------------
+Event.destroy_all
+
 puts "Seeding User"
 user_1 = User.new( first_name: "John", last_name: "Lennon", email: "johnlennon@lewagon.org", password:"123456")
 user_1.save
@@ -42,25 +44,28 @@ event_yoga = Event.new({
   image_url: nil,
   })
 
+event_yoga.save
+
 puts " Choice 1 Yoga"
- event_choice_1 = Choice.new({
-  event_id: event_yoga,
+ event_yoga_choice_1 = Choice.new({
   title: "Je vais au Yoga",
   description: "cool",
   score_impact: 0,
   stress_impact: 0,
 })
- event_choice_1.save
+
+ event_yoga_choice_1.event = event_yoga
+ event_yoga_choice_1.save
 
 puts " Choice 2 Yoga"
-event_choice_2 = Choice.new({
-  event_id: event_yoga,
+event_yoga_choice_2 = Choice.new({
   title:"Je continue de travailler",
   description:" Pas cool" ,
   score_impact:  20,
   stress_impact: 10 ,
 })
-event_choice_2.save
+event_yoga_choice_2.event = event_yoga
+event_yoga_choice_2.save
 
 # puts " Creating games event"
 # game_event_1 = GameEvent.new(game_id: game_1, event_id: event_yoga)
