@@ -1,10 +1,10 @@
 class GameEventsController < ApplicationController
   def show
-    @game_event = GameEvent.find(params[:game_id])
+    @game_event = GameEvent.find(params[:id])
     @event = Event.find(@game_event.event_id)
-    @game = Game.find(params[:id])
+    @game = Game.find(params[:game_id])
   end
-    
+
   def create
     @game_event = GameEvent.new
     @game = Game.find(params[:game_id])
