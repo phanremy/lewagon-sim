@@ -1,4 +1,10 @@
 class GameEventsController < ApplicationController
+  def show
+    @game_event = GameEvent.find(params[:game_id])
+    @event = Event.find(@game_event.event_id)
+    @game = Game.find(params[:id])
+  end
+    
   def create
     @game_event = GameEvent.new
     @game = Game.find(params[:game_id])
@@ -12,5 +18,6 @@ class GameEventsController < ApplicationController
 
   def game_event_params
     params.permit(:game_id)
+
   end
 end

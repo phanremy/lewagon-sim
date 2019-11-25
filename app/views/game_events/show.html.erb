@@ -1,3 +1,18 @@
 <div class="main-container">
-  <h1>Event</h1>
+  <div class="d-flex justify-content-between">
+    <div>
+      <p>event title</p>
+      <p><%= @game_event.event.title %></p>
+    </div>
+    <div>
+      <p>event description</p>
+      <p><%= @game_event.event.description %></p>
+    </div>
+    <div>
+      <p>choice</p>
+      <% @event.choices.each do |choice| %>
+      <p><%= choice.description %></p>
+      <% end %>
+    </div>
+  </div>
 </div>
