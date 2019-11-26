@@ -9,9 +9,21 @@ class GameEventsController < ApplicationController
     @game_event = GameEvent.new
     @game = Game.find(params[:game_id])
     @game_event.game = @game
-    @game_event.event = Event.first # To be modified
+    # Start randomizing
+    @all_possible_events = Event.all
+    @random_event = @all_possible_events.sample
+    # End randomizing by removing event that happened (to be updated in method Update)
+
+    @game_event.event = @random_event # To be modified
     @game_event.save
     redirect_to game_game_event_path(@game.id, @game_event)
+  end
+
+  def update
+    @game_event = GameEvent.find(params[:id])
+    @game_event.choice_id = params[:game_event][:choice_id]
+    @game_event.save
+    redirect_to game_game_event_path
   end
 
   private

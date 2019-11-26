@@ -1,13 +1,40 @@
 <div class="main-container">
-  <h1>Rules</h1>
+  <h1 class="text-center mb-3">Rules</h1>
 
-  <h2>Choices</h2>
+  <div class="d-flex">
+    <div>
+      <img src="https://www.newneuromarketing.com/media/zoo/images/NNM-2015-016-icon_319f6cc40d9f0f387ef37a90eb766d46.png" style="width: 100px; height:100px" class="mr-3" alt="">
+    </div>
+    <div>
+      <h2>Choices</h2>
+      <p>Choices have been provided to you, by 2, chose the one you want..</p>
+    </div>
+  </div>
 
-  <h2>Stress level</h2>
 
-  <h2>Score</h2>
+  <div class="d-flex">
+    <div>
+      <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/stress-6-825610.png" style="width: 100px; height:100px" class="mr-3" alt="">
+    </div>
+    <div>
+      <h2>Stress level</h2>
+      <p>.. but be careful! Depending on your choice, your stress level might go up! If it reaches the max, the game is over!</p>
+    </div>
+  </div>
 
-  <%= simple_form_for [@game, @game_event] do |f| %>
-    <%= f.submit "Got it, let's start"%>
-  <% end %>
+  <div class="d-flex mb-3">
+    <div>
+      <img src="https://chariotlearning.com/wp-content/uploads/2014/07/SATtrophy-1.png" style="width: 100px; height:100px" class="mr-3" alt="">
+    </div>
+    <div>
+      <h2>Score</h2>
+      <p>Your choices will also gives you points. Let's get the highest score possible.</p>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <%= simple_form_for [@game, @game_event] do |f| %>
+      <%= f.submit "Got it, let's start", class: "btn btn-primary"%>
+    <% end %>
+  </div>
 </div>
