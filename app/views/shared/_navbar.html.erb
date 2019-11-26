@@ -45,7 +45,7 @@
 
       <% else %>
         <% if @game_event.event.present? %>
-          <p style="margin-bottom: 0;">Score : <%= @game.score %></p>
+            <p id="score-display" class="" >Score : <%= @game.score %></p>
         <% else %>
           <% if user_signed_in? %>
 
