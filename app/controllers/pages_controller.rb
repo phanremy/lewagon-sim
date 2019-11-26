@@ -9,4 +9,8 @@ class PagesController < ApplicationController
     @game = Game.find(params[:game_id])
     @game_event = GameEvent.new
   end
+
+  def endgame
+    @game = Game.new
+  end
 end
