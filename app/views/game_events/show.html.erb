@@ -12,10 +12,10 @@
       <p class="text-center">choices</p>
       <div class="d-flex justify-content-around">
         <% @event.choices.each do |choice| %>
-          <%#= simple_form_for @game_event, choice do |f| %>
-            <%#= f.submit label: choice.description %>
-          <%# end %>
-          <p><%= choice.title %></p>
+          <%= simple_form_for [@game, @game_event] do |f| %>
+            <%= f.hidden_field :choice_id, value: choice.id %>
+            <%= f.submit choice.title %>
+          <% end %>
         <% end %>
       </div>
   </div>
@@ -31,6 +31,7 @@
         <h1 class="text-center"><%= @game_event.choice.title %></h1>
     </div>
     <p class=""><%= @game_event.choice.score_impact %></p>
+<!--     TO DO BUTTON TO GAME EVENT SHOW  -->
   </div>
 
 <% end %>

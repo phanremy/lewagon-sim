@@ -20,6 +20,8 @@ class GameEventsController < ApplicationController
   end
 
   def update
+    # j'affecte l'id sur le game_event.choice
+    # si le clientje redirige vers une nouvelle game_event en
   end
 
   private
