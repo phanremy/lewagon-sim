@@ -1,0 +1,32 @@
+
+#button-container{
+top: 50%;
+position: fixed;
+width: 100%;
+}
+
+
+
+.button-display{
+    height: auto;
+    min-height: 100px;
+    width: 200px;
+    border-radius: 8px;
+    background: blue;
+    color: lightgray;
+    margin: 0 300px;
+    white-space: normal;
+    word-break: break-word;
+}
+
+#next-display{
+    min-height: 50px;
+    width: 100px;
+    margin: 0px 0px;
+}
+
+#end-display{
+  min-height: 50px;
+  width: 100px;
+  margin: 0px 0px;
+}
