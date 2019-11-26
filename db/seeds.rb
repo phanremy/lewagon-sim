@@ -132,7 +132,7 @@ event_push_master_choice_2.save
 #-------------------------------------------------------------
 puts "Creating Flemme Cours event"
 event_flemme = Event.new({
-  title: "Flemme Cours",
+  title: "Flemme de noter en cours",
   description: "T’as trop trainé hier soir et t’as une flemme monumentale ce matin, t’as vraiment aucune envie de prendre des notes..",
   image_url: nil,
   })
@@ -159,6 +159,37 @@ event_flemme_choice_2 = Choice.new({
 })
 event_flemme_choice_2.event = event_flemme
 event_flemme_choice_2.save
+
+#-------------------------------------------------------------
+puts "Creating Scaffold event"
+event_scaffold = Event.new({
+  title: "Scaffold!",
+  description: "On nous a appris le scaffold, pour eviter de faire ces methodes interminables et repetitives..  Par contre, interdit d'utiliser cette technique, mis a part le prof!"
+  image_url: nil,
+  })
+
+event_scaffold.save
+
+puts " Choice 1 Scaffold"
+ event_scaffold_choice_1 = Choice.new({
+  title: "M'en fiche j'utilise quand meme",
+  description: "Cool, pas de stress, tu prends meme le ptit dej avec le prof",
+  score_impact: 20,
+  stress_impact: 0,
+})
+
+ event_scaffold_choice_1.event = event_scaffold
+ event_scaffold_choice_1.save
+
+puts " Choice 2 Scaffold"
+event_scaffold_choice_2 = Choice.new({
+  title:"Je respecte l'instruction du prof",
+  description:"Ca fait rien, mais t'es un champion quand meme",
+  score_impact:  0,
+  stress_impact: 0 ,
+})
+event_scaffold_choice_2.event = event_scaffold
+event_scaffold_choice_2.save
 
 # puts " Creating games event"
 # game_event_1 = GameEvent.new(game_id: game_1, event_id: event_yoga)
