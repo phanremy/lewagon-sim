@@ -1,0 +1,54 @@
+
+
+h1 {
+  text-align: center;
+}
+.gameover-container{
+  margin: 0 auto;
+  width: 500px;
+  background: grey;
+  min-height: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+
+
+.flex-container {
+    padding: 16px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: flex-end;
+    align-items: flex-start;
+    border-bottom: 1px solid;
+    }
+
+
+.middle {
+  display: flex;
+  width: 100%;
+}
+
+
+
+
+
+#restart-btn {
+  background-color: #FF0000;
+  color: white;
+  padding: 12px 18px;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 3px grey;
+}
+#restart-btn:hover {
+  color: black;
+
+}
