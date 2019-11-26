@@ -1,45 +1,53 @@
-<% if @game_event.choice == nil %>
-  <div class="main-container">
-     <!-- ----- ICI C EST L AFFICHAGE DE L'EVENT---- -->
-      <p class="text-center">event description</p>
-      <p class="text-center"><%= @game_event.event.description %></p>
-      <div class="d-flex justify-content-center">
-        <%= image_tag("https://source.unsplash.com/random/350x350") %>
-      </div>
-      <p class="text-center">event title</p>
-      <p class="text-center"><%= @game_event.event.title %></p>
-      <br><!-- choices -->
-      <p class="text-center">choices</p>
-      <div class="d-flex justify-content-around">
-        <% @event.choices.each do |choice| %>
-          <%= simple_form_for [@game, @game_event] do |f| %>
-            <%= f.hidden_field :choice_id, value: choice.id %>
-            <%= f.submit choice.title %>
-          <% end %>
-        <% end %>
-      </div>
-  </div>
-     <!-- ----- ICI C EST L AFFICHAGE DU CHOIX---- -->
-<% else %>
-  <div class="d-flex justify-content-between">
-    <p class=""><%= @game_event.choice.stress_impact %></p>
-    <div class="main-container">
-      <p class="text-center"><%= @game_event.choice.description %></p>
-      <div class="d-flex justify-content-center">
-         <%= image_tag("https://source.unsplash.com/random/350x350") %>
-      </div>
-      <h1 class="text-center"><%= @game_event.event.title %></h1>
-      <% if (@game.stress < 100) %>
-        <%= simple_form_for [@game, GameEvent.new] do |f| %>
-          <%= f.submit "Next event", class: "btn btn-primary", url: game_game_events_path%>
-        <% end %>
-      <% else %>
-        <%= link_to "See Results", game_endgame_path(@game), class: "btn btn-primary" %>
-      <% end %>
-    </div>
-    <p class=""><%= @game_event.choice.score_impact %></p>
-<!--     TO DO BUTTON TO GAME EVENT SHOW  -->
-  </div>
 
-<% end %>
+<!-- ----- GROSS DIV CARD POUR IMPLEMENTER SORTABLEJS, RIEN D'AUTRES---- -->
+<div id="card">
+
+  <% if @game_event.choice == nil %>
+
+    <!-- -----CLASS ACTIVE POUR SORTABLEJS, CCS DANS GAME_EVENT.SCSS---- -->
+    <div class="main-container active">
+       <!-- ----- ICI C EST L AFFICHAGE DE L'EVENT---- -->
+        <p class="text-center">event description</p>
+        <p class="text-center"><%= @game_event.event.description %></p>
+        <div class="d-flex justify-content-center">
+          <%= image_tag("https://source.unsplash.com/random/350x350") %>
+        </div>
+        <p class="text-center">event title</p>
+        <p class="text-center"><%= @game_event.event.title %></p>
+        <br><!-- choices -->
+        <p class="text-center">choices</p>
+        <div class="d-flex justify-content-around">
+          <% @event.choices.each do |choice| %>
+            <%= simple_form_for [@game, @game_event] do |f| %>
+              <%= f.hidden_field :choice_id, value: choice.id %>
+              <%= f.submit choice.title %>
+            <% end %>
+          <% end %>
+        </div>
+    </div>
+       <!-- ----- ICI C EST L AFFICHAGE DU CHOIX---- -->
+  <% else %>
+    <div class="d-flex justify-content-between">
+      <p class=""><%= @game_event.choice.stress_impact %></p>
+      <div class="main-container">
+        <p class="text-center"><%= @game_event.choice.description %></p>
+        <div class="d-flex justify-content-center">
+           <%= image_tag("https://source.unsplash.com/random/350x350") %>
+        </div>
+        <h1 class="text-center"><%= @game_event.event.title %></h1>
+        <% if (@game.stress < 100) %>
+          <%= simple_form_for [@game, GameEvent.new] do |f| %>
+            <%= f.submit "Next event", class: "btn btn-primary", url: game_game_events_path%>
+          <% end %>
+        <% else %>
+          <%= link_to "See Results", game_endgame_path(@game), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <p class=""><%= @game_event.choice.score_impact %></p>
+  <!--     TO DO BUTTON TO GAME EVENT SHOW  -->
+    </div>
+
+  <% end %>
+
+</div>
 
