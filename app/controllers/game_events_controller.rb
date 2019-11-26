@@ -20,6 +20,10 @@ class GameEventsController < ApplicationController
   end
 
   def update
+    @game_event = GameEvent.find(params[:id])
+    @game_event.choice_id = params[:game_event][:choice_id]
+    @game_event.save
+    redirect_to game_game_event_path
   end
 
   private
