@@ -164,7 +164,7 @@ event_flemme_choice_2.save
 puts "Creating Scaffold event"
 event_scaffold = Event.new({
   title: "Scaffold!",
-  description: "On nous a appris le scaffold, pour eviter de faire ces methodes interminables et repetitives..  Par contre, interdit d'utiliser cette technique, mis a part le prof!"
+  description: "On nous a appris le scaffold, pour eviter de faire ces methodes interminables et repetitives..  Par contre, interdit d'utiliser cette technique, mis a part le prof!",
   image_url: nil,
   })
 
