@@ -29,8 +29,12 @@
          <%= image_tag("https://source.unsplash.com/random/350x350") %>
       </div>
       <h1 class="text-center"><%= @game_event.event.title %></h1>
-      <%= simple_form_for [@game, GameEvent.new] do |f| %>
-        <%= f.submit "Next event", class: "btn btn-primary", url: game_game_events_path%>
+      <% if (@game.stress <= 100) %>
+        <%= simple_form_for [@game, GameEvent.new] do |f| %>
+          <%= f.submit "Next event", class: "btn btn-primary", url: game_game_events_path%>
+        <% end %>
+      <% else %>
+        <%= link_to "See Results", game_endgame_path(@game), class: "btn btn-primary" %>
       <% end %>
     </div>
     <p class=""><%= @game_event.choice.score_impact %></p>
