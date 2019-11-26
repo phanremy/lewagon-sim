@@ -12,7 +12,7 @@ class PagesController < ApplicationController
 
   def test_remy
     @games = Game.all
-    
+
     # Random event by removing occured events
     #@game6 = Game.find(6)
     #@all_possible_events = Event.all
@@ -20,8 +20,8 @@ class PagesController < ApplicationController
     #@possible_events_game6_gameevent2 = @all_possible_events.reject { |event| @all_events_of_game6.include?(event.id) }
     #@random_event = @possible_events_game6_gameevent2.sample
   end
-  
+
   def endgame
-    @game = Game.new
+    @game = Game.find(params[:game_id])
   end
 end
