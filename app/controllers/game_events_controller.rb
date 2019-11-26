@@ -14,7 +14,7 @@ class GameEventsController < ApplicationController
     @random_event = @all_possible_events.sample
     # End randomizing by removing event that happened (to be updated in method Update)
 
-    @game_event.event = @random_event # To be modified
+    @game_event.event = @random_event
     @game_event.save
     redirect_to game_game_event_path(@game.id, @game_event)
   end
