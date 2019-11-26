@@ -14,6 +14,10 @@ class GameEventsController < ApplicationController
     redirect_to game_game_event_path(@game.id, @game_event)
   end
 
+  def update
+
+  end
+
   private
 
   def game_event_params
