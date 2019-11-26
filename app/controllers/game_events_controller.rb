@@ -15,7 +15,6 @@ class GameEventsController < ApplicationController
   end
 
   def update
-
   end
 
   private
