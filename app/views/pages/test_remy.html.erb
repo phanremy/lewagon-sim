@@ -1,0 +1,73 @@
+
+<div class="col-6 offset-3">
+  <div class="border">
+    <p>All possible answers</p>
+    <p>@all_possible_events.length:  <%= @all_possible_events.length %></p>
+    <ul class="list-inline">
+      <% @all_possible_events.each do |event| %>
+      <li class="list-inline-item"> <%= event.id %></li>
+      <% end %>
+    </ul>
+    <p>All possible answers for Game 6 3rd </p>
+    <ul class="list-inline">
+      <% @possible_events_game6_gameevent2.each do |event| %>
+      <li class="list-inline-item"> <%= event.id %></li>
+      <% end %>
+    </ul>
+  </div>
+
+
+
+
+  <div class="border">
+    <% @game6.game_events.each do |game_event| %>
+      <p>Game 6 - game event</p>
+      <p class="ml-3">game_event.id:  <%= game_event.id %></p>
+      <p class="ml-3">game_event.choice.present?:  <%= game_event.choice.present? %></p>
+      <p class="ml-3">game_event.event.present?:  <%= game_event.event.present? %></p>
+      <p class="ml-3">game_event.event.id:  <%= game_event.event.id %></p>
+    <% end %>
+  </div>
+
+
+  <% @games.each do |game|%>
+    <div class="border bg-secondary">
+      <p>game.id:  <%= game.id %></p>
+      <p>game.user:  <%= game.user.email %></p>
+      <p>game.game_events.first.id:  <%= game.game_events.first.id %></p>
+      <p>game.game_events.first.event.present?:  <%= game.game_events.first.event.present? %></p>
+      <p>game.game_events.first.event.id:  <%= game.game_events.first.event.id %></p>
+      <ul class="list-inline">
+        <% @possible_events_game6_gameevent2.each do |event| %>
+        <li class="list-inline-item"> <%= event.id %></li>
+        <% end %>
+      </ul>
+      <p>game.game_events.first.choice.present?:  <%= game.game_events.first.choice.present? %></p>
+    </div>
+  <% end %>
+</div>
+
+<%# @game.game_events.each do |game_event|%>
+  <p><%#= game_event.game %></p>
+  <p><%#= game_event.event %></p>
+<%# end %>
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
