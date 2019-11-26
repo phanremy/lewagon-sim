@@ -1,35 +1,65 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+    <!-- si user signed_in? afficher l'avatar, else afficher logo wagon -->
+  <% if user_signed_in? %>
+    <div class="d-flex align-items-center justify-content-between">
+      <li class="nav-item dropdown">
+        <!-- a remplacer par l'avatar add par user -->
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
+          <%= link_to "Action", "#", class: "dropdown-item" %>
+          <%= link_to "Another action", "#", class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </li>
+  <% else %>
+      <%= link_to "#", class: "navbar-brand" do %>
+        <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <% end %>
+      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+  <% end %>
+      <% if @game_event.nil? %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+      <% else %>
+    <!-- si game_event existe et qu'il a un event associé on rentre dans la boucle de la stress bar -->
+        <% if @game_event.event.present? %>
+    <!-- empeche l'affichage de la stress bar si niveau de stress inférieur à 10% pour éviter probleme d'affichage -->
+          <% if @game.stress < 10 %>
+            <div class="wrapper">
+              <div class="progress" style="width: <%= @game.stress %>%; opacity: 0;"></div>
+            </div>
+      <!-- si le niveau de stress est > à 10% plus de souci d'affichage, on affiche la progression -->
+          <% else %>
+            <div class="wrapper">
+              <div class="progress" style="width: <%= @game.stress %>%;"></div>
+            </div>
+          <% end %>
+      <!-- si game_event n'existe pas, n'affiche pas de barre de santé, remplacée par le logo du wagon -->
+        <% else %>
 
-
+        <% end %>
+      <% end %>
+    </div>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
+      <% if @game_event.nil? %>
+
       <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
+        <% if @game_event.event.present? %>
+          <p style="margin-bottom: 0;">Score : <%= @game.score %></p>
+        <% else %>
+          <% if user_signed_in? %>
+
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+          <% end %>
+        <% end %>
       <% end %>
     </ul>
   </div>
 </div>
+
+
+
+
