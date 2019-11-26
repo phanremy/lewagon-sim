@@ -20,8 +20,10 @@ class GameEventsController < ApplicationController
   end
 
   def update
-    # j'affecte l'id sur le game_event.choice
-    # si le clientje redirige vers une nouvelle game_event en
+    @game_event = GameEvent.find(params[:id])
+    @game_event.choice_id = params[:game_event][:choice_id]
+    @game_event.save
+    redirect_to game_game_event_path
   end
 
   private
