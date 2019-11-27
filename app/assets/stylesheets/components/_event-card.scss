@@ -1,0 +1,36 @@
+#event-card{
+  position: relative;
+  background: $main-blue;
+  min-height: 85vh;
+  padding: 20px;
+  border-radius: 10px;
+  //border: 3px outset rgba(253, 15, 21, 0.9);
+  border: 3px outset black;
+  color: rgba(240, 240, 240, 0.9);
+
+  img{
+    border: solid 2px black;
+    border-radius: 10px;
+    display: flex;
+  }
+}
+
+.event-head{
+  height: 50%;
+  align-items: center;
+  margin-top: 20px;
+
+  h3{
+    top: 10px;
+    margin-bottom: 20px;
+    margin-top: -75px;
+  }
+}
+
+#event-description{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 0px 10px;
+    padding: 25px;
+    width: 384px;
+}
