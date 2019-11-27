@@ -16,16 +16,18 @@
 }
 
 .event-head{
-  height: 50%;
+  //height: 200px;
   align-items: center;
-  margin-top: 20px;
 
   h3{
-    top: 10px;
-    margin-bottom: 20px;
-    margin-top: -75px;
+    border: 2px solid black;
+    padding: 5px;
+    margin-bottom: 25px;
+    width: 384px;
+    border-radius: 10px;
+    background: #789DA8;
   }
-}
+ }
 
 #event-description{
     border: 2px solid black;
@@ -33,4 +35,9 @@
     margin: 0px 10px;
     padding: 25px;
     width: 384px;
+    min-height: 225px;
+    background: #789DA8;
+    p{
+      margin-bottom: 0px;
+    }
 }
