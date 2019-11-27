@@ -1,12 +1,12 @@
-#card div {
+#card img {
   cursor: grab;
 }
 
-#card div:active {
+#card img:active {
   cursor: grabbing;
 }
 
-#card div.ghost {
+#card img.ghost {
   filter: grayscale(1);
   opacity: 0;
 }

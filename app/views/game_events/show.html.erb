@@ -1,13 +1,13 @@
 <!-- ----- GROSS DIV CARD POUR IMPLEMENTER SORTABLEJS, RIEN D'AUTRES---- -->
-<div id="card">
+<div>
 
   <% if @game_event.choice == nil %>
-    <div class="main-container active">
+    <div class="main-container">
        <!-- ----- ICI C EST L AFFICHAGE DE L'EVENT---- -->
         <p class="text-center">event description</p>
         <p class="text-center"><%= @game_event.event.description %></p>
-        <div class="d-flex justify-content-center">
-          <%= image_tag("https://source.unsplash.com/random/350x350") %>
+        <div class="d-flex justify-content-center " id="card">
+          <%= image_tag("https://source.unsplash.com/random/350x350", class:"active") %>
         </div>
         <p class="text-center">event title</p>
         <p class="text-center"><%= @game_event.event.title %></p>
