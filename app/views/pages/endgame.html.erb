@@ -1,19 +1,13 @@
-<div class="gameover-container " >
-    <h1>Game over</h1>
 
-    <%= "your score = #{@game.score}"  %>
-    <% @game.game_events.each do |game_event| %>
-        <div class="flex-container">
-          <div><%=  game_event.choice.title%></div>
-          <br>
-          <div><%="vous a fait prendre #{game_event.choice.stress_impact} "%>
-            <%="vous a fais gagner#{game_event.choice.score_impact } "%>
-          </div>
-          <%  %>
+<div class="body">
+  <div class = "top-padding">
+    <div class="gameover-container" >
+      <h2>Game over</h2>
+      <h1><%= "your score = #{@game.score}"  %></h1>
 
+         <div class="pb-2">
+          <%= button_to "yeet" ,game_rules_path , :method => "get"%>
         </div>
-       <% end %>
-       <%= button_to "yeet" ,game_rules_path , :method => "get"%>
+    </div>
+  </div>
 </div>
-
-
