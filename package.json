@@ -6,7 +6,8 @@
     "animate.css": "^3.7.2",
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
-    "popper.js": "^1.16.0"
+    "popper.js": "^1.16.0",
+    "sortablejs": "^1.10.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.9.0"
