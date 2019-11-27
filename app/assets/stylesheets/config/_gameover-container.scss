@@ -23,6 +23,7 @@
   flex-direction: column;
   opacity: 0.6;
   border: 10px white solid;
+  animation-duration: 20s;
 }
 
 .body {
@@ -50,17 +51,20 @@
 
 
 
-// #restart-btn {
-//   background-color: #FF0000;
-//   color: white;
-//   padding: 12px 18px;
-//   text-decoration: none;
-//   border-radius: 10px;
-//   box-shadow: 3px grey;
-// }
-// #restart-btn:hover {
-//   color: black;
-// }
+.restart-btn {
+  font-family:  'Press Start 2P', cursive;
+  background-color: $pop-yellow;
+  color: white;
+  padding: 6px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 3px grey;
+}
+.restart-btn:hover {
+  color: black;
+  text-decoration: none;
+  box-shadow: 2px 1px $pop-yellow;
+}
 
 
 
