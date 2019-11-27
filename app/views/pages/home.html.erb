@@ -1,8 +1,32 @@
-
-<div class="main-container">
-  <h1>Pages#home</h1>
-  <p>Find me in app/views/pages/home.html.erb</p>
-  <%= simple_form_for [@user, @game] do |t|%>
-    <%= t.submit "créer une nouvelle game" %>
-  <% end %>
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("gaudelet_pixelized_fitsize.jpg") %>)">
+  <div class="container container-home">
+    <div>
+      <h1>Le Wagon Simulator</h1>
+      <div id="typed-height">
+        <span id="typed"></span>
+      </div>
+      <div id="typed-strings">
+        <p>Change your life and relive <br> <em> Le Wagon experience </em><br> through a game</p>
+      </div>
+      <div class="text-center">
+        <%= simple_form_for [@user, @game] do |t|%>
+          <%= t.submit "Play", class:"play-button" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- <div class="container">
+  <h1>J'essaye un truc</h1>
+  <p>J'essaye un truc</p>
+  <p>J'essaye un truc</p>
+  <p>J'essaye un truc</p>
+  <p>J'essaye un truc</p>
+  <p>J'essaye un truc</p>
+  <p>J'essaye un truc</p>
+  <p>J'essaye un truc</p>
+  <p>J'essaye un truc</p>
+
+
+</div> -->
