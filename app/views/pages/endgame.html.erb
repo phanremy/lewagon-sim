@@ -1,13 +1,12 @@
 
 <div class="body">
   <div class = "top-padding">
-    <div class="gameover-container" >
+    <div class="gameover-container animated fadeInUp slower" id="to-drag">
       <h2>Game over</h2>
-      <h1><%= "your score = #{@game.score}"  %></h1>
-
-         <div class="pb-2">
-          <%= button_to "yeet" ,game_rules_path , :method => "get"%>
-        </div>
+      <h1><%= "your score = #{@game.score}"%></h1>
+       <div class="pb-2">
+        <%= link_to "yeet" ,game_rules_path , class: "restart-btn"%>
+      </div>
     </div>
   </div>
 </div>
