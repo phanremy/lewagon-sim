@@ -22,17 +22,23 @@
       <% else %>
     <!-- si game_event existe et qu'il a un event associé on rentre dans la boucle de la stress bar -->
         <% if @game_event.event.present? %>
+          <% if @game_event.choice.present? %>
     <!-- empeche l'affichage de la stress bar si niveau de stress inférieur à 10% pour éviter probleme d'affichage -->
-          <% if @game.stress < 10 %>
-            <div class="wrapper">
-              <div class="progress" data-stress-display='<%= @game.stress %>'style="width: <%= @game.stress %>%; opacity: 0;"></div>
-            </div>
-      <!-- si le niveau de stress est > à 10% plus de souci d'affichage, on affiche la progression -->
-          <% else %>
-            <div class="wrapper">
-              <div class="progress" style="width: <%= @game.stress %>%;"></div>
-            </div>
-          <% end %>
+            <%# if @game.stress < 10 %>
+              <div class="wrapper">
+                <div class="progress" data-stress-display='<%= @game.stress %>' style="width: <%= @game.stress - @game_event.choice.score_impact %>%;"></div>
+              </div>
+        <!-- si le niveau de stress est > à 10% plus de souci d'affichage, on affiche la progression -->
+            <% else %>
+              <div class="wrapper">
+                <div class="progress" data-stress-display='<%= @game.stress %>' style="width: <%= @game.stress %>%;"></div>
+              </div>
+              <%# end %>
+              <%# else %>
+             <!--    <div class="wrapper">
+                  <div class="progress" data-stress-display='<%= @game.stress %>' style="width: <%= @game.stress %>%;"></div>
+                </div> -->
+                <% end %>
       <!-- si game_event n'existe pas, n'affiche pas de barre de santé, remplacée par le logo du wagon -->
         <% else %>
 
@@ -45,7 +51,11 @@
 
       <% else %>
         <% if @game_event.event.present? %>
-            <p id="score-display" data-score-display='<%= @game.score %>'></p>
+          <% if @game_event.choice.present? %>
+            <p id="score-display" data-score-display='<%= @game.score %>'><%= @game.score - @game_event.choice.score_impact %></p>
+          <% else %>
+            <p id="score-display" data-score-display='<%= @game.score %>'><%= @game.score %></p>
+          <% end %>
         <% else %>
           <% if user_signed_in? %>
 
