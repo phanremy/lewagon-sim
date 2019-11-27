@@ -1,21 +1,7 @@
 import "bootstrap";
-import Typed from 'typed.js';
 import { initSortable } from '../plugins/init_sortable';
-
-const typedInHome = document.querySelector("#typed");
-
-if (typedInHome) {
-  var options = {
-    stringsElement: '#typed-strings',
-    typeSpeed: 40,
-    loop: true,
-    loopCount: Infinity,
-  };
-
-
-  var typed = new Typed('#typed', options);
-}
-
+import { initTyped } from '../plugins/init_typed';
+import { initDisappearingImpact } from '../plugins/init_disappearing_impact';
 
 function incrementScore() {
   const score = document.querySelector("[data-score-display]");
@@ -44,6 +30,8 @@ function incrementStress() {
     }
 };
 
+initTyped();
 incrementStress();
 incrementScore();
 initSortable();
+initDisappearingImpact();
