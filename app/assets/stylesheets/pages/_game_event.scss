@@ -1,12 +1,12 @@
-#card img {
+#sortable-img-card img {
   cursor: grab;
 }
 
-#card img:active {
+#sortable-img-card img:active {
   cursor: grabbing;
 }
 
-#card img.ghost {
+#sortable-img-card img.ghost {
   filter: grayscale(1);
   opacity: 0;
 }

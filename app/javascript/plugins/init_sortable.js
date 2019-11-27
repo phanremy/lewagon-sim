@@ -1,7 +1,7 @@
 import Sortable from 'sortablejs';
 
 const initSortable = () => {
-  const list = document.querySelector('#card');
+  const list = document.querySelector('#sortable-img-card');
     Sortable.create(list, {
       ghostClass: "ghost",
       animation: 150,
