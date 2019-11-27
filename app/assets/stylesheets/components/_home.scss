@@ -14,40 +14,48 @@
 
 .container-home>div>h1{
   text-align: left;
+  opacity: 0.9;
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 40px;
+  font-size: 54px;
   font-weight: bold;
 }
 
 .container-home>div>div>span{
   font-size: 24px;
   color: white;
-  opacity: .8;
+  opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  padding: 25px 0;
 }
 
 #typed-height {
-  min-height:115px;
+  min-height:160px;
+  padding: 25px 0;
 }
 
 .play-button {
+  padding: 25px 0;
   background: $pop-red;
-  color: white;
+  color: #FAFBFC;
+  opacity: 1;
   width: 150px;
   height: 50px;
   font-size: 18px;
   font-weight: bold;
   padding: 8px 24px;
   border-radius: 4px;
-  transition: background 0.5s ease;
+  transition: opacity 0.3s ease;
+  transition: color 0.3s ease;
+  transition: background 0.3s ease;
 }
 
 
 .play-button:hover {
-  background-color: $main-red;
   color: white;
+  background: $main-red;
+  opacity: 0.9;
 }
 
 
