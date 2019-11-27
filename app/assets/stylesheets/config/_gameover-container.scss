@@ -1,54 +1,74 @@
 
 
-h1 {
+.gameover-container h2 {
+  font-family: 'Press Start 2P', cursive;
   text-align: center;
+  color: white;
+}
+
+
+.gameover-container h1 {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+  color: white;
+
 }
 .gameover-container{
   margin: 0 auto;
-  width: 500px;
+  width: 800px;
   background: grey;
-  min-height: 800px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  opacity: 0.6;
+  border: 10px white solid;
 }
 
-
-
-
+.body {
+  width: 100%;
+  min-height: 100vh;
+  background: rgb(37,48,49);
+  background: linear-gradient(to bottom, rgba(37,48,49,1) 0%, rgba(9,9,121,1) 35%, rgba(8,76,97,1) 100%);
+}
 
 .flex-container {
-    padding: 16px;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-content: flex-end;
-    align-items: flex-start;
-    border-bottom: 1px solid;
-    }
-
-
-.middle {
-  display: flex;
+  padding-left:20px;
+  padding-right: 20px;
+  font-size: 12px;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid;
 }
 
 
 
-
-
-#restart-btn {
-  background-color: #FF0000;
-  color: white;
-  padding: 12px 18px;
-  text-decoration: none;
-  border-radius: 10px;
-  box-shadow: 3px grey;
+.top-padding {
+  padding: 20px;
 }
-#restart-btn:hover {
-  color: black;
 
-}
+
+
+// #restart-btn {
+//   background-color: #FF0000;
+//   color: white;
+//   padding: 12px 18px;
+//   text-decoration: none;
+//   border-radius: 10px;
+//   box-shadow: 3px grey;
+// }
+// #restart-btn:hover {
+//   color: black;
+// }
+
+
+
+ // // <% @game.game_events.each do |game_event| %>
+ //          <div class="flex-container">
+ //            <div><%=  game_event.choice.title%></div>
+ //            <div><p><%="This gave you : #{game_event.choice.stress_impact} stress points"%></p>
+ //              <p><%="This made you gain : #{game_event.choice.score_impact } score points "%></p>
+ //            </div>
+ //          </div>
+ //         <% end %>
