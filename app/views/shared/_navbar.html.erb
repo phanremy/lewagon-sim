@@ -25,7 +25,7 @@
     <!-- empeche l'affichage de la stress bar si niveau de stress inférieur à 10% pour éviter probleme d'affichage -->
           <% if @game.stress < 10 %>
             <div class="wrapper">
-              <div class="progress" style="width: <%= @game.stress %>%; opacity: 0;"></div>
+              <div class="progress" data-stress-display='<%= @game.stress %>'style="width: <%= @game.stress %>%; opacity: 0;"></div>
             </div>
       <!-- si le niveau de stress est > à 10% plus de souci d'affichage, on affiche la progression -->
           <% else %>
@@ -45,7 +45,7 @@
 
       <% else %>
         <% if @game_event.event.present? %>
-            <p id="score-display" class="" >Score : <%= @game.score %></p>
+            <p id="score-display" data-score-display='<%= @game.score %>'></p>
         <% else %>
           <% if user_signed_in? %>
 

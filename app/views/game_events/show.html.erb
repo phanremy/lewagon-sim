@@ -1,53 +1,50 @@
-<!-- ----- GROSS DIV CARD POUR IMPLEMENTER SORTABLEJS, RIEN D'AUTRES---- -->
-<div>
 
-  <% if @game_event.choice == nil %>
-    <div class="main-container">
-       <!-- ----- ICI C EST L AFFICHAGE DE L'EVENT---- -->
-        <p class="text-center">event description</p>
-        <p class="text-center"><%= @game_event.event.description %></p>
-        <div class="d-flex justify-content-center " id="card">
-          <%= image_tag("https://source.unsplash.com/random/350x350", class:"active") %>
-        </div>
-        <p class="text-center">event title</p>
-        <p class="text-center"><%= @game_event.event.title %></p>
-        <br><!-- choices -->
-        <p class="text-center">choices</p>
-    </div>
-        <div class="d-flex justify-content-around" id="button-container">
-          <% @event.choices.each do |choice| %>
-            <%= simple_form_for [@game, @game_event] do |f| %>
-              <%= f.hidden_field :choice_id, value: choice.id %>
-              <%= f.submit choice.title , class: "button-display"%>
-            <% end %>
+<% if @game_event.choice == nil %>
+  <div class="main-container">
+     <!-- ----- ICI C EST L AFFICHAGE DE L'EVENT---- -->
+      <p class="text-center">event description</p>
+      <p class="text-center"><%= @game_event.event.description %></p>
+      <div class="d-flex justify-content-center " id="card">
+        <%= image_tag("https://source.unsplash.com/random/350x350", class:"active") %>
+      </div>
+      <p class="text-center">event title</p>
+      <p class="text-center"><%= @game_event.event.title %></p>
+      <br><!-- choices -->
+      <p class="text-center">choices</p>
+  </div>
+      <div class="d-flex justify-content-around" id="button-container">
+        <% @event.choices.each do |choice| %>
+          <%= simple_form_for [@game, @game_event] do |f| %>
+            <%= f.hidden_field :choice_id, value: choice.id %>
+            <%= f.submit choice.title , class: "button-display"%>
           <% end %>
-        </div>
-       <!-- ----- ICI C EST L AFFICHAGE DU CHOIX---- -->
-  <% else %>
-    <div class="d-flex justify-content-between">
-      <p class=""><%= @game_event.choice.stress_impact %></p>
-      <div class="main-container">
-        <p class="text-center"><%= @game_event.choice.description %></p>
-        <div class="d-flex justify-content-center">
-           <%= image_tag("https://source.unsplash.com/random/350x350") %>
-        </div>
-        <h1 class="text-center"><%= @game_event.event.title %></h1>
-        <% if (@game.stress < 100) %>
-        <div class="text-center">
-          <%= simple_form_for [@game, GameEvent.new] do |f| %>
-            <%= f.submit "NEXT", class: "button-display", id: "next-display", url: game_game_events_path%>
-          <% end %>
-        </div>
-        <% else %>
-        <div class = "text-center">
-          <%= link_to "See Results", game_endgame_path(@game), class: "button-display", id: "end-display" %>
-        </div>
         <% end %>
       </div>
-      <p class=""><%= @game_event.choice.score_impact %></p>
-  <!--     TO DO BUTTON TO GAME EVENT SHOW  -->
+     <!-- ----- ICI C EST L AFFICHAGE DU CHOIX---- -->
+<% else %>
+  <div class="d-flex justify-content-between">
+    <p class=""><%= @game_event.choice.stress_impact %></p>
+    <div class="main-container">
+      <p class="text-center"><%= @game_event.choice.description %></p>
+      <div class="d-flex justify-content-center">
+         <%= image_tag("https://source.unsplash.com/random/350x350") %>
+      </div>
+      <h1 class="text-center"><%= @game_event.event.title %></h1>
+      <% if (@game.stress < 100) %>
+      <div class="text-center">
+        <%= simple_form_for [@game, GameEvent.new] do |f| %>
+          <%= f.submit "NEXT", class: "button-display", id: "next-display", url: game_game_events_path%>
+        <% end %>
+      </div>
+      <% else %>
+      <div class = "text-center">
+        <%= link_to "See Results", game_endgame_path(@game), class: "button-display", id: "end-display" %>
+      </div>
+      <% end %>
     </div>
+    <p class=""><%= @game_event.choice.score_impact %></p>
+<!--     TO DO BUTTON TO GAME EVENT SHOW  -->
+  </div>
 
-  <% end %>
-</div>
+<% end %>
 
