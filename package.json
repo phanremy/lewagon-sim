@@ -7,7 +7,8 @@
     "bootstrap": "^4.3.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
-    "sortablejs": "^1.10.1"
+    "sortablejs": "^1.10.1",
+    "typed.js": "^2.0.11"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.9.0"
