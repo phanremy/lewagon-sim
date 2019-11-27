@@ -25,7 +25,7 @@
      <!-- ----- ICI C EST L AFFICHAGE DU CHOIX---- -->
 <% else %>
   <div class="d-flex justify-content-between">
-    <p class="" data-stress-impact='<%= @game_event.choice.stress_impact %>'><%= @game_event.choice.stress_impact %></p>
+    <p class="impact bounceInDown" data-stress-impact='<%= @game_event.choice.stress_impact %>'> + <%= @game_event.choice.stress_impact %></p>
     <div class="main-container">
 
       <div id="event-card" class="d-flex flex-column justify-content-between">
@@ -51,7 +51,7 @@
       </div>
     <% end %>
   </div>
-    <p class="" data-score-impact='<%= @game_event.choice.score_impact %>'><%= @game_event.choice.score_impact %></p>
+    <p class="impact bounceInDown" data-score-impact='<%= @game_event.choice.score_impact %>'> + <%= @game_event.choice.score_impact %></p>
   </div>
 
 <% end %>
