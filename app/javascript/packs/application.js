@@ -2,15 +2,19 @@ import "bootstrap";
 import Typed from 'typed.js';
 import { initSortable } from '../plugins/init_sortable';
 
-var options = {
-  stringsElement: '#typed-strings',
-  typeSpeed: 40,
-  loop: true,
-  loopCount: Infinity,
-};
+const typedInHome = document.querySelector("#typed");
+
+if (typedInHome) {
+  var options = {
+    stringsElement: '#typed-strings',
+    typeSpeed: 40,
+    loop: true,
+    loopCount: Infinity,
+  };
 
 
-var typed = new Typed('#typed', options);
+  var typed = new Typed('#typed', options);
+}
 
 
 function incrementScore() {
