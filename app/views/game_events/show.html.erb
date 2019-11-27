@@ -2,15 +2,14 @@
 <% if @game_event.choice == nil %>
   <div class="main-container">
      <!-- ----- ICI C EST L AFFICHAGE DE L'EVENT---- -->
-    <div id="event-card" class="module d-flex flex-column justify-content-around">
-      <div class="event-head">
-
+    <div id="event-card" class="d-flex flex-column justify-content-between">
+      <div class=" event-head d-flex flex-column justify-content-between">
         <h3 class="text-center"><%= @game_event.event.title %></h3>
         <div class="d-flex justify-content-center " id="sortable-img-card">
-          <%= image_tag("https://source.unsplash.com/random/380x200", class:"active") %>
+          <%= image_tag("https://source.unsplash.com/random/380x240", class:"active") %>
         </div>
       </div>
-      <div class=" d-flex flex-column justify-content-center" id="event-description">
+      <div class="d-flex flex-column justify-content-center" id="event-description">
         <p class="text-center "><%= @game_event.event.description %></p>
       </div>
     </div>
@@ -30,7 +29,7 @@
     <div class="main-container">
       <p class="text-center"><%= @game_event.choice.description %></p>
       <div class="d-flex justify-content-center">
-         <%= image_tag("https://source.unsplash.com/random/380x200") %>
+         <%= image_tag("https://source.unsplash.com/random/380x240") %>
       </div>
       <h1 class="text-center"><%= @game_event.event.title %></h1>
       <% if (@game.stress < 100) %>
