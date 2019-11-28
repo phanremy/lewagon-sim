@@ -4,15 +4,11 @@ import { initTyped } from '../plugins/init_typed';
 import { initDisappearingImpact } from '../plugins/init_disappearing_impact';
 import { incrementStress } from '../plugins/init_increment';
 import { incrementScore } from '../plugins/init_increment';
+import { initSwipe } from '../plugins/init_swipe';
 
 initTyped();
 incrementStress();
 incrementScore();
 initSortable();
 initDisappearingImpact();
-
-
-
-
-import { initTestSwipe } from '../plugins/init_test_swipe';
-initTestSwipe();
+initSwipe();
