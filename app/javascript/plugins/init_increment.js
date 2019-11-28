@@ -16,27 +16,20 @@ function incrementStress() {
     if (stress_impact) {
       if (Number.parseInt(stress.dataset.stressDisplay) === 0) {
         let increasedWidth = 0;
-        setInterval(function(){
-          if (Number.parseInt(stress.dataset.stressDisplay) !== 0) {
-            let increasedWidth = Number.parseInt(stress.dataset.stressDisplay - stress_impact.dataset.stressImpact);
-            console.log(increasedWidth);
-            stress.style.width = increasedWidth + "%";
-            increasedWidth ++;
-          } else {
-            stress.style.width = 0;
-          };
-        }, 50 )
+        stress.style.width = increasedWidth + "%";
+        increasedWidth ++;
       } else {
         let increasedWidth = Number.parseInt(stress.dataset.stressDisplay - stress_impact.dataset.stressImpact);
-          setInterval(function(){
-            console.log(increasedWidth + "pas ok")
-            if (Number.parseInt(stress.dataset.stressDisplay) >= Number.parseInt(stress.style.width)) {
-                console.log(increasedWidth + "ok");
-                stress.style.width = increasedWidth + "%";
-                increasedWidth ++;
-              }
-            }, 50 )
-        }
+        setInterval(function(){
+          if (Number.parseInt(stress.dataset.stressDisplay) > Number.parseInt(stress.style.width)) {
+            stress.style.width = increasedWidth + "%";
+            increasedWidth ++;
+          }
+        }, 50 )
+      }
+    } else {
+        let increasedWidth = Number.parseInt(stress.dataset.stressDisplay)
+        stress.style.width = increasedWidth + "%";
     }
 };
 
