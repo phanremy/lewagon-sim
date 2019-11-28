@@ -11,3 +11,8 @@ incrementScore();
 initSortable();
 initDisappearingImpact();
 
+
+
+
+import { initTestSwipe } from '../plugins/init_test_swipe';
+initTestSwipe();
