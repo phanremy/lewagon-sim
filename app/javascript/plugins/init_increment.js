@@ -24,7 +24,6 @@ function incrementStress() {
           if (Number.parseInt(stress.dataset.stressDisplay) > Number.parseInt(stress.style.width)) {
             stress.style.width = increasedWidth + "%";
             increasedWidth ++;
-            console.log('okok');
             if (Number.parseInt(stress.dataset.stressDisplay) === Number.parseInt(stress.style.width)) {
               clearInterval(interval);
             }
@@ -32,8 +31,10 @@ function incrementStress() {
         }, 50 )
       }
     } else {
+      if (document.querySelector("#event-card")) {
         let increasedWidth = Number.parseInt(stress.dataset.stressDisplay);
         stress.style.width = increasedWidth + "%";
+      }
     }
 };
 
