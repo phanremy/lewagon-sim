@@ -127,6 +127,68 @@ event_yoga_choice_2.save
 
 puts "done"
 
+puts "Creating push origin master event"
+event_push_master = Event.new({
+  title: "Git Push Origin Master",
+  description: "You just pushed origin master and you weren’t up to date. You just crushed most of one of your buddies work..",
+  image_url: nil,
+  })
+
+event_push_master.save
+
+puts "Choices Push Master"
+ event_push_master_choice_1 = Choice.new({
+  title: "Play the bad faith card.. « No no, I was on a branch, I swear…",
+  description: "Dummy ! They took less than 3sec to verify who made the push and you got busted..",
+  score_impact: 50,
+  stress_impact: 50,
+})
+
+ event_push_master_choice_1.event = event_push_master
+ event_push_master_choice_1.save
+
+event_push_master_choice_2 = Choice.new({
+  title: "Try a CTRL-Z from outer-space on your buddy’s laptop",
+  description: "You lucky bastard, every lost line just reappears on the screen ! That really was a close one !! 15 stress /  500 its" ,
+  score_impact:  650,
+  stress_impact: 15 ,
+})
+event_push_master_choice_2.event = event_push_master
+event_push_master_choice_2.save
+
+puts "done"
+
+puts "After work event"
+event_after_work = Event.new({
+  title: "After work",
+  description: "You’re wasted and all you want is go back home to rest.. Of course somebody asks you if want to drink a beer to relax after this long day.",
+  image_url: nil,
+  })
+
+event_after_work.save
+
+puts "Choices After Work"
+ event_after_work_choice_1 = Choice.new({
+  title: "I'm going home !",
+  description: "Good choice, you’ll have time to do your flash cards and sleep well, because obviously you need it.",
+  score_impact: 150,
+  stress_impact: 0,
+})
+
+ event_after_work_choice_1.event = event_after_work
+ event_after_work_choice_1.save
+
+event_after_work_choice_2 = Choice.new({
+  title: "One beer never hurt anybody",
+  description: "Damn, one beer never hurt anyone, but what about 10 ? Well, you know it’s painful because this hangover is gonna follow you all day. Was it worth it ? You tell us !" ,
+  score_impact:  350,
+  stress_impact: 25,
+})
+event_after_work_choice_2.event = event_after_work
+event_after_work_choice_2.save
+
+puts "done"
+
 # #-------------------------------------------------------------
 # puts "Creating Embuscade event"
 # event_embuscade = Event.new({
