@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-const initTestSwipe = () => {
+const initSwipe = () => {
   $(document).ready(function() {
 
     var animating = false;
@@ -83,4 +83,4 @@ const initTestSwipe = () => {
   });
 };
 
-export { initTestSwipe };
+export { initSwipe };
