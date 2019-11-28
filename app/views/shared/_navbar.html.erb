@@ -57,7 +57,10 @@
               <h1 class="display-score" id="score-display" data-score-display='<%= @game.score %>'><%= @game.score - @game_event.choice.score_impact %></h1>
             </div>
           <% else %>
-            <h1 style="font-family:  'Press Start 2P', cursive;" id="score-display" data-score-display='<%= @game.score %>'><%= @game.score %></h1>
+            <div class="d-flex align-items-center justify-content-around">
+              <h4  class="display-score" >Score:</h4>
+              <h1 class="display-score" id="score-display" data-score-display='<%= @game.score %>'><%= @game.score %></h1>
+            </div>
           <% end %>
         <% else %>
           <% if user_signed_in? %>
