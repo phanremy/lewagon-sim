@@ -24,7 +24,7 @@
 }
 
 .container-home>div>div>span{
-  font-size: 24px;
+  font-size: 16px;
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -57,6 +57,13 @@
   color: white;
   background: $main-red;
   opacity: 0.9;
+}
+
+#typed {
+  p {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+  }
 }
 
 
