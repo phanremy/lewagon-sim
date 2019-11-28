@@ -9,12 +9,17 @@
     <br>
     <br>
     <br>
-    <div class="gameover-container animated fadeInUp slower" id="to-drag">
+    <div class="gameover-container animated fadeInUp slower p-5" id="to-drag">
       <h2>Game over</h2>
       <h1><%= "your score = #{@game.score}"%></h1>
-       <div class="pb-2">
-        <%= link_to "again!" ,root_path , class: "restart-btn"%>
+      <div class="my-5">
+        <%= link_to "Try again!" ,root_path , class: "restart-btn"%>
       </div>
+      <% if @game.score > @own_best_score %>
+        <h2><small>New record! </small></h2>
+      <% end %>
+      <h2><small>Your best score: <%= @own_best_score %></small></h2>
+      <h2><small>Best score ever: <%= @best_score_ever %></small></h2>
     </div>
   </div>
 </div>

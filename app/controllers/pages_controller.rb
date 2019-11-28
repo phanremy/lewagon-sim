@@ -27,5 +27,9 @@ class PagesController < ApplicationController
 
   def endgame
     @game = Game.find(params[:game_id])
+    @user = @game.user
+    @user_games = Game.where(user: @user)
+    @own_best_score = @user_games.maximum(:score)
+    @best_score_ever = Game.maximum(:score)
   end
 end
