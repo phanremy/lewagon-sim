@@ -35,27 +35,27 @@ $green: #B1DA96;
   }
 
   &__content {
-    overflow: hidden;
-    position: relative;
-    height: $h - $headerH;
-    padding-top: 4.5rem;
-    user-select: none;
+    // overflow: hidden;
+    // position: relative;
+    // height: $h - $headerH;
+    // padding-top: 4.5rem;
+    // user-select: none;
   }
 
   &__card-cont {
-    position: relative;
-    width: $cardW;
-    height: $cardH;
-    margin: 0 auto 5rem;
+    // position: relative;
+    // width: $cardW;
+    // height: $cardH;
+    // margin: 0 auto 5rem;
   }
 
   &__card {
-    z-index: 2;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    // z-index: 2;
+    // position: absolute;
+    // left: 0;
+    // top: 0;
+    // width: 100%;
+    // height: 100%;
     transform-origin: 50% 100%;
 
     &.reset {
@@ -65,6 +65,7 @@ $green: #B1DA96;
       .demo__card__choice {
         transition: opacity 0.3s;
         opacity: 0 !important;;
+        border-radius: 3px;
       }
     }
 
@@ -143,6 +144,7 @@ $green: #B1DA96;
       width: 100%;
       height: 100%;
       opacity: 0;
+      border-radius: 10px;
 
       &:before {
         // content: "";
@@ -174,15 +176,17 @@ $green: #B1DA96;
       &.m--left {
         background: grey;
         color: white;
-        font-weight: bold;
-        padding: 30px;
+        padding: 100px 40px;
+        font-size: 30px;
+        font-family: 'Press Start 2P', cursive;
       }
       &.m--right{
         background: grey;
         color: white;
-        font-weight: bold;
         text-align: right;
-        padding: 30px;
+        padding: 100px 40px;
+        font-size: 30px;
+        font-family: 'Press Start 2P', cursive;
 
         &:after {
           transform: scaleY(-1);
