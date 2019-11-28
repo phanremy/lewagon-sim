@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <!-- si user signed_in? afficher l'avatar, else afficher logo wagon -->
   <% if user_signed_in? %>
-    <div class="d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center justify-content-around">
       <li class="nav-item dropdown">
         <!-- a remplacer par l'avatar add par user -->
         <%= image_tag "logo.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -52,9 +52,12 @@
       <% else %>
         <% if @game_event.event.present? %>
           <% if @game_event.choice.present? %>
-            <p id="score-display" data-score-display='<%= @game.score %>'><%= @game.score - @game_event.choice.score_impact %></p>
+            <div class="d-flex align-items-center justify-content-around">
+              <h4  class="display-score" >Score:</h4>
+              <h1 class="display-score" id="score-display" data-score-display='<%= @game.score %>'><%= @game.score - @game_event.choice.score_impact %></h1>
+            </div>
           <% else %>
-            <p id="score-display" data-score-display='<%= @game.score %>'><%= @game.score %></p>
+            <h1 style="font-family:  'Press Start 2P', cursive;" id="score-display" data-score-display='<%= @game.score %>'><%= @game.score %></h1>
           <% end %>
         <% else %>
           <% if user_signed_in? %>
