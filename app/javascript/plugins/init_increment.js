@@ -6,7 +6,7 @@ function incrementScore() {
         if (score.dataset.scoreDisplay - score.innerHTML > 0) {
           score.innerHTML ++;
         }
-      }, 100 )
+      }, 10 )
     }
 };
 
@@ -20,17 +20,23 @@ function incrementStress() {
         increasedWidth ++;
       } else {
         let increasedWidth = Number.parseInt(stress.dataset.stressDisplay - stress_impact.dataset.stressImpact);
-        setInterval(function(){
+        const interval = setInterval(function(){
           if (Number.parseInt(stress.dataset.stressDisplay) > Number.parseInt(stress.style.width)) {
             stress.style.width = increasedWidth + "%";
             increasedWidth ++;
+            if (Number.parseInt(stress.dataset.stressDisplay) === Number.parseInt(stress.style.width)) {
+              clearInterval(interval);
+            }
           }
         }, 50 )
       }
     } else {
-        let increasedWidth = Number.parseInt(stress.dataset.stressDisplay)
+      if (document.querySelector("#event-card")) {
+        let increasedWidth = Number.parseInt(stress.dataset.stressDisplay);
         stress.style.width = increasedWidth + "%";
     }
+
+      }
 };
 
 export { incrementStress };
