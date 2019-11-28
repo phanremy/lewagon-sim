@@ -34,9 +34,8 @@ function incrementStress() {
       if (document.querySelector("#event-card")) {
         let increasedWidth = Number.parseInt(stress.dataset.stressDisplay);
         stress.style.width = increasedWidth + "%";
-    }
-
       }
+    }
 };
 
 export { incrementStress };
