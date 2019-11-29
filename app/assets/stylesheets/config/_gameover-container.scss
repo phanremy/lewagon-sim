@@ -67,13 +67,3 @@
   box-shadow: 2px 1px $pop-yellow;
 }
 
-
-
- // // <% @game.game_events.each do |game_event| %>
- //          <div class="flex-container">
- //            <div><%=  game_event.choice.title%></div>
- //            <div><p><%="This gave you : #{game_event.choice.stress_impact} stress points"%></p>
- //              <p><%="This made you gain : #{game_event.choice.score_impact } score points "%></p>
- //            </div>
- //          </div>
- //         <% end %>
