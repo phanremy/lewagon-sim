@@ -15,7 +15,7 @@
       <div class="my-5">
         <%= link_to "Try again!" ,root_path , class: "restart-btn"%>
       </div>
-      <% if @game.score > @own_best_score %>
+      <% if @game.score >= @own_best_score %>
         <h2><small>New record! </small></h2>
       <% end %>
       <h2><small>Your best score: <%= @own_best_score %></small></h2>
