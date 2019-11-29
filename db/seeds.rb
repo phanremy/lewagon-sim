@@ -109,7 +109,7 @@ puts "Creating Air-BnB event"
 airbnb = Event.new({
   title: "Airbnb Project",
   description: " You have to work a whole week with 3 Buddies, to make a copycat of Airbnb. You can choose any subject you want ! What do you want to rent?",
-  image_url: "stress.png",
+  image_url: "RbNb house.jpg",
   })
 airbnb.save
 
@@ -142,7 +142,7 @@ puts "Creating push origin master event"
 event_push_master = Event.new({
   title: "Git Push Origin Master",
   description: "You just pushed origin master and you weren’t up to date. You just crushed most of one of your buddies work..",
-  image_url: "stress.png",
+  image_url: "no-yoga-ppixelized.jpg",
   })
 
 event_push_master.save
@@ -153,7 +153,7 @@ puts "Choices Push Master"
   description: "Dummy ! They took less than 3 seconds to verify who made the push and you got busted..",
   score_impact: 50,
   stress_impact: 50,
-  image_url: "kill_bill_380_280"
+  image_url: "kill_bill_380_280.png"
 })
 
  event_push_master_choice_1.event = event_push_master
@@ -175,7 +175,7 @@ puts "Creating After work event"
 event_after_work = Event.new({
   title: "After work",
   description: "You’re wasted and all you want is go back home to rest.. Of course somebody asks you if want to drink a beer to relax after this long day.",
-  image_url: "no-yoga-ppixelized.png",
+  image_url: "saloon_pixel_resize.jpeg",
   })
 
 event_after_work.save
