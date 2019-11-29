@@ -174,19 +174,22 @@ $green: #B1DA96;
       }
 
       &.m--left {
-        background: grey;
-        color: white;
+        background: rgba(60,60,60,0.8);
+        color: rgba(220,220,220, 1);
         padding: 100px 40px;
+        padding-top: 150px;
+        text-align: center;
         font-size: 30px;
-        font-family: 'Press Start 2P', cursive;
+        font-family: $cutive-mono;
       }
       &.m--right{
-        background: grey;
-        color: white;
-        text-align: right;
+        background: rgba(60,60,60,0.8);
+        color: rgba(220,220,220, 1);
+        text-align: center;
         padding: 100px 40px;
+        padding-top: 150px;
         font-size: 30px;
-        font-family: 'Press Start 2P', cursive;
+        font-family: $cutive-mono;
 
         &:after {
           transform: scaleY(-1);
