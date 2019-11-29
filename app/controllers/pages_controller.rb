@@ -11,7 +11,7 @@ class PagesController < ApplicationController
       @game_event.game = @game
       @event = Event.all.sample
       @game_event.event = @event
-      # @game_event.save
+      @game_event.save
     else
       redirect_to new_user_session_path
     end

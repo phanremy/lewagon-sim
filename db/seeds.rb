@@ -184,6 +184,7 @@ event_after_work_choice_2 = Choice.new({
   description: "Damn, a beer never hurt anyone, but what about 10 ? Well, you know it’s painful because this hangover is gonna follow you all day. Was it worth it? You tell us!" ,
   score_impact:  350,
   stress_impact: 25,
+  image_url: "beers.jpg",
 })
 event_after_work_choice_2.event = event_after_work
 event_after_work_choice_2.save
