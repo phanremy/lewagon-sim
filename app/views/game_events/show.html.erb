@@ -6,13 +6,13 @@
        <!-- ----- ICI C EST L AFFICHAGE DE L'EVENT---- -->
         <div id="event-card" class="animated slideInUp d-flex flex-column justify-content-between">
           <div class=" event-head d-flex flex-column justify-content-between">
-            <h3 class="text-center" style="font-size: 16px;"><%= @game_event.event.title %></h3>
+            <h3 class="text-center" style=""><%= @game_event.event.title %></h3>
             <div class="d-flex justify-content-center ">
               <%= image_tag("http://imageshack.com/a/img921/4688/sCCo8w.png") %>
             </div>
           </div>
-          <div class="d-flex flex-column justify-content-center" id="event-description">
-            <p class="text-center "><%= @game_event.event.description %></p>
+          <div id="toto" class="event-description d-flex flex-column justify-content-center">
+            <p class="text-center"><%= @game_event.event.description %></p>
           </div>
         </div>
         <% @event.choices.each do |choice| %>
@@ -47,8 +47,8 @@
                <%= image_tag("https://source.unsplash.com/random/380x240") %>
             </div>
           </div>
-            <div class="d-flex flex-column justify-content-center" id="event-description">
-              <p class="text-center" style="font-size: 10px; line-height: 25px; letter-spacing: 1px;"><%= @game_event.choice.description %></p>
+            <div class=" event-description d-flex flex-column justify-content-center" id="">
+              <p class="text-center" style=""><%= @game_event.choice.description %></p>
             </div>
             <!-- NEXT LINK AND SEE RESULTS ARE NOW CLASS NEXT LINK TRANSPARENT ALL OVER THE CARD -->
             <!-- IT WORKS BECAUSE NEXT LINK IS ABSOLUTE POSITION AND EVENT CARD IS RELATIVE POSITION -->
