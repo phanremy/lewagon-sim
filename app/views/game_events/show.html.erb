@@ -44,7 +44,7 @@
           <div class=" event-head d-flex flex-column justify-content-between">
             <h3 class="text-center" style="font-size: 16px;"><%= @game_event.event.title %></h3>
             <div class="d-flex justify-content-center">
-               <%= image_tag("https://source.unsplash.com/random/380x240") %>
+               <%= image_tag @game_event.choice.image_url %>
             </div>
           </div>
             <div class="d-flex flex-column justify-content-center" id="event-description">
