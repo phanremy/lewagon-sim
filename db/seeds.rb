@@ -40,8 +40,8 @@ game_1.save
 puts "Creating first day event"
 first_day = Event.new({
   title: "First Day",
-  description: " This is your first day at « Villa Gaudelet », you’re excited to begin , you just met 30 new buddies and you have to install all the files needed for working easily. Where do you spend the most time?" ,
-  image_url: nil,
+  description: " This is your first day at « Villa Gaudelet », you’re exited to begin , you just met 30 new buddies and you have to  install all the files needed for working easily. Where do you spend the most time?" ,
+  image_url: "stress.png",
   })
 first_day.save
 
@@ -70,7 +70,7 @@ puts "Creating Air-BnB event"
 airbnb = Event.new({
   title: "Airbnb Project",
   description: " You have to work a whole week with 3 Buddies, to make a copycat of Airbnb. You can choose any subject you want ! What do you want to rent?",
-  image_url: nil,
+  image_url: "stress.png",
   })
 airbnb.save
 
@@ -100,7 +100,7 @@ puts "Creating Yoga event"
 event_yoga = Event.new({
   title: "Yoga",
   description: " This is the middle of the afternoon, you just receive a message from the Yoga teacher, it's begin in 15 minutes. What do you do?",
-  image_url: nil,
+  image_url: "stress.png",
   })
 
 event_yoga.save
@@ -130,8 +130,8 @@ puts "done"
 puts "Creating push origin master event"
 event_push_master = Event.new({
   title: "Git Push Origin Master",
-  description: "You just pushed origin master and you weren’t up to date. You just crushed most of the work of one of your buddies..",
-  image_url: nil,
+  description: "You just pushed origin master and you weren’t up to date. You just crushed most of one of your buddies work..",
+  image_url: "stress.png",
   })
 
 event_push_master.save
@@ -161,8 +161,8 @@ puts "done"
 puts "After work event"
 event_after_work = Event.new({
   title: "After work",
-  description: "You’re wasted and all you want to do is go back home to rest.. Of course somebody asks you if you want to drink a beer to relax after this long day.",
-  image_url: nil,
+  description: "You’re wasted and all you want is go back home to rest.. Of course somebody asks you if want to drink a beer to relax after this long day.",
+  image_url: "stress.png",
   })
 
 event_after_work.save
