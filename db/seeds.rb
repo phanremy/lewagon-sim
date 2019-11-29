@@ -40,21 +40,21 @@ game_1.save
 puts "Creating first day event"
 first_day = Event.new({
   title: "First Day",
-  description: " This is your first day at « Villa Gaudelet », you’re exited to begin , you just met 30 new buddies and you have to  install all the files needed for working easily. Where do you spend the most time?" ,
+  description: " This is your first day at « Villa Gaudelet », you’re excited to begin , you just met 30 new buddies and you have to install all the files needed for working easily. Where do you spend the most time?" ,
   image_url: nil,
   })
 first_day.save
 
 puts "Creating first day choices"
  first_day_choice_1 = Choice.new({
-  title: "Discuss with schoolmates" ,
+  title: "Discuss with schoolmates 👫" ,
   description: "Good Choice, you’ll spend 9 weeks with them, it’s important to know your next buddies.",
   score_impact: 450 ,
   stress_impact: 0,
 })
 
 first_day_choice_2 = Choice.new({
-  title: "follow the set-up instructions",
+  title: "follow the set-up instructions 👨‍💻",
   description:"Well… You must install Linux, witch takes a lot of time, and a lot of bug appears. All the teachers have to help you. You’re a bit embarrassed." ,
   score_impact: 120,
   stress_impact: 20,
@@ -68,7 +68,7 @@ puts "done"
 
 puts "Creating Air-BnB event"
 airbnb = Event.new({
-  title: "Air Bnb Project",
+  title: "Airbnb Project",
   description: " You have to work a whole week with 3 Buddies, to make a copycat of Airbnb. You can choose any subject you want ! What do you want to rent?",
   image_url: nil,
   })
@@ -76,15 +76,15 @@ airbnb.save
 
 puts "Creating Air-Bnb choices"
  airbnb_choice_1 = Choice.new({
-  title: "Manors" ,
+  title: "Manors 🏰" ,
   description: "Pff... Boring !!!",
   score_impact: 175,
   stress_impact: 10,
 })
 
 airbnb_choice_2 = Choice.new({
-  title: "Socks",
-  description:"Yes ! You have the good spirit. No need to be serious for the moment." ,
+  title: "Socks 🧦",
+  description:"Yes ! You have the good spirit. No need to be serious for the moment. Enjoy pictures of socks in your laptop!" ,
   score_impact: 560,
   stress_impact: 0,
 })
@@ -107,7 +107,7 @@ event_yoga.save
 
 puts "Choices Yoga"
  event_yoga_choice_1 = Choice.new({
-  title: "Time to Yoga!",
+  title: "Time to Yoga! 🧘‍♀️",
   description: " It was very efficient on your moral. At the end of the day you didn't finish your day-work, but you are way more efficent the next day",
   score_impact: 320,
   stress_impact: 5,
@@ -117,7 +117,7 @@ puts "Choices Yoga"
  event_yoga_choice_1.save
 
 event_yoga_choice_2 = Choice.new({
-  title: "Keep working",
+  title: "Keep working 👨‍💻",
   description: "You rush into your work, but you're tired, this hour of working is useless, you learned nothing. You are just more stressed. " ,
   score_impact:  10,
   stress_impact: 30 ,
@@ -130,7 +130,7 @@ puts "done"
 puts "Creating push origin master event"
 event_push_master = Event.new({
   title: "Git Push Origin Master",
-  description: "You just pushed origin master and you weren’t up to date. You just crushed most of one of your buddies work..",
+  description: "You just pushed origin master and you weren’t up to date. You just crushed most of the work of one of your buddies..",
   image_url: nil,
   })
 
@@ -138,8 +138,8 @@ event_push_master.save
 
 puts "Choices Push Master"
  event_push_master_choice_1 = Choice.new({
-  title: "Play the bad faith card.. « No no, I was on a branch, I swear…",
-  description: "Dummy ! They took less than 3sec to verify who made the push and you got busted..",
+  title: "Play the bad faith card.. « No no, I was on a branch, I swear… 🙅‍♂️",
+  description: "Dummy ! They took less than 3 seconds to verify who made the push and you got busted..",
   score_impact: 50,
   stress_impact: 50,
 })
@@ -148,8 +148,8 @@ puts "Choices Push Master"
  event_push_master_choice_1.save
 
 event_push_master_choice_2 = Choice.new({
-  title: "Try a CTRL-Z from outer-space on your buddy’s laptop",
-  description: "You lucky bastard, every lost line just reappears on the screen ! That really was a close one !! 15 stress /  500 its" ,
+  title: "Try a CTRL-Z from outer-space on your buddy’s laptop 👨‍💻",
+  description: "You lucky bastard, every lost lines just reappear on the screen! That really was a close one!!" ,
   score_impact:  650,
   stress_impact: 15 ,
 })
@@ -161,7 +161,7 @@ puts "done"
 puts "After work event"
 event_after_work = Event.new({
   title: "After work",
-  description: "You’re wasted and all you want is go back home to rest.. Of course somebody asks you if want to drink a beer to relax after this long day.",
+  description: "You’re wasted and all you want to do is go back home to rest.. Of course somebody asks you if you want to drink a beer to relax after this long day.",
   image_url: nil,
   })
 
@@ -169,7 +169,7 @@ event_after_work.save
 
 puts "Choices After Work"
  event_after_work_choice_1 = Choice.new({
-  title: "I'm going home !",
+  title: "I'm going home !🚶‍♀️",
   description: "Good choice, you’ll have time to do your flash cards and sleep well, because obviously you need it.",
   score_impact: 150,
   stress_impact: 0,
@@ -179,8 +179,8 @@ puts "Choices After Work"
  event_after_work_choice_1.save
 
 event_after_work_choice_2 = Choice.new({
-  title: "One beer never hurt anybody",
-  description: "Damn, one beer never hurt anyone, but what about 10 ? Well, you know it’s painful because this hangover is gonna follow you all day. Was it worth it ? You tell us !" ,
+  title: "One beer never hurt anybody 🍻",
+  description: "Damn, a beer never hurt anyone, but what about 10 ? Well, you know it’s painful because this hangover is gonna follow you all day. Was it worth it? You tell us!" ,
   score_impact:  350,
   stress_impact: 25,
 })
