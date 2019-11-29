@@ -36,6 +36,10 @@ puts " Creating a party"
 game_1 = Game.new( score: 0, stress: 0, user_id: user_1)
 game_1.save
 
+puts "Creating top score"
+game_2 = Game.new(score: 12090, stress: 0, user_id: user_1)
+game_2.save
+
 #-------------------------------------------------------------
 puts "Creating first day event"
 first_day = Event.new({
@@ -51,7 +55,7 @@ puts "Creating first day choices"
   description: "Good Choice, you’ll spend 9 weeks with them, it’s important to know your next buddies.",
   score_impact: 450 ,
   stress_impact: 0,
-  image_url: "stress.png",
+  image_url: "Peoplehigh5.png",
 })
 
 first_day_choice_2 = Choice.new({
@@ -67,38 +71,6 @@ first_day_choice_2 = Choice.new({
  first_day_choice_1.save
  first_day_choice_2.save
 puts "done"
-
-puts "Creating Air-BnB event"
-airbnb = Event.new({
-  title: "Airbnb Project",
-  description: " You have to work a whole week with 3 Buddies, to make a copycat of Airbnb. You can choose any subject you want ! What do you want to rent?",
-  image_url: "stress.png",
-  })
-airbnb.save
-
-puts "Creating Air-Bnb choices"
- airbnb_choice_1 = Choice.new({
-  title: "Manors 🏰" ,
-  description: "Pff... Boring !!!",
-  score_impact: 175,
-  stress_impact: 10,
-  image_url: "stress.png",
-})
-
-airbnb_choice_2 = Choice.new({
-  title: "Socks 🧦",
-  description:"Yes ! You have the good spirit. No need to be serious for the moment. Enjoy pictures of socks in your laptop!" ,
-  score_impact: 560,
-  stress_impact: 0,
-  image_url: "stress.png",
-})
-
- airbnb_choice_1.event = airbnb
- airbnb_choice_2.event = airbnb
- airbnb_choice_1.save
- airbnb_choice_2.save
-puts "done"
-
 
 puts "Creating Yoga event"
 event_yoga = Event.new({
@@ -126,12 +98,45 @@ event_yoga_choice_2 = Choice.new({
   description: "You rush into your work, but you're tired, this hour of working is useless, you learned nothing. You are just more stressed. " ,
   score_impact:  10,
   stress_impact: 30,
-  image_url: "stress.png",
+  image_url: "angry_man.png",
 })
 event_yoga_choice_2.event = event_yoga
 event_yoga_choice_2.save
 
 puts "done"
+
+puts "Creating Air-BnB event"
+airbnb = Event.new({
+  title: "Airbnb Project",
+  description: " You have to work a whole week with 3 Buddies, to make a copycat of Airbnb. You can choose any subject you want ! What do you want to rent?",
+  image_url: "stress.png",
+  })
+airbnb.save
+
+puts "Creating Air-Bnb choices"
+ airbnb_choice_1 = Choice.new({
+  title: "Manors 🏰" ,
+  description: "Pff... Boring !!!",
+  score_impact: 175,
+  stress_impact: 10,
+  image_url: "manor.png",
+})
+
+airbnb_choice_2 = Choice.new({
+  title: "Socks 🧦",
+  description:"Yes ! You have the good spirit. No need to be serious for the moment. Enjoy pictures of socks in your laptop!" ,
+  score_impact: 560,
+  stress_impact: 0,
+  image_url: "stress.png",
+})
+
+ airbnb_choice_1.event = airbnb
+ airbnb_choice_2.event = airbnb
+ airbnb_choice_1.save
+ airbnb_choice_2.save
+puts "done"
+
+
 
 puts "Creating push origin master event"
 event_push_master = Event.new({
