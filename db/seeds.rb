@@ -45,7 +45,7 @@ puts "Creating first day event"
 first_day = Event.new({
   title: "First Day",
   description: " This is your first day at « Villa Gaudelet », you’re exited to begin , you just met 30 new buddies and you have to  install all the files needed for working easily. Where do you spend the most time?" ,
-  image_url: "stress.png",
+  image_url: "rentrée.png",
   })
 first_day.save
 
@@ -76,7 +76,7 @@ puts "Creating Yoga event"
 event_yoga = Event.new({
   title: "Yoga",
   description: " This is the middle of the afternoon, you just receive a message from the Yoga teacher, it's begin in 15 minutes. What do you do?",
-  image_url: "stress.png",
+  image_url: "yoga-event.jpg",
   })
 
 event_yoga.save
@@ -87,7 +87,7 @@ puts "Choices Yoga"
   description: " It was very efficient on your moral. At the end of the day you didn't finish your day-work, but you are way more efficent the next day",
   score_impact: 320,
   stress_impact: 5,
-  image_url: "stress.png",
+  image_url: "yoga-go.jpg",
 })
 
  event_yoga_choice_1.event = event_yoga
@@ -171,11 +171,11 @@ event_push_master_choice_2.save
 
 puts "done"
 
-puts "After work event"
+puts "Creating After work event"
 event_after_work = Event.new({
   title: "After work",
   description: "You’re wasted and all you want is go back home to rest.. Of course somebody asks you if want to drink a beer to relax after this long day.",
-  image_url: "stress.png",
+  image_url: "no-yoga-ppixelized.png",
   })
 
 event_after_work.save
