@@ -142,6 +142,7 @@ puts "Choices Push Master"
   description: "Dummy ! They took less than 3 seconds to verify who made the push and you got busted..",
   score_impact: 50,
   stress_impact: 50,
+  image_url: "kill_bill_380_280"
 })
 
  event_push_master_choice_1.event = event_push_master

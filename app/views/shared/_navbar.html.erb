@@ -21,6 +21,7 @@
 
       <% else %>
     <!-- si game_event existe et qu'il a un event associé on rentre dans la boucle de la stress bar -->
+    <%= raise %>
         <% if @game_event.event.present? %>
           <% if @game_event.choice.present? %>
     <!-- empeche l'affichage de la stress bar si niveau de stress inférieur à 10% pour éviter probleme d'affichage -->
