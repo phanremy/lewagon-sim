@@ -9,7 +9,7 @@ class PagesController < ApplicationController
       @game.user = @user
       @game.save
       @game_event.game = @game
-      @event = Event.all.sample
+      @event = Event.first
       @game_event.event = @event
       @game_event.save
     else
