@@ -37,9 +37,8 @@
         <br>
         <br>
         <div class="text-center">
-          <%= simple_form_for [@user, @game] do |t|%>
-            <%= t.submit "PLAY!", class:"restart-btn" %>
-          <% end %>
+
+          <%= link_to "Play!", game_game_event_path(@game_event.game.id, @game_event.id),class: "restart-btn" %>
         </div>
       </div>
     </div>

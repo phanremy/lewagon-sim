@@ -3,6 +3,18 @@ class PagesController < ApplicationController
 
   def home
     @game = Game.new
+    @game_event = GameEvent.new
+    if current_user
+      @user = current_user
+      @game.user = @user
+      @game.save
+      @game_event.game = @game
+      @event = Event.all.sample
+      @game_event.event = @event
+      @game_event.save
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def rules
