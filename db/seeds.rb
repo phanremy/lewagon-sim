@@ -51,6 +51,7 @@ puts "Creating first day choices"
   description: "Good Choice, you’ll spend 9 weeks with them, it’s important to know your next buddies.",
   score_impact: 450 ,
   stress_impact: 0,
+  image_url: "stress.png",
 })
 
 first_day_choice_2 = Choice.new({
@@ -58,6 +59,7 @@ first_day_choice_2 = Choice.new({
   description:"Well… You must install Linux, witch takes a lot of time, and a lot of bug appears. All the teachers have to help you. You’re a bit embarrassed." ,
   score_impact: 120,
   stress_impact: 20,
+  image_url: "stress.png",
 })
 
  first_day_choice_1.event = first_day
@@ -80,6 +82,7 @@ puts "Creating Air-Bnb choices"
   description: "Pff... Boring !!!",
   score_impact: 175,
   stress_impact: 10,
+  image_url: "stress.png",
 })
 
 airbnb_choice_2 = Choice.new({
@@ -87,6 +90,7 @@ airbnb_choice_2 = Choice.new({
   description:"Yes ! You have the good spirit. No need to be serious for the moment. Enjoy pictures of socks in your laptop!" ,
   score_impact: 560,
   stress_impact: 0,
+  image_url: "stress.png",
 })
 
  airbnb_choice_1.event = airbnb
@@ -111,6 +115,7 @@ puts "Choices Yoga"
   description: " It was very efficient on your moral. At the end of the day you didn't finish your day-work, but you are way more efficent the next day",
   score_impact: 320,
   stress_impact: 5,
+  image_url: "stress.png",
 })
 
  event_yoga_choice_1.event = event_yoga
@@ -120,7 +125,8 @@ event_yoga_choice_2 = Choice.new({
   title: "Keep working 👨‍💻",
   description: "You rush into your work, but you're tired, this hour of working is useless, you learned nothing. You are just more stressed. " ,
   score_impact:  10,
-  stress_impact: 30 ,
+  stress_impact: 30,
+  image_url: "stress.png",
 })
 event_yoga_choice_2.event = event_yoga
 event_yoga_choice_2.save
@@ -153,6 +159,7 @@ event_push_master_choice_2 = Choice.new({
   description: "You lucky bastard, every lost lines just reappear on the screen! That really was a close one!!" ,
   score_impact:  650,
   stress_impact: 15 ,
+  image_url: "stress.png"
 })
 event_push_master_choice_2.event = event_push_master
 event_push_master_choice_2.save
@@ -174,6 +181,7 @@ puts "Choices After Work"
   description: "Good choice, you’ll have time to do your flash cards and sleep well, because obviously you need it.",
   score_impact: 150,
   stress_impact: 0,
+  image_url: "stress.png",
 })
 
  event_after_work_choice_1.event = event_after_work
