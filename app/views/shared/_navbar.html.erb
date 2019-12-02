@@ -1,54 +1,40 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <!-- si user signed_in? afficher l'avatar, else afficher logo wagon -->
+    <!-- AVATAR-->
   <% if user_signed_in? %>
-    <div class="d-flex align-items-center justify-content-around">
-      <li class="nav-item dropdown">
-        <!-- a remplacer par l'avatar add par user -->
-        <%= image_tag "http://www.avatarsinpixels.com/minipix/eyJIYWlyTG93ZXIiOiIxIiwiRXllcyI6IjIiLCJNb3V0aCI6IjEyIiwiU2hvZXMiOiIxIiwiUGFudHMiOiIxIiwiVG9wIjoiMyIsIkhhaXIiOiIxMyIsInNraW5Ub25lIjoiZjNhZTgwIiwiZXllc1RvbmUiOiIzMzMzMzMiLCJoYWlyVG9uZSI6IjAwMDAwMCIsInBhbnRzVG9uZSI6IjAwOTlkZCIsInRvcFRvbmUiOiIwMDEyMTkiLCJ0b3BUb25lMiI6IjAwMDAwMCJ9/1/show.png", class: "avatar-char dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdown">
-          <%= link_to "Action", "#", class: "dropdown-item" %>
-          <%= link_to "Another action", "#", class: "dropdown-item" %>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+    <div class="d-flex align-items-center justify-content-around" id="player-stress">
+      <li class="nav-item dropdown" >
+        <div id="avatar-border">
+          <%= image_tag "http://www.avatarsinpixels.com/minipix/eyJIYWlyTG93ZXIiOiIxIiwiRXllcyI6IjIiLCJNb3V0aCI6IjEyIiwiU2hvZXMiOiIxIiwiUGFudHMiOiIxIiwiVG9wIjoiMyIsIkhhaXIiOiIxMyIsInNraW5Ub25lIjoiZjNhZTgwIiwiZXllc1RvbmUiOiIzMzMzMzMiLCJoYWlyVG9uZSI6IjAwMDAwMCIsInBhbnRzVG9uZSI6IjAwOTlkZCIsInRvcFRvbmUiOiIwMDEyMTkiLCJ0b3BUb25lMiI6IjAwMDAwMCJ9/1/show.png", class: "avatar-char dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         </div>
       </li>
+      <!--ICONE ET STRESS BAR -->
+    <div id="stress-border" class="d-flex align-items-center">
   <% else %>
-      <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-      <% end %>
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+    <% end %>
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
   <% end %>
+    <%= image_tag "stress-bar.png", alt: "stress-icon", id: "stress-icon" %>
       <% if @game_event.nil? %>
-
       <% else %>
-    <!-- si game_event existe et qu'il a un event associé on rentre dans la boucle de la stress bar -->
         <% if @game_event.event.present? %>
           <% if @game_event.choice.present? %>
-    <!-- empeche l'affichage de la stress bar si niveau de stress inférieur à 10% pour éviter probleme d'affichage -->
-            <%# if @game.stress < 10 %>
-              <div class="wrapper">
-                <div class="progress" data-stress-display='<%= @game.stress %>' style="width: 0%;"></div>
-              </div>
-        <!-- si le niveau de stress est > à 10% plus de souci d'affichage, on affiche la progression -->
+            <div class="wrapper">
+              <div class="progress" data-stress-display='<%= @game.stress %>' style="width: 0%;"></div>
+            </div>
             <% else %>
               <div class="wrapper">
                 <div class="progress" data-stress-display='<%= @game.stress %>' style="width: 0%;"></div>
               </div>
-              <%# end %>
-              <%# else %>
-             <!--    <div class="wrapper">
-                  <div class="progress" data-stress-display='<%= @game.stress %>' style="width: <%= @game.stress %>%;"></div>
-                </div> -->
-                <% end %>
-      <!-- si game_event n'existe pas, n'affiche pas de barre de santé, remplacée par le logo du wagon -->
-        <% else %>
-
+          <% end %>
         <% end %>
       <% end %>
+    </div>
     </div>
   <div class="" id="">
     <ul class="navbar-nav mr-auto">
       <% if @game_event.nil? %>
-
       <% else %>
         <% if @game_event.event.present? %>
           <% if @game_event.choice.present? %>

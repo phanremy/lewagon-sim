@@ -1,0 +1,62 @@
+@keyframes movecar {
+    0%      { left: 0px; }
+    50%     { left: 93%; }
+    100%    { left: 0px; }
+}
+
+    @-webkit-keyframes movecar {
+        0%      { left: 0px; }
+        50%     { left: 93%; }
+        100%    { left: 0px; }
+    }
+
+    @-moz-keyframes movecar {
+        0%      { left: 0px; }
+        50%     { left: 93%; }
+        100%    { left: 0px; }
+    }
+
+.sky {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    opacity: 0.5;
+
+    overflow: hidden;   /* this keeps car inside sky div */
+}
+
+.sky img {
+
+    border-radius: 30px;
+    position: relative;
+    display: inline;
+
+    animation: movecar 10s linear 1s infinite alternate;
+        -webkit-animation: movecar 10s ease-in-out 1s infinite alternate;
+        -moz-animation: movecar 10s ease-in-out 1a infinite alternate;
+}
+
+.sun {
+    background: #ffe252;
+    width: 85px;
+    height: 85px;
+    border: 2px solid black;
+    border-radius: 50px;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.rode1, .rode2 {
+    width: 100%;
+    height: 20px;
+    background: #808080;
+    margin: 0;
+}
+
+.rode1 {
+    border-top: 2px solid #000000;
+}
+
+.rode2 {
+    border-top: 2px dashed #ffffff;
+}

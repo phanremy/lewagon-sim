@@ -12,8 +12,7 @@ class PagesController < ApplicationController
       @event = Event.first
       @game_event.event = @event
       @game_event.save
-    else
-      redirect_to new_user_session_path
+     # redirect_to new_user_session_path
     end
   end
 
