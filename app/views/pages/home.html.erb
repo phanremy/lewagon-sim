@@ -2,10 +2,7 @@
   <div class="body">
       <div class="container container-home">
         <div>
-        <div class="sky ">
-            <%= image_tag "wagon.png",height: 40, width:70 %>
 
-        </div>
           <h1 class="animated heartBeat delay-2s home_h1">Le Wagon Simulator</h1>
           <div id="typed-height">
             <span id="typed"></span>
@@ -37,13 +34,16 @@
           </div>
           <br>
           <br>
+            <div class="sky ">
+              <%= image_tag "wagon.png",height: 40, width:70 %>
+            </div>
           <br>
           <br>
           <div class="text-center">
             <% if current_user %>
-              <%= link_to "PLAY!", game_game_event_path(@game_event.game.id, @game_event.id),class: "restart-btn" %>
+                <%= link_to "PLAY!", game_game_event_path(@game_event.game.id, @game_event.id),class: "restart-btn" %>
             <% else %>
-              <%= link_to "SIGN UP!", new_user_session_path, class: "restart-btn" %>
+                <%= link_to "SIGN UP!", new_user_session_path, class: "restart-btn" %>
             <% end %>
          </div>
       </div>
