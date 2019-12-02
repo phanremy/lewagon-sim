@@ -56,13 +56,13 @@
             <div class="text-center ">
               <%= simple_form_for [@game, GameEvent.new] do |f| %>
               <!--  "NEXT" -->
-                <%= f.submit "", class: "next-link", url: game_game_events_path%>
+                <%= f.submit "CLICK FOR NEXT", class: "next-link", url: game_game_events_path%>
               <% end %>
             </div>
           <% else %>
-            <div class = "text-center">
+            <div class = "text-center ">
               <!-- "See Results" -->
-              <%= link_to "", game_endgame_path(@game), class: "next-link" %>
+              <%= link_to "CLICK FOR GAME OVER", game_endgame_path(@game), class: "next-link d-flex justify-content-center align-items-center" %>
             </div>
           <% end %>
         </div>
