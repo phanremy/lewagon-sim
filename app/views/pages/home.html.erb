@@ -3,7 +3,6 @@
       <div class="container container-home">
         <div>
         <div class="sky ">
-
             <%= image_tag "wagon.png",height: 40, width:70 %>
 
         </div>
@@ -33,22 +32,20 @@
               </li>
             </ul>
           </div>
-
-          <div id="typed-strings">
-            <p id="typed">Change your life and relive your <br> <em> Le Wagon experience </em> through a game!</p>
+         <div id="typed-strings">
+          <p id="typed">Change your life and relive your <br> <em> Le Wagon experience </em> through a game!</p>
           </div>
           <br>
           <br>
           <br>
           <br>
-          <div class="d-flex">
-            <div>
-            <div class="text-center">
-
-              <%= link_to "PLAY!", game_game_event_path(@game_event.game.id, @game_event.id),class: "start-btn" %>
-            </div>
-          </div>
-        </div>
+          <div class="text-center">
+            <% if current_user %>
+              <%= link_to "PLAY!", game_game_event_path(@game_event.game.id, @game_event.id),class: "restart-btn" %>
+            <% else %>
+              <%= link_to "SIGN UP!", new_user_session_path, class: "restart-btn" %>
+            <% end %>
+         </div>
       </div>
   </div>
 
