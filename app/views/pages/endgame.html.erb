@@ -15,7 +15,7 @@
     </div>
     <br>
     <br>
-    <div class="gameover-container animated fadeInUp slower delay-2s p-3" id="to-drag">
+    <div class="gameover-container animated fadeInUp slower delay-2s p-3" style="height:310px" id="to-drag">
       <table class="fixed_headers">
         <thead>
           <tr>
@@ -25,11 +25,11 @@
             <th class="pb-4" style="font-size: 25px; color:white;">Score</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="best-score-games">
           <% @best_score_games.each_with_index do |game, index| %>
             <tr>
-              <td class="pr-4 pb-2" style="font-size: 20px; color:white;"># <%= index + 1 %></td>
-              <td class="pr-5 pb-2" style="font-size: 20px; color:white;"><%= ("#{game.user.first_name} #{game.user.last_name}".length > 20) ? "#{game.user.first_name} #{game.user.last_name}" : "#{game.user.first_name} #{game.user.last_name}"[0..10] %></td>
+              <td class="pr-4 pb-2" style="font-size: 20px; color:white;">#<%= index + 1 %></td>
+              <td class="pr-5 pb-2" style="font-size: 20px; color:white;"><%= ("#{game.user.first_name} #{game.user.last_name}".length > 11) ? "#{game.user.first_name} #{game.user.last_name}"[0..10] : "#{game.user.first_name} #{game.user.last_name}" %></td>
               <td class="pr-4 pb-2" style="font-size: 20px; color:white;"><%= game.user.batch %></td>
               <td class="pb-2" style="font-size: 20px; color:white;"><%= game.score %></td>
             </tr>

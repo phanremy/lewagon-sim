@@ -9,6 +9,7 @@ import { initNextLinksHelper } from '../plugins/init_next_links_helper';
 import { swipeRight } from '../plugins/init_swipe_indicator';
 // import { swipeLeft } from '../plugins/init_swipe_indicator';
 import { typedShow } from '../plugins/init_typed';
+import { initGameoverScoreScrollUp } from '../plugins/init_gameover_score_scroll_up.js';
 
 if (document.querySelector("#typedShow")) {
   typedShow();
@@ -18,8 +19,6 @@ if (document.querySelector("#typedShow")) {
 if (document.querySelector("#typed")) {
   initTyped();
 }
-
-
 
 
 if (document.querySelector('#sortable-img-card')) {
@@ -40,3 +39,8 @@ incrementStress();
 
 
 incrementScore();
+
+
+if (document.querySelectorAll('.best-score-games')) {
+  initGameoverScoreScrollUp();
+}
