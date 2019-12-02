@@ -36,8 +36,11 @@
         <br>
         <br>
         <div class="text-center">
-
+          <% if current_user %>
           <%= link_to "PLAY!", game_game_event_path(@game_event.game.id, @game_event.id),class: "restart-btn" %>
+          <% else %>
+          <%= link_to "SIGN UP!", new_user_session_path, class: "restart-btn" %>
+          <% end %>
         </div>
       </div>
     </div>
