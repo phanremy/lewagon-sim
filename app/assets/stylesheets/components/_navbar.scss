@@ -11,7 +11,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 65px;
 }
 
 #score-display {
@@ -27,10 +27,12 @@
 }
 
 .avatar-char {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0);
   border-radius: 50%;
-  margin-right: 5px;
+  margin: 6px 6px;
+  width: 50px;
 }
+
 
 @media only screen and (max-width: 576px) {
 
@@ -46,4 +48,39 @@
 
   }
 
+}
+
+
+// Barre d'infos du joueurs
+#player-stress{
+
+  #stress-icon{
+    width: 40px;
+    height: 40px;
+    margin-right: -20px;
+    z-index:1 ;
+    background: rgb(5,5,5);
+    border-radius: 50%;
+  }
+
+}
+
+//border pour application couleur et style du fonds de la barre d'infos
+#avatar-border{
+  background: #B8B9D1;
+  padding: 10px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+#stress-border {
+  background: #B8B9D1;
+  margin-left: -10px;
+  padding: 6px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding-right: 13px;
+  z-index: 99;
+  border: 2px solid black;
+  border-left: none;
 }
