@@ -66,7 +66,7 @@
     width: 100%;
     border-radius: 10px;
     margin: 0px 10px;
-    padding: 0px;
+    padding: 15px;
     width: 384px;
     height: 225px;
     background: rgb(189, 167, 103);
@@ -103,13 +103,13 @@
 }
 
 .no-swipe-arrow-left {
-  opacity: 1;
+  opacity: 0;
   transition: opacity 2s ease;
   position: absolute;
 }
 
 .no-swipe-arrow-right {
-  opacity: 1;
+  opacity: 0;
   transition: opacity 2s ease;
 }
 
