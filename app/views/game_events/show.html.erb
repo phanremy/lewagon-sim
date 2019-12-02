@@ -1,6 +1,12 @@
 <div class="body">
   <%= render 'shared/navbar' %>
   <% if @game_event.choice == nil %>
+  <div class="d-flex align-items-center justify-content-between px-5">
+    <div class="arrows d-flex justify-content-between">
+      <p></p>
+      <%= image_tag('swipe-to-left.png', class:'no-swipe-arrow-left animated') %>
+      <p></p>
+    </div>
     <div class="main-container">
       <!-- SWIPEABLE CLASS INCLUDING CARD, SIMPLE FORM CHOICES OPTIONS -->
       <div class="demo__card">
@@ -35,6 +41,13 @@
 
       </div>
     </div>
+    <div class="arrows d-flex justify-content-between">
+      <p></p>
+      <%= image_tag('swipe-to-right.png', class:'no-swipe-arrow-right animated') %>
+      <p></p>
+    </div>
+  </div>
+
        <!-- ----- ICI C EST L AFFICHAGE DU CHOIX---- -->
   <% else %>
     <div class="d-flex justify-content-between">

@@ -1,0 +1,28 @@
+<div class="main-container">
+  <div id="event-card-nico" class="animated slideInUp d-flex flex-column justify-content-between">
+    <div class=" event-head-nico d-flex flex-column justify-content-between">
+      <h3 class="text-center" style=""><%= @game_event.event.title %></h3>
+      <div class="d-flex justify-content-center">
+        <%= image_tag('https://source.unsplash.com/random/450x300') %>
+      </div>
+    </div>
+    <div id="toto" class="event-description-nico d-flex flex-column justify-content-center">
+      <p class="text-center"><%= @game_event.event.description %></p>
+    </div>
+  </div>
+    <% @event.choices.each do |choice| %>
+      <% if choice == @game_event.event.choices.first %>
+        <div class="demo__card__choice m--left"><%= choice.title %></div>
+          <%= simple_form_for [@game, @game_event] do |f| %>
+            <%= f.hidden_field :choice_id, value: choice.id %>
+            <%= f.submit choice.title, class:"d-none", data: {choice: "choiceleft"}%>
+          <% end %>
+      <% else %>
+        <div class="demo__card__choice m--right"><%= choice.title %></div>
+        <%= simple_form_for [@game, @game_event] do |f| %>
+          <%= f.hidden_field :choice_id, value: choice.id %>
+          <%= f.submit choice.title, class:"d-none", data: {choice: "choiceright"}%>
+        <% end %>
+      <% end %>
+    <% end %>
+</div>
