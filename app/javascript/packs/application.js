@@ -5,6 +5,7 @@ import { initDisappearingImpact } from '../plugins/init_disappearing_impact';
 import { incrementStress } from '../plugins/init_increment';
 import { incrementScore } from '../plugins/init_increment';
 import { initSwipe } from '../plugins/init_swipe';
+import { initNextLinksHelper } from '../plugins/init_next_links_helper';
 
 const arrowLeft = document.querySelector('.no-swipe-arrow-left');
   setTimeout(function() {
@@ -31,12 +32,7 @@ const arrowRight = document.querySelector('.no-swipe-arrow-right');
 
 
 
-initTyped();
-incrementStress();
-incrementScore();
-initSortable();
-initDisappearingImpact();
-initSwipe();
+
 
 if (document.querySelector("#typed")) {
   initTyped();
@@ -59,3 +55,8 @@ if (document.querySelectorAll('.bounceInDown')) {
 }
 
 initSwipe();
+
+if (document.querySelectorAll('.next-link')) {
+  initNextLinksHelper();
+}
+
