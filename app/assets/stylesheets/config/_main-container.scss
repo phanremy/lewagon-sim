@@ -3,4 +3,17 @@
   width: 500px;
   min-height: 100vh;
   padding: 25px;
+  overflow: hidden;
+};
+
+@media only screen and (max-width: 576px) {
+  .main-container{
+    width: 400px;
+    padding: 0px;
+  }
+
+  #event-card{
+    // max-width: 200px;
+  }
+
 }

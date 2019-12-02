@@ -31,3 +31,19 @@
   border-radius: 50%;
   margin-right: 5px;
 }
+
+@media only screen and (max-width: 576px) {
+
+  #score-display{
+    font-size: 10px;
+  }
+
+  .display-score {
+    font-size: 10px;
+  }
+
+  .avatar-char {
+
+  }
+
+}
