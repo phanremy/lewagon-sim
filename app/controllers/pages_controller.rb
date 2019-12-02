@@ -51,12 +51,12 @@ class PagesController < ApplicationController
     # @random_event = @possible_events_game6_gameevent2.sample
   end
 
-
   def endgame
     @game = Game.find(params[:game_id])
     @user = @game.user
     @user_games = Game.where(user: @user)
     @own_best_score = @user_games.maximum(:score)
     @best_score_ever = Game.maximum(:score)
+    @best_score_games = Game.order(score: :desc).first(2)
   end
 end
