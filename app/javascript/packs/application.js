@@ -31,8 +31,6 @@ const arrowRight = document.querySelector('.no-swipe-arrow-right');
 
 
 
-
-
 initTyped();
 incrementStress();
 incrementScore();
@@ -40,5 +38,24 @@ initSortable();
 initDisappearingImpact();
 initSwipe();
 
+if (document.querySelector("#typed")) {
+  initTyped();
+}
 
+if (document.querySelector("[data-stress-impact]")) {
+  incrementStress();
+}
 
+if (document.querySelector("[data-score-display]")) {
+  incrementScore();
+}
+
+if (document.querySelector('#sortable-img-card')) {
+  initSortable();
+}
+
+if (document.querySelectorAll('.bounceInDown')) {
+  initDisappearingImpact();
+}
+
+initSwipe();

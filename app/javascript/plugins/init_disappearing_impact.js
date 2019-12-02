@@ -1,7 +1,7 @@
 
 const initDisappearingImpact = () => {
 
-  const elements =  document.querySelectorAll('.bounceInDown')
+  const elements = document.querySelectorAll('.bounceInDown')
   if (elements) {
     elements.forEach((element) => {
       element.classList.add('animated', 'bounceInDown')

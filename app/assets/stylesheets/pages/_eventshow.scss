@@ -32,6 +32,15 @@ width: 100%;
 .impact {
   margin: 70px;
   margin-left: 100px;
+  margin-top: 70px;
+}
+
+@media only screen and (max-width: 576px) {
+// MAKE IMPACT DISAPPEAR IN SMARTPHONES
+  .impact{
+    margin: 0px;
+    display: none;
+  }
 }
 
 .next-link {

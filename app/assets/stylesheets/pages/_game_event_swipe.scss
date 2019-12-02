@@ -18,7 +18,8 @@ $brown: #795548;
 $orange: #FF945A;
 $green: #B1DA96;
 
-.demo {
+.demo,
+#event-card {
   // position: absolute;
   // left: 50%;
   // top: 50%;
@@ -174,26 +175,35 @@ $green: #B1DA96;
       }
 
       &.m--left {
-        background: rgba(60,60,60,0.8);
+        background: rgb(17,17,17);
+        background: linear-gradient(0deg, rgba(17,17,17,0.9714695411392406) 33%, rgba(33,33,33,0.946153085443038) 92%);
         color: rgba(220,220,220, 1);
         padding: 100px 40px;
-        padding-top: 150px;
+        padding-top: 250px;
         text-align: center;
         font-size: 30px;
-        font-family: $cutive-mono;
+        font-family: $share-tech;
+        letter-spacing: .2rem;
+        text-shadow: 0px 1px 2px rgb(250, 250,250);
+        box-shadow: 3px 3px 24px 4px rgba(255,255,255,0.4);
       }
       &.m--right{
-        background: rgba(60,60,60,0.8);
+        background: rgb(17,17,17);
+        background: linear-gradient(0deg, rgba(17,17,17,0.9714695411392406) 33%, rgba(33,33,33,0.946153085443038) 92%);
         color: rgba(220,220,220, 1);
         text-align: center;
         padding: 100px 40px;
-        padding-top: 150px;
+        padding-top: 250px;
         font-size: 30px;
-        font-family: $cutive-mono;
+        font-family: $share-tech;
+        letter-spacing: .3rem;
+        text-shadow: 0px 1px 2px rgb(250, 250,250);
+        box-shadow: 3px 3px 24px 4px rgba(255,255,255,0.4);
 
         &:after {
           transform: scaleY(-1);
         }
+
       }
     }
 
