@@ -1,47 +1,56 @@
-<div class="body">
-    <div class="container container-home">
-      <div>
-        <h1 class="animated heartBeat delay-2s home_p">Le Wagon Simulator</h1>
-        <div id="typed-height">
-          <span id="typed"></span>
-        </div>
+
+  <div class="body">
+      <div class="container container-home">
         <div>
-          <ul style="list-style: none;">
-            <li>
-              <div class="d-flex justify-content-between py-2 align-items-center">
-                <%= image_tag "score.png",height: 45, width: 55 %>
-                <p class="home_p"> Try to get the highest score!</p>
-              </div>
-            </li>
-            <li>
-              <div class="d-flex justify-content-between py-2 align-items-center">
-                <%= image_tag "shy (1).png",height: 45, width: 45  %>
-                <p class="home_p">Don't let the stress get the better of you!</p>
-              </div>
-            </li>
-            <li>
-              <div class="d-flex justify-content-between py-2 align-items-center">
-                <%= image_tag "memory-board-games1.png",height: 45, width: 45  %>
-                <p class="home_p">Do The right choice!</p>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <div class="sky ">
 
-        <div id="typed-strings">
-          <p id="typed">Change your life and relive your <br> <em> Le Wagon experience </em> through a game!</p>
-        </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <div class="text-center">
+            <%= image_tag "wagon.png",height: 40, width:70 %>
 
-          <%= link_to "PLAY!", game_game_event_path(@game_event.game.id, @game_event.id),class: "restart-btn" %>
+        </div>
+          <h1 class="animated heartBeat delay-2s home_h1">Le Wagon Simulator</h1>
+          <div id="typed-height">
+            <span id="typed"></span>
+          </div>
+          <div>
+            <ul style="list-style: none;">
+              <li>
+                <div class="d-flex justify-content-between py-2 align-items-center">
+                  <%= image_tag "memory-board-games1.png",height: 45, width: 45  %>
+                  <p>Do The right choice!</p>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex justify-content-between py-2 align-items-center">
+                  <%= image_tag "score.png",height: 45, width: 55 %>
+                  <p> Try to get the highest score!</p>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex justify-content-between py-2 align-items-center">
+                  <%= image_tag "shy (1).png",height: 45, width: 45  %>
+                  <p>Don't let the stress get the better of you!</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div id="typed-strings">
+            <p id="typed">Change your life and relive your <br> <em> Le Wagon experience </em> through a game!</p>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div class="d-flex">
+            <div>
+            <div class="text-center">
+
+              <%= link_to "PLAY!", game_game_event_path(@game_event.game.id, @game_event.id),class: "start-btn" %>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-</div>
+  </div>
 
 
 
