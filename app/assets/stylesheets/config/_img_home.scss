@@ -2,7 +2,22 @@
 .home_p {
   padding: 0;
   margin: 0;
+  font-family: 'Share Tech', cursive;
+  text-align: center;
+  color: white;
+}
+
+.home_h1 {
+  padding: 0;
+  margin: 0;
   font-family: 'Press Start 2P', cursive;
   text-align: center;
   color: white;
+}
+
+.diff-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 5px
 }
