@@ -13,6 +13,23 @@
   color: white;
 
 }
+
+.gameover-container th,
+.gameover-container td {
+  font-family: 'Press Start 2P', cursive;
+  text-align: left;
+  color: white;
+}
+
+.gameover-container th {
+  font-size: 25px;
+}
+
+.gameover-container td {
+  font-size: 20px;
+}
+
+
 .gameover-container{
   margin: 0 auto;
   width: 800px;

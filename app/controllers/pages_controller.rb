@@ -57,6 +57,6 @@ class PagesController < ApplicationController
     @user_games = Game.where(user: @user)
     @own_best_score = @user_games.maximum(:score)
     @best_score_ever = Game.maximum(:score)
-    @best_score_games = Game.order(score: :desc).first(2)
+    @best_score_games = Game.order(score: :desc).where.not(score: 0)
   end
 end
