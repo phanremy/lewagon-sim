@@ -35,7 +35,7 @@ class PagesController < ApplicationController
     # @all_events_of_game6 = @game6.game_events.map { |game_event| game_event.event.id }
     # @possible_events_game6_gameevent2 = @all_possible_events.reject {|event| @all_events_of_game6.include?(event.id)}
     # @random_event = @possible_events_game6_gameevent2.sample
-    end
+  end
 
   def test_nico
     @game = Game.first
@@ -52,12 +52,12 @@ class PagesController < ApplicationController
     # @random_event = @possible_events_game6_gameevent2.sample
   end
 
-
   def endgame
     @game = Game.find(params[:game_id])
     @user = @game.user
     @user_games = Game.where(user: @user)
     @own_best_score = @user_games.maximum(:score)
     @best_score_ever = Game.maximum(:score)
+    @best_score_games = Game.order(score: :desc).first(2)
   end
 end
