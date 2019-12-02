@@ -180,7 +180,8 @@ $green: #B1DA96;
         padding-top: 150px;
         text-align: center;
         font-size: 30px;
-        font-family: $cutive-mono;
+        font-family: $share-tech;
+        letter-spacing: .2rem;
       }
       &.m--right{
         background: rgba(60,60,60,0.8);
@@ -189,7 +190,8 @@ $green: #B1DA96;
         padding: 100px 40px;
         padding-top: 150px;
         font-size: 30px;
-        font-family: $cutive-mono;
+        font-family: $share-tech;
+        letter-spacing: .3rem;
 
         &:after {
           transform: scaleY(-1);
