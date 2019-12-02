@@ -65,9 +65,9 @@
     width: 100%;
     border-radius: 10px;
     margin: 0px 10px;
-    // padding: 20px;
-    // width: 384px;
-    height: 200px;
+    padding: 0px;
+    width: 384px;
+    height: 100%;
     background: rgb(189, 167, 103);
     box-shadow: inset 0px 1px 5px 0px rgba(87,85,87,0.25);
     p{
@@ -80,9 +80,30 @@
     }
 }
 
+
 .click-next {
   box-shadow: 3px 3px 24px 4px rgba(255,255,255,0.4);
   background: rgb(17,17,17);
   background: linear-gradient(0deg, rgba(17,17,17,0.9714695411392406) 33%, rgba(33,33,33,0.946153085443038) 92%);
+} 
+
+.arrows {
+  z-index: 100;
+  width: 100%;
+}
+
+.no-swipe-arrow-left {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.no-swipe-arrow-right {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.swipe-arrow {
+  opacity: 1;
+  transition: opacity 2s ease;
 }
 
