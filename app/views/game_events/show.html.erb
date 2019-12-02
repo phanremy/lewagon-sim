@@ -3,7 +3,7 @@
   <% if @game_event.choice == nil %>
     <div class="main-container">
       <!-- SWIPEABLE CLASS INCLUDING CARD, SIMPLE FORM CHOICES OPTIONS -->
-      <div class="demo__card">
+      <div class="demo__card d-flex justify-content-center">
        <!-- ----- ICI C EST L AFFICHAGE DE L'EVENT---- -->
         <div id="event-card" class="animated slideInUp d-flex flex-column justify-content-between">
           <div class="event-head">
@@ -15,31 +15,30 @@
           <div id="toto" class="event-description d-flex flex-column justify-content-center">
             <p class="text-center"><%= @game_event.event.description %></p>
           </div>
-        </div>
-        <% @event.choices.each do |choice| %>
-          <% if choice == @game_event.event.choices.first %>
-            <div class="demo__card__choice m--left"><%= choice.title %></div>
-            <%= simple_form_for [@game, @game_event] do |f| %>
-              <%= f.hidden_field :choice_id, value: choice.id %>
-              <%= f.submit choice.title, class:"", data: {choice: "choiceleft"}%>
-            <% end %>
-          <% else %>
-            <div class="demo__card__choice m--right"><%= choice.title %></div>
-            <%= simple_form_for [@game, @game_event] do |f| %>
-              <%= f.hidden_field :choice_id, value: choice.id %>
-              <%= f.submit choice.title, class:"d-none", data: {choice: "choiceright"}%>
+          <% @event.choices.each do |choice| %>
+            <% if choice == @game_event.event.choices.first %>
+              <div class="demo__card__choice m--left"><%= choice.title %></div>
+              <%= simple_form_for [@game, @game_event] do |f| %>
+                <%= f.hidden_field :choice_id, value: choice.id %>
+                <%= f.submit choice.title, class:"d-none", data: {choice: "choiceleft"}%>
+              <% end %>
+            <% else %>
+              <div class="demo__card__choice m--right"><%= choice.title %></div>
+              <%= simple_form_for [@game, @game_event] do |f| %>
+                <%= f.hidden_field :choice_id, value: choice.id %>
+                <%= f.submit choice.title, class:"d-none", data: {choice: "choiceright"}%>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
-        <div class="demo__card__drag"></div>
-
+          <div class="demo__card__drag"></div>
+        </div>
       </div>
     </div>
        <!-- ----- ICI C EST L AFFICHAGE DU CHOIX---- -->
   <% else %>
     <div class="d-flex justify-content-between">
       <p class="impact bounceInDown display-score" style="color: #FD0E14;"; data-stress-impact='<%= @game_event.choice.stress_impact %>'> + <%= @game_event.choice.stress_impact %></p>
-      <div class="main-container">
+      <div class="main-container d-flex justify-content-center">
 
         <div id="event-card" class="animated slideInUp d-flex flex-column justify-content-between">
           <div class="event-head">
@@ -47,7 +46,7 @@
           </div>
           <div class="event-image" style="background-image: url(<%= image_path @game_event.choice.image_url %>)">
           </div>
-          <div class=" event-description d-flex flex-column justify-content-center" id="">
+          <div class="event-description d-flex flex-column justify-content-center" id="">
             <p class="text-center" style=""><%= @game_event.choice.description %></p>
           </div>
             <!-- NEXT LINK AND SEE RESULTS ARE NOW CLASS NEXT LINK TRANSPARENT ALL OVER THE CARD -->
