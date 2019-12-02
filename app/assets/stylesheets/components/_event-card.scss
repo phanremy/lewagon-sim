@@ -65,9 +65,9 @@
     width: 100%;
     border-radius: 10px;
     margin: 0px 10px;
-    // padding: 20px;
-    // width: 384px;
-    height: 200px;
+    padding: 0px;
+    width: 384px;
+    height: 100%;
     background: rgb(189, 167, 103);
     box-shadow: inset 0px 1px 5px 0px rgba(87,85,87,0.25);
     p{
@@ -78,5 +78,25 @@
       line-height: 22px;
       letter-spacing: 1px;
     }
+}
+
+.arrows {
+  z-index: 100;
+  width: 100%;
+}
+
+.no-swipe-arrow-left {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.no-swipe-arrow-right {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.swipe-arrow {
+  opacity: 1;
+  transition: opacity 2s ease;
 }
 
