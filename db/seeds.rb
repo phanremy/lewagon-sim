@@ -185,39 +185,7 @@ puts "done"
 
 
 puts "Creating 404 event"
-event_404 = Event.new({
-  title: "Page not found!",
-  description: "1 day before the demo-day, you have a 404 error for you main page, no clue where's the problem..",
-  image_url: "heart-icon.png",
-  })
 
-event_404.save
-
-puts "Choices 404 event"
- event_404_choice_1 = Choice.new({
-  title: "Cry 😭",
-  description: " A teacher saw you, and find the solution in 5 minutes. No big deal.",
-  score_impact: 321,
-  stress_impact: 0,
-  image_url: "heart-icon.png",
-})
-
- event_404_choice_1.event = event_404
- event_404_choice_1.save
-
-event_404_choice_2 = Choice.new({
-  title: "search for a solution 💡",
-  description: " Don't be so obstinate. you lost your day finding a solution." ,
-  score_impact:  20,
-  stress_impact: 220,
-  image_url: "heart-icon.png",
-})
-event_404_choice_2.event = event_404
-event_404_choice_2.save
-
-puts "done"
-
-puts "Creating 404 event"
 event_404 = Event.new({
   title: "Page not found!",
   description: "1 day before the demo-day, you have a 404 error for you main page, no clue where's the problem..",
@@ -245,6 +213,7 @@ event_404_choice_2 = Choice.new({
   stress_impact: 20,
   image_url: "heart-icon.png",
 })
+
 event_404_choice_2.event = event_404
 event_404_choice_2.save
 
