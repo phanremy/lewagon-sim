@@ -185,39 +185,7 @@ puts "done"
 
 
 puts "Creating 404 event"
-event_404 = Event.new({
-  title: "Page not found!",
-  description: "1 day before the demo-day, you have a 404 error for you main page, no clue where's the problem..",
-  image_url: "heart-icon.png",
-  })
 
-event_404.save
-
-puts "Choices 404 event"
- event_404_choice_1 = Choice.new({
-  title: "Cry 😭",
-  description: " A teacher saw you, and find the solution in 5 minutes. No big deal.",
-  score_impact: 321,
-  stress_impact: 0,
-  image_url: "heart-icon.png",
-})
-
- event_404_choice_1.event = event_404
- event_404_choice_1.save
-
-event_404_choice_2 = Choice.new({
-  title: "search for a solution 💡",
-  description: " Don't be so obstinate. you lost your day finding a solution." ,
-  score_impact:  20,
-  stress_impact: 220,
-  image_url: "heart-icon.png",
-})
-event_404_choice_2.event = event_404
-event_404_choice_2.save
-
-puts "done"
-
-puts "Creating 404 event"
 event_404 = Event.new({
   title: "Page not found!",
   description: "1 day before the demo-day, you have a 404 error for you main page, no clue where's the problem..",
@@ -245,41 +213,42 @@ event_404_choice_2 = Choice.new({
   stress_impact: 20,
   image_url: "heart-icon.png",
 })
+
 event_404_choice_2.event = event_404
 event_404_choice_2.save
 
 puts "done"
 
-puts "Creating Demo Day Event"
-event_demo_day = Event.new({
-  title: "Demo Day",
-  description: "Few hours left before your speech, how do you handle it?",
+puts "Creating Choose you batch Event"
+event_choose_batch = Event.new({
+  title: "Batch",
+  description: "Wich batch you are ?",
   image_url: "heart-icon.png",
   })
 
-event_demo_day.save
+event_choose_batch.save
 
-puts "Choices Demo Day Event"
- event_demo_day_choice_1 = Choice.new({
-  title: "Affraid to stutter 🥺",
-  description: "Don't be affraid, look ! they seem captivate 👀",
-  score_impact: 305,
-  stress_impact: 10,
+puts "Choices Choose you batch"
+ event_choose_batch_choice_1 = Choice.new({
+  title: "Le Perchoir",
+  description: "there isn't any best choice ✌️",
+  score_impact: 321,
+  stress_impact: 0,
   image_url: "heart-icon.png",
 })
 
- event_demo_day_choice_1.event = event_demo_day
- event_demo_day_choice_1.save
+ event_choose_batch_choice_1.event = event_choose_batch
+ event_choose_batch_choice_1.save
 
-event_demo_day_choice_2 = Choice.new({
-  title: "Eager to party! 🎉",
-  description: " Hey don't be to exited, you should support your teammates before !" ,
-  score_impact:  155,
-  stress_impact: 30,
+event_choose_batch_choice_2 = Choice.new({
+  title: "Villa Gaudelet",
+  description: "there isn't any best choice ✌️" ,
+  score_impact:  320,
+  stress_impact: 0,
   image_url: "heart-icon.png",
 })
-event_demo_day_choice_2.event = event_demo_day
-event_demo_day_choice_2.save
+event_choose_batch_choice_2.event = event_choose_batch
+event_choose_batch_choice_2.save
 
 puts "done"
 
