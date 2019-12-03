@@ -44,7 +44,7 @@ game_2.save
 puts "Creating first day event"
 first_day = Event.new({
   title: "First Day",
-  description: " This is your first day at « Villa Gaudelet », you’re exited to begin , you just met 30 new buddies and you have to  install all the files needed for working easily. Where do you spend the most time?" ,
+  description: " This is the first day at 'Le Wagon', you just met 30 new buddies and you have to install all the files needed. Where do you spend most time?" ,
   image_url: "rentrée.png",
   })
 first_day.save
@@ -59,8 +59,8 @@ puts "Creating first day choices"
 })
 
 first_day_choice_2 = Choice.new({
-  title: "follow the set-up instructions 👨‍💻",
-  description:"Well… You must install Linux, witch takes a lot of time, and a lot of bug appears. All the teachers have to help you. You’re a bit embarrassed." ,
+  title: "follow the instructions 👨‍💻",
+  description:"Well… You must install Linux, witch takes a lot of time, and a lot of bug appears. All the teachers have to help you.",
   score_impact: 120,
   stress_impact: 20,
   image_url: "stress.png",
@@ -95,7 +95,7 @@ puts "Choices Yoga"
 
 event_yoga_choice_2 = Choice.new({
   title: "Keep working 👨‍💻",
-  description: "You rush into your work, but you're tired, this hour of working is useless, you learned nothing. You are just more stressed. " ,
+  description: " You are too much tired,this hour of working is useless, you learned nothing." ,
   score_impact:  10,
   stress_impact: 30,
   image_url: "angry_man.png",
@@ -108,7 +108,7 @@ puts "done"
 puts "Creating Air-BnB event"
 airbnb = Event.new({
   title: "Airbnb Project",
-  description: " You have to work a whole week with 3 Buddies, to make a copycat of Airbnb. You can choose any subject you want ! What do you want to rent?",
+  description: " You have to make a site like AirBnb for  a whole week with teammates. Wich things do you want to rent?",
   image_url: "RbNb house.jpg",
   })
 airbnb.save
@@ -116,7 +116,7 @@ airbnb.save
 puts "Creating Air-Bnb choices"
  airbnb_choice_1 = Choice.new({
   title: "Manors 🏰" ,
-  description: "Pff... Boring !!!",
+  description: "Pff... This is so  Boring !!! Be a 'creative people'.",
   score_impact: 175,
   stress_impact: 10,
   image_url: "manor.png",
@@ -137,6 +137,39 @@ airbnb_choice_2 = Choice.new({
 puts "done"
 
 
+
+puts "Creating After work event"
+event_after_work = Event.new({
+  title: "After work",
+  description: "It's the end of long working day... A buddy ask you to drink a beer. What do you do?",
+  image_url: "saloon_pixel_resize.jpeg",
+  })
+
+event_after_work.save
+
+puts "Choices After Work"
+ event_after_work_choice_1 = Choice.new({
+  title: "I'm going home !🚶‍♀️",
+  description: "Good choice, you’ll have time to do your flash cards and sleep well, because obviously you need it.",
+  score_impact: 150,
+  stress_impact: 0,
+  image_url: "stress.png",
+})
+
+ event_after_work_choice_1.event = event_after_work
+ event_after_work_choice_1.save
+
+event_after_work_choice_2 = Choice.new({
+  title: "One beer never hurt anybody 🍻",
+  description: "BIGGEST Hangover of your life! Don't trust your friends...." ,
+  score_impact:  350,
+  stress_impact: 25,
+  image_url: "beers.jpg",
+})
+event_after_work_choice_2.event = event_after_work
+event_after_work_choice_2.save
+
+puts "done"
 
 puts "Creating push origin master event"
 event_push_master = Event.new({
@@ -168,39 +201,6 @@ event_push_master_choice_2 = Choice.new({
 })
 event_push_master_choice_2.event = event_push_master
 event_push_master_choice_2.save
-
-puts "done"
-
-puts "Creating After work event"
-event_after_work = Event.new({
-  title: "After work",
-  description: "You’re wasted and all you want is go back home to rest.. Of course somebody asks you if want to drink a beer to relax after this long day.",
-  image_url: "saloon_pixel_resize.jpeg",
-  })
-
-event_after_work.save
-
-puts "Choices After Work"
- event_after_work_choice_1 = Choice.new({
-  title: "I'm going home !🚶‍♀️",
-  description: "Good choice, you’ll have time to do your flash cards and sleep well, because obviously you need it.",
-  score_impact: 150,
-  stress_impact: 0,
-  image_url: "stress.png",
-})
-
- event_after_work_choice_1.event = event_after_work
- event_after_work_choice_1.save
-
-event_after_work_choice_2 = Choice.new({
-  title: "One beer never hurt anybody 🍻",
-  description: "Damn, a beer never hurt anyone, but what about 10 ? Well, you know it’s painful because this hangover is gonna follow you all day. Was it worth it? You tell us!" ,
-  score_impact:  350,
-  stress_impact: 25,
-  image_url: "beers.jpg",
-})
-event_after_work_choice_2.event = event_after_work
-event_after_work_choice_2.save
 
 puts "done"
 
