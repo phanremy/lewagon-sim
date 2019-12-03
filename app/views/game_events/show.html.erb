@@ -54,11 +54,11 @@
 
         <div class="event-card animated slideInUp d-flex flex-column justify-content-between" id="result-card">
           <div class="event-head" id="result-head">
-              <% if @game_event.choice.stress_impact > 0 %>
+              <% if @game_event.choice.stress_impact <= 0 %>
 
                <h2 class="text-center"> No stress! </h2>
               <% else %>
-                <h3 class="text-center">+<%= @game_event.choice.score_impact%>% stress!</h3>
+                <h3 class="text-center">+<%= @game_event.choice.stress_impact%>% stress!</h3>
               <% end %>
             </h3>
           </div>
@@ -80,7 +80,7 @@
           <% else %>
             <div class = "text-center ">
               <!-- "See Results" -->
-              <%= link_to "SEE RESULTS", game_endgame_path(@game), class: "next-link d-flex justify-content-center align-items-center" %>
+              <%= link_to "GAME OVER see results", game_endgame_path(@game), class: "next-link d-flex justify-content-center align-items-center" %>
             </div>
           <% end %>
         </div>
