@@ -45,10 +45,15 @@
     <div class="arrow-right">
       <%= image_tag('swipe-to-right.png', class:'no-swipe-arrow-right animated') %>
     </div>
-    <div class="kebab-joker">
-      <%= image_tag('icons/kebab.png') %>
-      <div class="content">
-        <p>Joker Kebab !</p>
+    <div class="kebab-joker d-flex">
+      <% if @game.stress >= 80 && @game.stress < 100 %>
+        <p data-game-stress="<%= @game.score %> "class="opacity" style="font-size: 8px; color: red;">Your stress is too HIGH, eat a kebab !</p>
+      <% end %>
+      <div>
+        <%= image_tag('icons/kebab.png') %>
+        <div class="content">
+          <p>Joker Kebab !</p>
+        </div>
       </div>
     </div>
 
@@ -96,10 +101,15 @@
           <%= image_tag "Good-Style.png"  %>
         </div>
     </div>
-    <div class="kebab-joker">
-      <%= image_tag('icons/kebab.png') %>
-      <div class="content">
-        <p>Joker Kebab !</p>
+    <div class="kebab-joker d-flex">
+      <% if @game.stress >= 80 && @game.stress < 100 %>
+        <p data-game-stress="<%= @game.score %> "class="opacity" style="font-size: 8px; color: red;">Your stress is too HIGH, eat a kebab !</p>
+      <% end %>
+      <div>
+        <%= image_tag('icons/kebab.png') %>
+        <div class="content">
+          <p>Joker Kebab !</p>
+        </div>
       </div>
     </div>
 
