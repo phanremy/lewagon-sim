@@ -12,47 +12,54 @@ import { typedShow } from '../plugins/init_typed';
 import { initGoodStyle } from '../plugins/init_apparition';
 import { initGameoverScoreScrollUp } from '../plugins/init_gameover_score_scroll_up.js';
 import { music } from '../plugins/init_music';
+import { displayMultiply } from '../plugins/init_joker_kebab.js';
+import { eatAKebab } from '../plugins/init_joker_kebab.js';
+
+if (document.querySelector(".kebab-joker")) {
+  eatAKebab();
+}
+
+
+if (document.querySelector(".kebab-joker")) {
+  displayMultiply();
+};
 
 if (document.querySelector("#typedShow")) {
   typedShow();
-}
+};
 
 
 if (document.querySelector("#typed")) {
   initTyped();
-}
+};
 
 
 if (document.querySelector('#sortable-img-card')) {
   initSortable();
-}
+};
 
 if (document.querySelectorAll('.bounceInDown')) {
   initDisappearingImpact();
-}
+};
 
 initSwipe();
 
 if (document.querySelectorAll('.next-link')) {
   initNextLinksHelper();
-}
-
-
+};
 
 if (document.querySelector('#goodStyle')) {
   initGoodStyle ();
-}
+};
 
+if (document.querySelectorAll('.best-score-games')) {
+  initGameoverScoreScrollUp();
+};
 
 incrementStress();
 
 
 incrementScore();
-
-
-if (document.querySelectorAll('.best-score-games')) {
-  initGameoverScoreScrollUp();
-}
 
 if (document.getElementById("music")) {
   music();

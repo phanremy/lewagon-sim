@@ -1,13 +1,12 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-@import url('https://fonts.googleapis.com/css?family=Cutive+Mono|Share+Tech|VT323&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Share+Tech|Share:400,400i,700&display=swap');
 // Define fonts for body and headers
 $body-font:   'Share Tech', sans-serif, "Helvetica", "sans-serif";
 $headers-font: 'Press Start 2P', cursive, "Helvetica", "sans-serif";
 
 $share-tech:'Share Tech', sans-serif;
- $vt323:'VT323', monospace;
- $cutive-mono:'Cutive Mono', monospace;
+
 // To use a font file (.woff) uncomment following lines
 // @font-face {
 //   font-family: "Font Name";

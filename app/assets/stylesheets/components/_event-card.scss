@@ -2,7 +2,26 @@
 
 
 //
+.container {
+  position: relative;
+}
 
+.content {
+  font-size: 8px;
+  margin-top: 10px;
+  opacity: 0;
+}
+
+.kebab-joker {
+  position: absolute;
+  right: 40px;
+  bottom: 35px;
+  display: flex;
+  align-items: center;
+  &:hover .content {
+    opacity: 1;
+  }
+}
 .event-card{
   position: relative;
   background: #B5B8ED;
@@ -63,7 +82,7 @@
 .event-description p,
 .event-description span {
   margin-bottom: 0px;
-  font-family: $cutive-mono;
+  font-family: $share-tech;
   font-size: 18px;
   line-height: 22px;
   letter-spacing: 1px;
@@ -121,3 +140,29 @@
   right:70px;
   top: 130px;
 }
+
+// .joker-kebab-used {
+//   opacity: 0.3;
+//   transition: opacity 2s ease;
+// }
+
+.score-multiply {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.display-multiply {
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+.opacity {
+  opacity: 1;
+  // transition: opacity 0.5s ease;
+}
+
+.no-opacity {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
