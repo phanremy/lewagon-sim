@@ -4,229 +4,175 @@
   <title>SORRY THIS PAGE DOESNT EXIST...</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    @import "compass/css3";
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
-
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
-
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
-
-  html,body{margin:0;padding:0;width:100%;height:100%;}
-  @keyframes bob{0%{top:0;}50%{top:0.2em;}}
-  body{
-    background:#53bfe0;
-    vertical-align:middle;
-    text-align:center;
-    transform: translate3d(0, 0, 0);
-    &:before{
-        content: '';
-        display: inline-block;
-        height: 100%;
-        vertical-align: middle;
-        margin-right: -0.25em;
-      }
-  }
-
-  .scene{
-    display:inline-block;
-    vertical-align:middle;
-  }
-
-  .text{
-    color:white;
-    font-size:2em;
-    font-family:helvetica;
-    font-weight:bold;
-  }
-
-  .sheep{
-    display:inline-block;
-    position:relative;
-    font-size:1em;
-    $skin:#211e21;
-    *{
-      transition:transform 0.3s;
-    }
-    .top{
-      position:relative;
-      top:0;
-      animation:bob 1s infinite;
-    }
-    &:hover{
-        .head{
-          transform:rotate(0deg);
-          .eye{
-            width:1.25em;
-            height:1.25em;
-            &:before{
-              right:30%;
-            }
-          }
-        }
-        .top{
-          animation-play-state:paused
-        }
-      }
-    .head{
-      display:inline-block;
-      width:5em;
-      height:5em;
-      border-radius:100%;
-      background:$skin;
+    html,body{margin:0;padding:0;width:100%;height:100%;}
+    @keyframes bob{0%{top:0;}50%{top:0.2em;}}
+    body{
+      background:#53bfe0;
       vertical-align:middle;
-      position:relative;
-      top:1em;
-      transform:rotate(30deg);
+      text-align:center;
+      transform: translate3d(0, 0, 0);
       &:before{
-          content:'';
-          display:inline-block;
-          width:80%;
-          height:50%;
-          background:$skin;
-          position:absolute;
-          bottom:0;
-          right:-10%;
-          border-radius:50% 40%;
+          content: '';
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+          margin-right: -0.25em;
         }
+    }
+
+    .scene{
+      display:inline-block;
+      vertical-align:middle;
+    }
+
+    .text{
+      color:white;
+      font-size:2em;
+      font-family:helvetica;
+      font-weight:bold;
+    }
+
+    .sheep{
+      display:inline-block;
+      position:relative;
+      font-size:1em;
+      $skin:#211e21;
+      *{
+        transition:transform 0.3s;
+      }
+      .top{
+        position:relative;
+        top:0;
+        animation:bob 1s infinite;
+      }
       &:hover{
-            .ear{
-                &.one,&.two{transform:rotate(0deg);}
+          .head{
+            transform:rotate(0deg);
+            .eye{
+              width:1.25em;
+              height:1.25em;
+              &:before{
+                right:30%;
+              }
             }
           }
-      .eye{
+          .top{
+            animation-play-state:paused
+          }
+        }
+      .head{
         display:inline-block;
-        width:1em;
-        height:1em;
+        width:5em;
+        height:5em;
         border-radius:100%;
-        background:white;
-        position:absolute;
-        overflow:hidden;
+        background:$skin;
+        vertical-align:middle;
+        position:relative;
+        top:1em;
+        transform:rotate(30deg);
         &:before{
             content:'';
             display:inline-block;
-            background:black;
-            width:50%;
+            width:80%;
             height:50%;
-            border-radius:100%;
+            background:$skin;
             position:absolute;
-            right:10%;
-            bottom:10%;
-            transition:all 0.3s;
+            bottom:0;
+            right:-10%;
+            border-radius:50% 40%;
           }
-        &.one{
-          right:-2%;
-          top:1.7em;
-        }
-        &.two{
-          right:2.5em;
-          top:1.7em;
-        }
-      }
-      .ear{
-          background:$skin;
-          width:50%;
-          height:30%;
+        &:hover{
+              .ear{
+                  &.one,&.two{transform:rotate(0deg);}
+              }
+            }
+        .eye{
+          display:inline-block;
+          width:1em;
+          height:1em;
           border-radius:100%;
+          background:white;
           position:absolute;
+          overflow:hidden;
+          &:before{
+              content:'';
+              display:inline-block;
+              background:black;
+              width:50%;
+              height:50%;
+              border-radius:100%;
+              position:absolute;
+              right:10%;
+              bottom:10%;
+              transition:all 0.3s;
+            }
           &.one{
-            left:-10%;
-            top:5%;
-            transform:rotate(-30deg);
+            right:-2%;
+            top:1.7em;
           }
           &.two{
-            top:2%;
-            right:-5%;
-            transform:rotate(20deg);
+            right:2.5em;
+            top:1.7em;
           }
         }
-    }
-    .body{
-      display:inline-block;
-      width:7em;
-      height:7em;
-      border-radius:100%;
-      background:white;
-      position:relative;
-      vertical-align:middle;
-      margin-right:-3em;
-    }
-    .legs{
-      display:inline-block;
-      position:absolute;
-      top:80%;
-      left:10%;
-      z-index:-1;
-      .leg{
-        display:inline-block;
-        background:darken($skin,5%);
-        width:0.5em;
-        height:2.5em;
-        margin:0.2em;
+        .ear{
+            background:$skin;
+            width:50%;
+            height:30%;
+            border-radius:100%;
+            position:absolute;
+            &.one{
+              left:-10%;
+              top:5%;
+              transform:rotate(-30deg);
+            }
+            &.two{
+              top:2%;
+              right:-5%;
+              transform:rotate(20deg);
+            }
+          }
       }
-    }
-    &:before{
-        content:'';
+      .body{
+        display:inline-block;
+        width:7em;
+        height:7em;
+        border-radius:100%;
+        background:white;
+        position:relative;
+        vertical-align:middle;
+        margin-right:-3em;
+      }
+      .legs{
         display:inline-block;
         position:absolute;
-        top:112%;
-        width:100%;
-        height:10%;
-        border-radius:100%;
-        background:rgba(black,0.4);
+        top:80%;
+        left:10%;
+        z-index:-1;
+        .leg{
+          display:inline-block;
+          background:darken($skin,5%);
+          width:0.5em;
+          height:2.5em;
+          margin:0.2em;
+        }
+      }
+      &:before{
+          content:'';
+          display:inline-block;
+          position:absolute;
+          top:112%;
+          width:100%;
+          height:10%;
+          border-radius:100%;
+          background:rgba(black,0.4);
+      }
     }
-  }
   </style>
 </head>
-
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>SORRY THIS PAGE DOESNT EXIST...</h1>
-      <p>In fact we're not sorry, you may have mistyped the address so it's your fault!.</p>
-    </div>
-  </div>
+<body>
  <div class="scene">
      <div class="text">404</div>
    <div class="text">Page Not Found!</div>

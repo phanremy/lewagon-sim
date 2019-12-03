@@ -6,8 +6,6 @@ import { incrementStress } from '../plugins/init_increment';
 import { incrementScore } from '../plugins/init_increment';
 import { initSwipe } from '../plugins/init_swipe';
 import { initNextLinksHelper } from '../plugins/init_next_links_helper';
-import { swipeRight } from '../plugins/init_swipe_indicator';
-// import { swipeLeft } from '../plugins/init_swipe_indicator';
 import { typedShow } from '../plugins/init_typed';
 import { initGoodStyle } from '../plugins/init_apparition';
 import { initGameoverScoreScrollUp } from '../plugins/init_gameover_score_scroll_up.js';
