@@ -222,3 +222,25 @@ $green: #B1DA96;
     font-size: 2.2rem;
   }
 }
+
+@media only screen and (max-width: 576px) {
+// MAKE IMPACT DISAPPEAR IN SMARTPHONES
+  .demo {
+    &__card {
+      &__choice {
+        &.m--left {
+          text-align: right;
+          padding-top:500px;
+          padding-left: 80px;
+          padding-right: 10px;
+        }
+        &.m--right {
+          text-align: left;
+          padding-top:500px;
+          padding-left: 10px;
+          padding-right: 80px;
+        }
+      }
+    }
+  }
+}
