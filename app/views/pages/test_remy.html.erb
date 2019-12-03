@@ -1,122 +1,52 @@
-<% if @game_event.choice == nil %>
-  <div >
-    <div class="demo__content">
-      <div class="demo__card-cont">
-        <div class="demo__card">
+  <div class="cathodic-container screen">
+    <div class="container container-home">
+      <div>
 
-             <!-- ----- ICI C EST L AFFICHAGE DE L'EVENT---- -->
-            <div id="" class="d-flex flex-column justify-content-between border">
-              <div class="event-head d-flex flex-column justify-content-between">
-                <h3 class="text-center"><%= @game_event.event.title %></h3>
-                <div class="d-flex justify-content-center " id="sortable-img-card">
-                  <%= image_tag("https://source.unsplash.com/random/380x240", class:"active") %>
-                </div>
+        <h1 class="animated heartBeat delay-2s home_h1">Le Wagon Simulator</h1>
+        <div id="typed-height">
+          <span class="home_h1" id="typed"></span>
+        </div>
+        <div>
+          <ul style="list-style: none;">
+            <li>
+              <div class="d-flex justify-content-between py-2 align-items-center">
+                <%= image_tag "memory-board-games1.png",height: 45, width: 45  %>
+                <p class="home_h1">Do The right choice!</p>
               </div>
-              <div class="d-flex flex-column justify-content-center" id="">
-                <p class="text-center "><%= @game_event.event.description %></p>
+            </li>
+            <li>
+              <div class="d-flex justify-content-between py-2 align-items-center">
+                <%= image_tag "score.png",height: 45, width: 55 %>
+                <p class="home_h1"> Try to get the highest score!</p>
               </div>
-            </div>
-          <% @event.choices.each do |choice| %>
-            <% if choice == @game_event.event.choices.first %>
-              <div class="demo__card__choice m--left"><%= choice.title %></div>
-              <%= simple_form_for [@game, @game_event] do |f| %>
-                <%= f.hidden_field :choice_id, value: choice.id %>
-                <%= f.submit choice.title, class:"d-none", data: {choice: "choiceleft"}%>
-              <% end %>
-            <% else %>
-              <div class="demo__card__choice m--right"><%= choice.title %></div>
-              <%= simple_form_for [@game, @game_event] do |f| %>
-                <%= f.hidden_field :choice_id, value: choice.id %>
-                <%= f.submit choice.title, class:"d-none", data: {choice: "choiceright"}%>
-              <% end %>
-            <% end %>
+            </li>
+            <li>
+              <div class="d-flex justify-content-between py-2 align-items-center">
+                <%= image_tag "shy (1).png",height: 45, width: 45  %>
+                <p class="home_h1">Don't let the stress get the better of you!</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div id="typed-strings">
+        <p id="typed">Change your life and relive your <br> <em> Le Wagon experience </em> through a game!</p>
+        </div>
+        <br>
+        <br>
+          <div class="sky ">
+            <%= image_tag "wagon.png",height: 40, width:70 %>
+          </div>
+        <br>
+        <br>
+        <div class="text-center">
+          <% if current_user %>
+              <%= link_to "PLAY!", game_game_event_path(@game_event.game.id, @game_event.id),class: "restart-btn" %>
+          <% else %>
+              <%= link_to "SIGN UP!", new_user_session_path, class: "restart-btn" %>
           <% end %>
-          <div class="demo__card__drag"></div>
         </div>
       </div>
     </div>
-  </div>
-<% else %>
-  <div class="d-flex justify-content-between">
-    <p class="impact bounceInDown" data-stress-impact='<%= @game_event.choice.stress_impact %>'> + <%= @game_event.choice.stress_impact %></p>
-    <div class="main-container">
-
-      <div id="event-card" class="d-flex flex-column justify-content-between">
-        <div class=" event-head d-flex flex-column justify-content-between">
-          <h3 class="text-center"><%= @game_event.event.title %></h3>
-          <div class="d-flex justify-content-center">
-             <%= image_tag("https://source.unsplash.com/random/380x240") %>
-          </div>
-        </div>
-          <div class="d-flex flex-column justify-content-center" id="event-description">
-            <p class="text-center"><%= @game_event.choice.description %></p>
-          </div>
-        </div>
-    <% if (@game.stress < 100) %>
-      <div class="text-center ">
-        <%#= simple_form_for [@game, GameEvent.new] do |f| %>
-          <%#= f.submit "NEXT", class: "button-display", id: "next-display", url: game_game_events_path%>
-        <%# end %>
-      </div>
-    <% else %>
-      <div class = "text-center">
-        <%#= link_to "See Results", game_endgame_path(@game), class: "button-display", id: "end-display" %>
-      </div>
-    <% end %>
-  </div>
-    <p class="impact bounceInDown" data-score-impact='<%= @game_event.choice.score_impact %>'> + <%= @game_event.choice.score_impact %></p>
-  </div>
-<% end %>
-
-<!-- <div class="col-6 offset-3">
-  <div class="border">
-    <p>All possible answers</p> -->
-    <!-- <p>@all_possible_events.length:</p>  <%#= @all_possible_events.length %#></p> -->
-    <ul class="list-inline">
-      <%# @all_possible_events.each do |event| %#>
-      <li class="list-inline-item"> <%#= event.id %#></li>
-      <%# end %#>
-    </ul>
-    <p>All possible answers for Game 6 3rd </p>
-    <ul class="list-inline">
-      <%# @possible_events_game6_gameevent2.each do |event| %#>
-      <li class="list-inline-item"> <%#= event.id %#></li>
-      <%# end %#>
-    </ul>
+    <div class="overlay">AV-1</div>
   </div>
 
-
-
-
-  <div class="border">
-    <%# @game6.game_events.each do |game_event| %#>
-      <p>Game 6 - game event</p>
-      <p class="ml-3">game_event.id:  <%#= game_event.id %#></p>
-      <p class="ml-3">game_event.choice.present?:  <%#= game_event.choice.present? %#></p>
-      <p class="ml-3">game_event.event.present?:  <%#= game_event.event.present? %#></p>
-      <p class="ml-3">game_event.event.id:  <%#= game_event.event.id %#></p>
-    <%# end %#>
-  </div>
-
-
-  <%# @games.each do |game|%#>
-    <div class="border bg-secondary">
-      <p>game.id:  <%#= game.id %#></p>
-      <p>game.user:  <%#= game.user.email %#></p>
-      <p>game.game_events.first.id:  <%#= game.game_events.first.id %#></p>
-      <p>game.game_events.first.event.present?:  <%#= game.game_events.first.event.present? %#></p>
-      <p>game.game_events.first.event.id:  <%#= game.game_events.first.event.id %#></p>
-      <ul class="list-inline">
-        <%# @possible_events_game6_gameevent2.each do |event| %#>
-        <li class="list-inline-item"> <%#= event.id %#></li>
-        <%# end %#>
-      </ul>
-      <p>game.game_events.first.choice.present?:  <%#= game.game_events.first.choice.present? %></p>
-    <!-- </div> -->
-  <%# end %>
-<!-- </div> -->
-
-<%# @game.game_events.each do |game_event|%>
-  <p><%#= game_event.game %></p>
-  <p><%#= game_event.event %></p>
-<%# end %>
