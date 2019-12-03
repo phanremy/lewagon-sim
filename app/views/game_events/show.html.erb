@@ -1,4 +1,5 @@
 <div class="body">
+
   <%= render 'shared/navbar' %>
   <% if @game_event.choice == nil %>
     <div class="arrow-left">
@@ -96,7 +97,7 @@
           <% end %>
         </div>
       </div>
-      <p class="impact bounceInDown display-score" data-score-impact='<%= @game_event.choice.score_impact %>'> + <%= @game_event.choice.score_impact %></p>
+      <p class="impact bounceInDown display-score" data-score-impact='<%= @game_event.choice.score_impact %>'> + <%= @game_event.joker ? @game_event.choice.score_impact * 2 : @game_event.choice.score_impact %></p>
         <div class='hidden fixe'  id="goodStyle">
           <%= image_tag "Good-Style.png"  %>
         </div>
@@ -106,7 +107,9 @@
         <p data-game-stress="<%= @game.score %> "class="opacity" style="font-size: 8px; color: red;">Your stress is too HIGH, eat a kebab !</p>
       <% end %>
       <div>
-        <%= image_tag('icons/kebab.png') %>
+        <%= link_to game_game_event_joker_path(@game, @game_event) do %>
+          <%= image_tag('icons/kebab.png') %>
+        <% end %>
         <div class="content">
           <p>Joker Kebab !</p>
         </div>
