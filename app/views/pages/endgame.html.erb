@@ -1,7 +1,6 @@
 
 <div class="body">
   <div class = "top-padding">
-    <br>
     <div class="gameover-container animated fadeInUp slower p-3" id="to-drag">
       <h2>Game over</h2>
       <h1><%= "your score = #{@game.score}"%></h1>
@@ -14,23 +13,23 @@
       </div>
     </div>
     <br>
-    <div class="gameover-container animated fadeInUp slower delay-2s p-3" style="height:310px" id="to-drag">
+    <div class="gameover-container animated fadeInUp slower delay-2s p-3" id="to-drag">
       <table class="fixed_headers">
         <thead>
           <tr>
-            <th class="pr-4 pb-4" style="font-size: 25px; color:white;">Rank</th>
-            <th class="pr-5 pb-4" style="font-size: 25px; color:white;">Username</th>
-            <th class="pr-4 pb-4" style="font-size: 25px; color:white;">Batch</th>
-            <th class="pb-4" style="font-size: 25px; color:white;">Score</th>
+            <th class="pr-4 pb-4">Rank</th>
+            <th class="pr-5 pb-4">Username</th>
+            <th class="pr-4 pb-4">Batch</th>
+            <th class="pb-4">Score</th>
           </tr>
         </thead>
         <tbody class="best-score-games">
           <% @best_score_games.each_with_index do |game, index| %>
             <tr>
-              <td class="pr-4 pb-2" style="font-size: 20px; color:white;">#<%= index + 1 %></td>
-              <td class="pr-5 pb-2" style="font-size: 20px; color:white;"><%= ("#{game.user.first_name} #{game.user.last_name}".length > 11) ? "#{game.user.first_name} #{game.user.last_name}"[0..10] : "#{game.user.first_name} #{game.user.last_name}" %></td>
-              <td class="pr-4 pb-2" style="font-size: 20px; color:white;"><%= game.user.batch %></td>
-              <td class="pb-2" style="font-size: 20px; color:white;"><%= game.score %></td>
+              <td class="pr-4 pb-2">#<%= index + 1 %></td>
+              <td class="pr-5 pb-2"><%= ("#{game.user.first_name} #{game.user.last_name}".length > 11) ? "#{game.user.first_name} #{game.user.last_name}"[0..10] : "#{game.user.first_name} #{game.user.last_name}" %></td>
+              <td class="pr-4 pb-2"><%= game.user.batch %></td>
+              <td class="pb-2"><%= game.score %></td>
             </tr>
           <% end %>
         </tbody>
