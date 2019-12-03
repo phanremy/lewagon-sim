@@ -119,3 +119,18 @@
 }
 
 
+.hidden {
+  opacity:0;
+  transition: opacity 2.5s ease ;
+}
+
+.shown {
+  opacity:1;
+  transition: opacity 2.5s ease ;
+}
+
+.fixe {
+  position:absolute;
+  right:70px;
+  top: 130px;
+}

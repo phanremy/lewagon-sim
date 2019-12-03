@@ -9,6 +9,7 @@ import { initNextLinksHelper } from '../plugins/init_next_links_helper';
 import { swipeRight } from '../plugins/init_swipe_indicator';
 // import { swipeLeft } from '../plugins/init_swipe_indicator';
 import { typedShow } from '../plugins/init_typed';
+import { initGoodStyle } from '../plugins/init_apparition';
 
 if (document.querySelector("#typedShow")) {
   typedShow();
@@ -40,4 +41,11 @@ initSwipe();
 if (document.querySelectorAll('.next-link')) {
   initNextLinksHelper();
 }
+
+
+if (document.querySelector('#goodStyle')) {
+  initGoodStyle ();
+}
+
+
 
