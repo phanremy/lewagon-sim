@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_29_103800) do
+ActiveRecord::Schema.define(version: 2019_12_03_140827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_11_29_103800) do
     t.bigint "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "joker", default: false
     t.index ["choice_id"], name: "index_game_events_on_choice_id"
     t.index ["event_id"], name: "index_game_events_on_event_id"
     t.index ["game_id"], name: "index_game_events_on_game_id"
@@ -73,6 +74,7 @@ ActiveRecord::Schema.define(version: 2019_11_29_103800) do
     t.integer "stress", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "joker_left", default: 3
     t.index ["user_id"], name: "index_games_on_user_id"
   end
 

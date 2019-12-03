@@ -38,6 +38,14 @@ class GameEventsController < ApplicationController
     redirect_to game_game_event_path
   end
 
+  def joker
+    @game_event = GameEvent.find(params[:id])
+    @game = @game_event.game
+    @game.joker_left -= 1
+    @game_event.joker = true
+    raise
+  end
+
   private
 
   def game_event_params
