@@ -3,6 +3,7 @@
   background-position: right;
   background-repeat: no-repeat;
   height: 100vh;
+  position: relative;
 }
 
 .container-home{
@@ -74,4 +75,9 @@
   background: #2F2F32;
 }
 
+.volume-btn {
+  position: absolute;
+  bottom: 80px;
+  right: 10px;
+}
 
