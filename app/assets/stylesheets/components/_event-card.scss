@@ -3,82 +3,66 @@
 
 //
 
-#event-card{
+.event-card{
   position: relative;
-  background: rgb(173, 150, 86);
-
-  align-items: center;
-  max-width: 450px;
-  min-width: 300px;
-
-  min-height: 85vh;
-  padding: 30px;
+  background: #B5B8ED;
+  height: 85vh;
+  padding: 0px;
   border-radius: 10px;
-  border: 3px outset #302918;
   color: #302918;
-  margin-top: 60px;
-  z-index: 100;
+  width: 400px;
+}
 
-  img{
-    border: solid 2px #302918;
-    border-radius: 10px;
-    display: flex;
+@media only screen and (max-width: 576px) {
+// MAKE IMPACT DISAPPEAR IN SMARTPHONES
+  .event-card{
+    margin-top: 120px;
   }
 }
 
 .event-head{
 
-  // position: absolute;
-
   align-items: center;
-  display: block;
-  width: 100%;
 
   h3{
     font-size: 20px;
-    //border: 2px solid black;
     box-shadow: inset 0px 1px 5px 0px rgba(87,85,87,0.25);
-    padding: 5px;
-    margin-bottom: 25px;
-    // width: 384px;
-    width: auto;
-
-    border-radius: 10px;
-    background: rgb(189, 167, 103);
+    padding: 15px;
+    margin-bottom: 0;
+    width: 100%;
+    border-radius: 10px 10px 0px 0;
+    background: #B5B8ED;
+    color: rgb(10,10,10);
   }
  }
 
 .event-image {
-  // top: 70px;
-  border: solid 2px #302918;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  // position: absolute;
-  height: 280px;
-  width: 380px;
+  height: 300px;
+  width: 400px;
+  background-repeat: 100% 100%;
+  background-size: contain;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .event-description {
+    padding: 10px 20px;
     width: 100%;
-    border-radius: 10px;
-    margin: 0px 10px;
-    padding: 15px;
-    width: 384px;
-    height: 225px;
-    background: rgb(189, 167, 103);
+    height: 120px;
+    margin: auto auto;
+    background: #D6D8F5;
     box-shadow: inset 0px 1px 5px 0px rgba(87,85,87,0.25);
-    p{
-      margin-bottom: 0px;
-      font-family: $share-tech;
-      letter-spacing: .3rem;
-      font-size: 24px;
-      line-height: 22px;
-      letter-spacing: 1px;
-    }
+
 }
 
+.event-description p,
+.event-description span {
+  margin-bottom: 0px;
+  font-family: $cutive-mono;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 1px;
+}
 
 .click-next {
   box-shadow: 3px 3px 24px 4px rgba(255,255,255,0.4);

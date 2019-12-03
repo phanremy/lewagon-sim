@@ -8,21 +8,21 @@
       <!-- SWIPEABLE CLASS INCLUDING CARD, SIMPLE FORM CHOICES OPTIONS -->
       <div class="demo__card d-flex justify-content-center">
        <!-- ----- ICI C EST L AFFICHAGE DE L'EVENT---- -->
-        <div id="event-card" class="animated slideInUp d-flex flex-column justify-content-between">
-          <div class="event-head">
-            <h3 class="text-center" style=""><%= @game_event.event.title %></h3>
-          </div>
-          <div class="event-image" style="background-image: url(<%= image_path @event.image_url %>)">
-              <%#= image_tag , class:"event-image" %>
-          </div>
-          <div id="toto" class="event-description d-flex flex-column justify-content-center">
-            <div class="typed-height">
-              <span id="typedShow"></span>
-            </div>
-            <div id="typed-strings-show">
-              <p id="typedShow"><%= @game_event.event.description %></p>
-            </div>
-          </div>
+       <div class="event-card animated slideInUp d-flex flex-column justify-content-between">
+         <div class=" event-head d-flex flex-column justify-content-between">
+           <h3 class="text-center" style=""><%= @game_event.event.title %></h3>
+         </div>
+         <div class="event-image" style="background-image: url(<%= image_path @event.image_url %>)">
+           <%#= image_tag @game_event.event.image_url %>
+         </div>
+         <div class="event-description d-flex flex-column justify-content-center">
+           <div class="typed-height">
+             <span id="typedShow"></span>
+           </div>
+           <div id="typed-strings-show">
+            <p id="typedShow"><%= @game_event.event.description %></p>
+           </div>
+         </div>
           <% @event.choices.each do |choice| %>
             <% if choice == @game_event.event.choices.first %>
               <div class="demo__card__choice m--left"><%= choice.title %></div>
@@ -52,14 +52,14 @@
       <p class="impact bounceInDown display-score" style="color: #FD0E14;"; data-stress-impact='<%= @game_event.choice.stress_impact %>'> + <%= @game_event.choice.stress_impact %></p>
       <div class="main-container d-flex justify-content-center">
 
-        <div id="event-card" class="animated slideInUp d-flex flex-column justify-content-between">
-          <div class="event-head">
-            <h3 class="text-center" style="font-size: 16px;"><%= @game_event.event.title %></h3>
+        <div style="background-color: #C1839F" class="event-card animated slideInUp d-flex flex-column justify-content-between">
+          <div class="event-head" style="">
+            <h3 class="text-center" style="background-color: #C1839F; font-size: 16px;"><%= @game_event.event.title %></h3>
           </div>
           <div class="event-image" style="background-image: url(<%= image_path @game_event.choice.image_url %>)">
           </div>
-          <div class="event-description d-flex flex-column justify-content-center" id="">
-            <p class="text-center" style=""><%= @game_event.choice.description %></p>
+          <div class="event-description d-flex flex-column justify-content-center" style="background-color: #DDBBCA" id="">
+            <p class="text-center" ><%= @game_event.choice.description %></p>
           </div>
             <!-- NEXT LINK AND SEE RESULTS ARE NOW CLASS NEXT LINK TRANSPARENT ALL OVER THE CARD -->
             <!-- IT WORKS BECAUSE NEXT LINK IS ABSOLUTE POSITION AND EVENT CARD IS RELATIVE POSITION -->
@@ -68,13 +68,13 @@
             <div class="text-center ">
               <%= simple_form_for [@game, GameEvent.new] do |f| %>
               <!--  "NEXT" -->
-                <%= f.submit "CLICK FOR NEXT", class: "next-link", url: game_game_events_path%>
+                <%= f.submit "CLICK FOR NEXT EVENT", class: "next-link", url: game_game_events_path%>
               <% end %>
             </div>
           <% else %>
             <div class = "text-center ">
               <!-- "See Results" -->
-              <%= link_to "CLICK FOR GAME OVER", game_endgame_path(@game), class: "next-link d-flex justify-content-center align-items-center" %>
+              <%= link_to "CLICK TO SEE YOUR RESULTS", game_endgame_path(@game), class: "next-link d-flex justify-content-center align-items-center" %>
             </div>
           <% end %>
         </div>
