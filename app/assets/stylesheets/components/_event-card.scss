@@ -2,7 +2,27 @@
 
 
 //
+.container {
+  position: relative;
+}
 
+.content {
+  font-size: 8px;
+  margin-top: 10px;
+  opacity: 0;
+}
+
+.kebab-joker {
+  position: absolute;
+  right: 40px;
+  bottom: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &:hover .content {
+    opacity: 1;
+  }
+}
 .event-card{
   position: relative;
   background: #B5B8ED;
@@ -120,3 +140,14 @@
   right:70px;
   top: 130px;
 }
+
+.score-multiply {
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.display-multiply {
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
