@@ -2,21 +2,40 @@
 <div class="body">
   <div class = "top-padding">
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="gameover-container animated fadeInUp slower p-5" id="to-drag">
+    <div class="gameover-container animated fadeInUp slower p-3" id="to-drag">
       <h2>Game over</h2>
       <h1><%= "your score = #{@game.score}"%></h1>
-      <div class="my-5">
-        <%= link_to "TRY AGAIN!" ,root_path , class: "restart-btn"%>
-      </div>
       <% if @game.score >= @own_best_score %>
         <h2><small>New record! </small></h2>
       <% end %>
       <h2><small>Your best score: <%= @own_best_score %></small></h2>
-      <h2><small>Best score ever: <%= @best_score_ever %></small></h2>
+      <div class="my-5">
+        <%= link_to "TRY AGAIN!" ,root_path , class: "restart-btn py-4 px-5"%>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class="gameover-container animated fadeInUp slower delay-2s p-3" style="height:310px" id="to-drag">
+      <table class="fixed_headers">
+        <thead>
+          <tr>
+            <th class="pr-4 pb-4" style="font-size: 25px; color:white;">Rank</th>
+            <th class="pr-5 pb-4" style="font-size: 25px; color:white;">Username</th>
+            <th class="pr-4 pb-4" style="font-size: 25px; color:white;">Batch</th>
+            <th class="pb-4" style="font-size: 25px; color:white;">Score</th>
+          </tr>
+        </thead>
+        <tbody class="best-score-games">
+          <% @best_score_games.each_with_index do |game, index| %>
+            <tr>
+              <td class="pr-4 pb-2" style="font-size: 20px; color:white;">#<%= index + 1 %></td>
+              <td class="pr-5 pb-2" style="font-size: 20px; color:white;"><%= ("#{game.user.first_name} #{game.user.last_name}".length > 11) ? "#{game.user.first_name} #{game.user.last_name}"[0..10] : "#{game.user.first_name} #{game.user.last_name}" %></td>
+              <td class="pr-4 pb-2" style="font-size: 20px; color:white;"><%= game.user.batch %></td>
+              <td class="pb-2" style="font-size: 20px; color:white;"><%= game.score %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
