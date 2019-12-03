@@ -52,13 +52,19 @@
       <p class="impact bounceInDown display-score" style="color: #FD0E14;"; data-stress-impact='<%= @game_event.choice.stress_impact %>'> + <%= @game_event.choice.stress_impact %></p>
       <div class="main-container d-flex justify-content-center">
 
-        <div style="background-color: #C1839F" class="event-card animated slideInUp d-flex flex-column justify-content-between">
-          <div class="event-head" style="">
-            <h3 class="text-center" style="background-color: #C1839F; font-size: 16px;"><%= @game_event.event.title %></h3>
+        <div class="event-card animated slideInUp d-flex flex-column justify-content-between" id="result-card">
+          <div class="event-head" id="result-head">
+              <% if @game_event.choice.stress_impact > 0 %>
+
+               <h2 class="text-center"> No stress! </h2>
+              <% else %>
+                <h3 class="text-center">+<%= @game_event.choice.score_impact%>% stress!</h3>
+              <% end %>
+            </h3>
           </div>
           <div class="event-image" style="background-image: url(<%= image_path @game_event.choice.image_url %>)">
           </div>
-          <div class="event-description d-flex flex-column justify-content-center" style="background-color: #DDBBCA" id="">
+          <div class="event-description d-flex flex-column justify-content-center" id="result-description">
             <p class="text-center" ><%= @game_event.choice.description %></p>
           </div>
             <!-- NEXT LINK AND SEE RESULTS ARE NOW CLASS NEXT LINK TRANSPARENT ALL OVER THE CARD -->
@@ -74,7 +80,7 @@
           <% else %>
             <div class = "text-center ">
               <!-- "See Results" -->
-              <%= link_to "CLICK TO SEE YOUR RESULTS", game_endgame_path(@game), class: "next-link d-flex justify-content-center align-items-center" %>
+              <%= link_to "SEE RESULTS", game_endgame_path(@game), class: "next-link d-flex justify-content-center align-items-center" %>
             </div>
           <% end %>
         </div>
