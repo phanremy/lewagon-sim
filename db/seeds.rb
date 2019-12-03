@@ -54,7 +54,6 @@ remy_game.save
 puts "Creating first day event"
 first_day = Event.new({
   title: "First Day",
-
   description: " This is the first day at 'Le Wagon', you just met 30 new buddies and you have to install all the files needed. Where do you spend most time?" ,
   image_url: "gameevents/event_first_day.png",
 
@@ -63,8 +62,8 @@ first_day.save
 
 puts "Creating first day choices"
  first_day_choice_1 = Choice.new({
-  title: "Discuss with schoolmates 👫" ,
-  description: "Good choice, you’ll spend 9 weeks with them, it’s important to know your next buddies.",
+  title: "With schoolmates 👫" ,
+  description: "Good choice, you’ll spend 9 weeks with them.",
   score_impact: 450 ,
   stress_impact: 0,
   image_url: "gameevents/event_first_day_choice1.png",
@@ -72,7 +71,7 @@ puts "Creating first day choices"
 
 first_day_choice_2 = Choice.new({
   title: "follow the instructions 👨‍💻",
-  description:"Well… You must install Linux, witch takes a lot of time, and a lot of bug appears. All the teachers have to help you.",
+  description:"Well… You must install Linux, witch takes a lot of time, and a lot of bug appears. All the teachers have to help you...",
   score_impact: 120,
   stress_impact: 20,
   image_url: "gameevents/event_first_day_choice2.png",
@@ -87,7 +86,7 @@ puts "done"
 puts "Creating Yoga event"
 event_yoga = Event.new({
   title: "Yoga",
-  description: "In the middle of the afternoon, you receive a message for the Yoga class, starting in 15 minutes...",
+  description: "It's 5pm, you received a message for the Yoga class, starting in 15 minutes...",
   image_url: "gameevents/event_yoga.png",
   })
 
@@ -121,7 +120,6 @@ puts "done"
 puts "Creating Air-BnB event"
 airbnb = Event.new({
   title: "Airbnb Project",
-
   description: " You have to make a site like AirBnb for a whole week with teammates. Wich things do you want to rent?",
   image_url: "gameevents/event_airbnb.jpg",
   })
@@ -130,7 +128,7 @@ airbnb.save
 puts "Creating Air-Bnb choices"
  airbnb_choice_1 = Choice.new({
   title: "Manors 🏰" ,
-  description: "Pff... This is so  Boring !!! Be a 'creative people'.",
+  description: "Pff... This is so  boring !!! Be a 'creative people'.",
   score_impact: 175,
   stress_impact: 10,
   image_url: "gameevents/event_airbnb_choice1.png",
@@ -154,7 +152,7 @@ puts "done"
 
 puts "Creating After work event"
 event_after_work = Event.new({
-  title: "After work",
+  title: "After work!",
   description: "It's the end of long working day... A buddy ask you to drink a beer. What do you do?",
   image_url: "gameevents/event_after_work.png",
   })
@@ -174,7 +172,7 @@ puts "Choices After Work"
  event_after_work_choice_1.save
 
 event_after_work_choice_2 = Choice.new({
-  title: "One beer never hurt anybody 🍻",
+  title: "BEER🍻",
   description: "BIGGEST Hangover of your life! Don't trust your friends...." ,
   score_impact:  350,
   stress_impact: 25,
@@ -185,56 +183,105 @@ event_after_work_choice_2.save
 
 puts "done"
 
-puts "Creating push origin master event"
-event_push_master = Event.new({
-  title: "Git Push Origin Master",
-  description: "You just pushed origin master and you weren’t up to date. You just crushed most of one of your buddies work..",
-  image_url: "gameevents/event_push_master.png",
+
+puts "Creating 404 event"
+event_404 = Event.new({
+  title: "Page not found!",
+  description: "1 day before the demo-day, you have a 404 error for you main page, no clue where's the problem..",
+  image_url: "heart-icon.png",
   })
 
-event_push_master.save
+event_404.save
 
-puts "Creating Push Master Choices "
- event_push_master_choice_1 = Choice.new({
-  title: "Try to lie.. « It was'nt me… 🙅‍",
-  description: "Dummy ! They took less than 3 seconds to verify who made the push and you got busted..",
-  score_impact: 50,
-  stress_impact: 50,
-  image_url: "gameevents/event_push_master_choice1.png"
+puts "Choices 404 event"
+ event_404_choice_1 = Choice.new({
+  title: "Cry 😭",
+  description: " A teacher saw you, and find the solution in 5 minutes. No big deal.",
+  score_impact: 321,
+  stress_impact: 0,
+  image_url: "heart-icon.png",
 })
 
- event_push_master_choice_1.event = event_push_master
- event_push_master_choice_1.save
+ event_404_choice_1.event = event_404
+ event_404_choice_1.save
 
-event_push_master_choice_2 = Choice.new({
-  title: "Try a CTRL-Z from outer-space on your buddy’s laptop 👨‍💻",
-  description: "You lucky bastard, every lost lines just reappear on the screen! That was really a close one!!" ,
-  score_impact:  650,
-  stress_impact: 15 ,
-  image_url: "gameevents/event_push_master_choice2.png"
+event_404_choice_2 = Choice.new({
+  title: "search for a solution 💡",
+  description: " Don't be so obstinate. you lost your day finding a solution." ,
+  score_impact:  20,
+  stress_impact: 220,
+  image_url: "heart-icon.png",
 })
-event_push_master_choice_2.event = event_push_master
-event_push_master_choice_2.save
+event_404_choice_2.event = event_404
+event_404_choice_2.save
 
 puts "done"
 
+puts "Creating 404 event"
+event_404 = Event.new({
+  title: "Page not found!",
+  description: "1 day before the demo-day, you have a 404 error for you main page, no clue where's the problem..",
+  image_url: "heart-icon.png",
+  })
 
+event_404.save
 
- event_after_work_choice_1.event = event_after_work
- event_after_work_choice_1.save
-
-event_after_work_choice_2 = Choice.new({
-  title: "One beer never hurt anybody 🍻",
-  description: "Damn, a beer never hurt anyone, but what about 10 ? Well, you know it’s painful because this hangover is gonna follow you all day. Was it worth it? You tell us!" ,
-  score_impact:  350,
-  stress_impact: 25,
-  image_url: "gameevents/event_after_work_choice2.jpg",
+puts "Choices 404 event"
+ event_404_choice_1 = Choice.new({
+  title: "Cry 😭",
+  description: " A teacher saw you, and find the solution in 5 minutes. No big deal.",
+  score_impact: 321,
+  stress_impact: 0,
+  image_url: "heart-icon.png",
 })
-event_after_work_choice_2.event = event_after_work
-event_after_work_choice_2.save
+
+ event_404_choice_1.event = event_404
+ event_404_choice_1.save
+
+event_404_choice_2 = Choice.new({
+  title: "search for a solution 💡",
+  description: " Don't be so obstinate. you lost your day finding a solution." ,
+  score_impact:  220,
+  stress_impact: 20,
+  image_url: "heart-icon.png",
+})
+event_404_choice_2.event = event_404
+event_404_choice_2.save
 
 puts "done"
 
+puts "Creating Demo Day Event"
+event_demo_day = Event.new({
+  title: "Demo Day",
+  description: "Few hours left before your speech, how do you handle it?",
+  image_url: "heart-icon.png",
+  })
+
+event_demo_day.save
+
+puts "Choices Demo Day Event"
+ event_demo_day_choice_1 = Choice.new({
+  title: "Affraid to stutter 🥺",
+  description: "Don't be affraid, look ! they seem captivate 👀",
+  score_impact: 305,
+  stress_impact: 10,
+  image_url: "heart-icon.png",
+})
+
+ event_demo_day_choice_1.event = event_demo_day
+ event_demo_day_choice_1.save
+
+event_demo_day_choice_2 = Choice.new({
+  title: "Eager to party! 🎉",
+  description: " Hey don't be to exited, you should support your teammates before !" ,
+  score_impact:  155,
+  stress_impact: 30,
+  image_url: "heart-icon.png",
+})
+event_demo_day_choice_2.event = event_demo_day
+event_demo_day_choice_2.save
+
+puts "done"
 
 
 # #-------------------------------------------------------------

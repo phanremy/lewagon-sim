@@ -68,9 +68,9 @@
           <div class="event-head" id="result-head">
               <% if @game_event.choice.stress_impact <= 0 %>
 
-               <h2 class="text-center"> No stress! </h2>
+               <h2 class="text-center no-stress"> No stress! </h2>
               <% else %>
-                <h3 class="text-center">+<%= @game_event.choice.stress_impact%>% stress!</h3>
+                <h2 class="text-center yes-stress">+<%= @game_event.choice.stress_impact%>% stress!</h3>
               <% end %>
             </h3>
           </div>
