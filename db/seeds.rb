@@ -29,33 +29,43 @@
 Event.destroy_all
 
 puts "Seeding User"
-user_1 = User.new( first_name: "John", last_name: "Lennon", email: "johnlennon@lewagon.org", password:"123456")
-user_1.save
+john = User.new( first_name: "John", last_name: "Lennon", email: "johnlennon@lewagon.org", password:"123456")
+john.save
 
-puts " Creating a party"
-game_1 = Game.new( score: 0, stress: 0, user_id: user_1)
-game_1.save
+puts "Seeding User Germain"
+germain = User.new( first_name: "Germain", last_name: "Loret", batch: 70, email: "germainloret@lewagon.org", password:"123456")
+germain.save
 
-puts "Creating top score"
-game_2 = Game.new(score: 12090, stress: 0, user_id: user_1)
-game_2.save
+puts " Creating a party with best score"
+best_game = Game.new( score: 42420 )
+best_game.user = germain
+best_game.save
+
+puts "Seeding User Germain"
+remy = User.new( first_name: "Remy", last_name: "Phan", batch: 321, email: "phan.remy@gmail.com", password:"123456")
+remy.save
+
+puts " Creating a party with best score"
+remy_game = Game.new( score: 4440 )
+remy_game.user = remy
+remy_game.save
 
 #-------------------------------------------------------------
 puts "Creating first day event"
 first_day = Event.new({
   title: "First Day",
-  description: " This is your first day at « Villa Gaudelet », you’re exited to begin , you just met 30 new buddies and you have to  install all the files needed for working easily. Where do you spend the most time?" ,
-  image_url: "rentrée.png",
+  description: "This is your first day at Le Wagon, you’re excited to start! You just met 30 new buddies but you have to install all the files needed for the setup..." ,
+  image_url: "gameevents/event_first_day.png",
   })
 first_day.save
 
 puts "Creating first day choices"
  first_day_choice_1 = Choice.new({
   title: "Discuss with schoolmates 👫" ,
-  description: "Good Choice, you’ll spend 9 weeks with them, it’s important to know your next buddies.",
+  description: "Good choice, you’ll spend 9 weeks with them, it’s important to know your next buddies.",
   score_impact: 450 ,
   stress_impact: 0,
-  image_url: "Peoplehigh5.png",
+  image_url: "gameevents/event_first_day_choice1.png",
 })
 
 first_day_choice_2 = Choice.new({
@@ -63,7 +73,7 @@ first_day_choice_2 = Choice.new({
   description:"Well… You must install Linux, witch takes a lot of time, and a lot of bug appears. All the teachers have to help you. You’re a bit embarrassed." ,
   score_impact: 120,
   stress_impact: 20,
-  image_url: "stress.png",
+  image_url: "gameevents/event_first_day_choice2.png",
 })
 
  first_day_choice_1.event = first_day
@@ -75,8 +85,8 @@ puts "done"
 puts "Creating Yoga event"
 event_yoga = Event.new({
   title: "Yoga",
-  description: " This is the middle of the afternoon, you just receive a message from the Yoga teacher, it's begin in 15 minutes. What do you do?",
-  image_url: "yoga-event.jpg",
+  description: "In the middle of the afternoon, you receive a message for the Yoga class, starting in 15 minutes...",
+  image_url: "gameevents/event_yoga.png",
   })
 
 event_yoga.save
@@ -84,10 +94,10 @@ event_yoga.save
 puts "Choices Yoga"
  event_yoga_choice_1 = Choice.new({
   title: "Time to Yoga! 🧘‍♀️",
-  description: " It was very efficient on your moral. At the end of the day you didn't finish your day-work, but you are way more efficent the next day",
+  description: " It was very effective! You didn't finish your day-work, but you are way more efficient the next day.",
   score_impact: 320,
   stress_impact: 5,
-  image_url: "yoga-go.jpg",
+  image_url: "gameevents/event_yoga_choice1.png",
 })
 
  event_yoga_choice_1.event = event_yoga
@@ -95,10 +105,10 @@ puts "Choices Yoga"
 
 event_yoga_choice_2 = Choice.new({
   title: "Keep working 👨‍💻",
-  description: "You rush into your work, but you're tired, this hour of working is useless, you learned nothing. You are just more stressed. " ,
+  description: "You rush into your code. This hour of working is tiring and useless. You learned nothing. You are just more stressed." ,
   score_impact:  10,
   stress_impact: 30,
-  image_url: "angry_man.png",
+  image_url: "gameevents/event_yoga_choice2.png",
 })
 event_yoga_choice_2.event = event_yoga
 event_yoga_choice_2.save
@@ -108,8 +118,8 @@ puts "done"
 puts "Creating Air-BnB event"
 airbnb = Event.new({
   title: "Airbnb Project",
-  description: " You have to work a whole week with 3 Buddies, to make a copycat of Airbnb. You can choose any subject you want ! What do you want to rent?",
-  image_url: "RbNb house.jpg",
+  description: " You have to work a whole week to make a copycat of Airbnb. You can choose any subject you want ! So, Manors or Socks?",
+  image_url: "gameevents/event_airbnb.jpg",
   })
 airbnb.save
 
@@ -119,7 +129,7 @@ puts "Creating Air-Bnb choices"
   description: "Pff... Boring !!!",
   score_impact: 175,
   stress_impact: 10,
-  image_url: "manor.png",
+  image_url: "gameevents/event_airbnb_choice1.png",
 })
 
 airbnb_choice_2 = Choice.new({
@@ -127,7 +137,7 @@ airbnb_choice_2 = Choice.new({
   description:"Yes ! You have the good spirit. No need to be serious for the moment. Enjoy pictures of socks in your laptop!" ,
   score_impact: 560,
   stress_impact: 0,
-  image_url: "stress.png",
+  image_url: "gameevents/event_airbnb_choice2.png",
 })
 
  airbnb_choice_1.event = airbnb
@@ -142,18 +152,18 @@ puts "Creating push origin master event"
 event_push_master = Event.new({
   title: "Git Push Origin Master",
   description: "You just pushed origin master and you weren’t up to date. You just crushed most of one of your buddies work..",
-  image_url: "no-yoga-ppixelized.jpg",
+  image_url: "gameevents/event_push_master.png",
   })
 
 event_push_master.save
 
-puts "Choices Push Master"
+puts "Creating Push Master Choices "
  event_push_master_choice_1 = Choice.new({
   title: "Play the bad faith card.. « No no, I was on a branch, I swear… 🙅‍♂️",
   description: "Dummy ! They took less than 3 seconds to verify who made the push and you got busted..",
   score_impact: 50,
   stress_impact: 50,
-  image_url: "kill_bill_380_280.png"
+  image_url: "gameevents/event_push_master_choice1.png"
 })
 
  event_push_master_choice_1.event = event_push_master
@@ -161,10 +171,10 @@ puts "Choices Push Master"
 
 event_push_master_choice_2 = Choice.new({
   title: "Try a CTRL-Z from outer-space on your buddy’s laptop 👨‍💻",
-  description: "You lucky bastard, every lost lines just reappear on the screen! That really was a close one!!" ,
+  description: "You lucky bastard, every lost lines just reappear on the screen! That was really a close one!!" ,
   score_impact:  650,
   stress_impact: 15 ,
-  image_url: "stress.png"
+  image_url: "gameevents/event_push_master_choice2.png"
 })
 event_push_master_choice_2.event = event_push_master
 event_push_master_choice_2.save
@@ -174,19 +184,19 @@ puts "done"
 puts "Creating After work event"
 event_after_work = Event.new({
   title: "After work",
-  description: "You’re wasted and all you want is go back home to rest.. Of course somebody asks you if want to drink a beer to relax after this long day.",
-  image_url: "saloon_pixel_resize.jpeg",
+  description: "You’re wasted and all you want to do is go back home to rest.. Of course somebody asks you if want to drink a beer to relax after this long day.",
+  image_url: "gameevents/event_after_work.png",
   })
 
 event_after_work.save
 
-puts "Choices After Work"
+puts "Creating After Work Choices"
  event_after_work_choice_1 = Choice.new({
   title: "I'm going home !🚶‍♀️",
-  description: "Good choice, you’ll have time to do your flash cards and sleep well, because obviously you need it.",
+  description: "Good choice, you’ll have time to do your flash cards and sleep well, because you obviously need it.",
   score_impact: 150,
   stress_impact: 0,
-  image_url: "stress.png",
+  image_url: "gameevents/event_after_work_choice1.png",
 })
 
  event_after_work_choice_1.event = event_after_work
@@ -197,7 +207,7 @@ event_after_work_choice_2 = Choice.new({
   description: "Damn, a beer never hurt anyone, but what about 10 ? Well, you know it’s painful because this hangover is gonna follow you all day. Was it worth it? You tell us!" ,
   score_impact:  350,
   stress_impact: 25,
-  image_url: "beers.jpg",
+  image_url: "gameevents/event_after_work_choice2.jpg",
 })
 event_after_work_choice_2.event = event_after_work
 event_after_work_choice_2.save
