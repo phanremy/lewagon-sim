@@ -9,6 +9,7 @@ import { initNextLinksHelper } from '../plugins/init_next_links_helper';
 import { swipeRight } from '../plugins/init_swipe_indicator';
 // import { swipeLeft } from '../plugins/init_swipe_indicator';
 import { typedShow } from '../plugins/init_typed';
+import { initGoodStyle } from '../plugins/init_apparition';
 import { initGameoverScoreScrollUp } from '../plugins/init_gameover_score_scroll_up.js';
 
 if (document.querySelector("#typedShow")) {
@@ -35,6 +36,13 @@ if (document.querySelectorAll('.next-link')) {
   initNextLinksHelper();
 }
 
+
+
+if (document.querySelector('#goodStyle')) {
+  initGoodStyle ();
+}
+
+
 incrementStress();
 
 
@@ -44,3 +52,4 @@ incrementScore();
 if (document.querySelectorAll('.best-score-games')) {
   initGameoverScoreScrollUp();
 }
+
