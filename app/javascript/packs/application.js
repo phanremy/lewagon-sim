@@ -11,6 +11,7 @@ import { swipeRight } from '../plugins/init_swipe_indicator';
 import { typedShow } from '../plugins/init_typed';
 import { initGoodStyle } from '../plugins/init_apparition';
 import { initGameoverScoreScrollUp } from '../plugins/init_gameover_score_scroll_up.js';
+import { music } from '../plugins/init_music';
 
 if (document.querySelector("#typedShow")) {
   typedShow();
@@ -53,3 +54,6 @@ if (document.querySelectorAll('.best-score-games')) {
   initGameoverScoreScrollUp();
 }
 
+if (document.getElementById("music")) {
+  music();
+}
