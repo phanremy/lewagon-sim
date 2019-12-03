@@ -1,7 +1,6 @@
 const music = () => {
   const soundLink = document.getElementById('music').dataset.music;
   const sound = new Audio(soundLink);
-
     sound.volume = 0.5;
     sound.play();
   const soundStop = document.querySelector('#sound-stop')

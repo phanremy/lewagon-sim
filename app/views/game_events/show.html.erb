@@ -61,7 +61,10 @@
        <!-- ----- ICI C EST L AFFICHAGE DU CHOIX---- -->
   <% else %>
     <div class="d-flex justify-content-between">
-      <p class="impact bounceInDown display-score" style="color: #FD0E14;"; data-stress-impact='<%= @game_event.choice.stress_impact %>'> + <%= @game_event.choice.stress_impact %></p>
+      <div>
+        <p class="impact bounceInDown display-score" style="color: #FD0E14;"; data-stress-impact='<%= @game_event.choice.stress_impact %>'> + <%= @game_event.choice.stress_impact %></p>
+        <p class="impact display-score" style="color: green; visibility: hidden;"; id="stress-kebab"> -20 </p>
+      </div>
       <div class="main-container d-flex justify-content-center">
 
         <div class="event-card animated slideInUp d-flex flex-column justify-content-between" id="result-card">
@@ -107,7 +110,7 @@
         <p data-game-stress="<%= @game.score %> "class="opacity" style="font-size: 8px; color: red;">Your stress is too HIGH, eat a kebab !</p>
       <% end %>
       <div>
-        <%= link_to game_game_event_joker_path(@game, @game_event) do %>
+        <%= link_to game_game_event_joker_path(@game, @game_event), remote: true do %>
           <%= image_tag('icons/kebab.png') %>
         <% end %>
         <div class="content">

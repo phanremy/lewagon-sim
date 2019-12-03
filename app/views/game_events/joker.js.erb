@@ -1,0 +1,15 @@
+function decreaseStress() {
+  console.log('Excess consumption of kebab is not good for your health, eat with moderation');
+  const stress_kebab = document.querySelector("#stress-kebab");
+
+  if (stress_kebab) {
+    stress_kebab.style.visibility = "visible";
+    stress_kebab.classList.add('animated', 'bounceInDown');
+    stress_kebab.addEventListener('animationend', function() {
+      stress_kebab.classList.toggle('animated', 'bounceInDown')
+      stress_kebab.classList.add('animated', 'bounceOutUp', "delay-1s");
+    });
+  };
+}
+
+decreaseStress()

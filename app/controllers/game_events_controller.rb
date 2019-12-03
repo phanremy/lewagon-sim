@@ -45,13 +45,18 @@ class GameEventsController < ApplicationController
   def joker
     @game_event = GameEvent.find(params[:game_event_id])
     @game = @game_event.game
-    if ((@game.joker_left > 0) && (@game_event.joker_next == false))
+    if ((@game.joker_left > 0) && (@game_event.joker_next == false) && (@game.stress < 100))
       @game.joker_left -= 1
       @game_event.joker_next = true
+      @game.stress -= 20
       @game.save
       @game_event.save
     end
-    redirect_to game_game_event_path(@game, @game_event)
+    respond_to do |format|
+      format.html { render 'pages/home' }
+      format.js
+    end
+    # redirect_to game_game_event_path(@game, @game_event)
   end
 
   private
