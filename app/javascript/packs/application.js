@@ -10,59 +10,18 @@ import { typedShow } from '../plugins/init_typed';
 import { initGoodStyle } from '../plugins/init_apparition';
 import { initGameoverScoreScrollUp } from '../plugins/init_gameover_score_scroll_up.js';
 import { music } from '../plugins/init_music';
-import { displayMultiply } from '../plugins/init_joker_kebab.js';
-// import { eatAKebab } from '../plugins/init_joker_kebab.js';
-
-function decrementStress() {
-      const stress = document.querySelector("[data-stress-display]");
-      const stress_impact = document.querySelector("[data-stress-impact]");
-      let increasedWidth = Number.parseInt(stress.dataset.stressDisplay - 20);
-      if (stress_impact) {
-        const interval = setInterval(function() {
-          if (Number.parseInt(stressJoker.dataset.stressJoker) < Number.parseInt(stress.dataset.stressDisplay)) {
-            console.log('walah');
-            stress.style.width = increasedWidth + "%";
-            // increasedWidth --;
-            if (Number.parseInt(stressJoker.dataset.stressJoker) - Number.parseInt(stress.style.width) === 0)
-              console.log('000');
-              clearInterval(interval);
-          }
-        }, 50 )
-
-  } else {
-    stress.style.width = increasedWidth + "%";
-  }
-    }
-
-
-
-
-
-  const kebab = document.querySelector(".kebab-joker");
-  const stressJoker = document.querySelector("[data-stress-joker]");
-  const stress = document.querySelector("[data-stress-display]");
-  const stress_impact = document.querySelector("[data-stress-impact]");
-  console.log(kebab);
-  kebab.addEventListener('click', (event) => {
-    decrementStress();
-  });
-
-
+// import { displayMultiply } from '../plugins/init_joker_kebab.js';
+import { eatAKebab } from '../plugins/init_joker_kebab.js';
 
 
 if (document.querySelector(".kebab-joker")) {
   eatAKebab();
 }
 
+
 // if (document.querySelector(".kebab-joker")) {
-//   eatAKebab();
-// }
-
-
-
-if (document.querySelector(".kebab-joker")) {
-  displayMultiply();
-};
+//   displayMultiply();
+// };
 
 if (document.querySelector("#typedShow")) {
   typedShow();
@@ -104,7 +63,3 @@ incrementScore();
 if (document.getElementById("music")) {
   music();
 }
-
-if (document.getElementById("kebab")) {
-}
-

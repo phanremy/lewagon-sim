@@ -1,12 +1,12 @@
-function displayMultiply() {
-  const kebab = document.querySelector('.kebab-joker');
-  const multiply = document.querySelector('.score-multiply')
-  kebab.addEventListener('click', (event) => {
-    multiply.classList.toggle('score-multiply')
-    multiply.classList.toggle('display-multiply');
-    kebab.classList.add('kebab-joker-used');
-  });
-};
+// function displayMultiply() {
+//   const kebab = document.querySelector('.kebab-joker');
+//   const multiply = document.querySelector('.score-multiply')
+//   kebab.addEventListener('click', (event) => {
+//     multiply.classList.toggle('score-multiply')
+//     multiply.classList.toggle('display-multiply');
+//     kebab.classList.add('kebab-joker-used');
+//   });
+// };
 
 function eatAKebab() {
   const eatAKebab = document.querySelector('.opacity');
@@ -21,5 +21,5 @@ function eatAKebab() {
     }
 }
 
-export { displayMultiply };
+// export { displayMultiply };
 export { eatAKebab };
