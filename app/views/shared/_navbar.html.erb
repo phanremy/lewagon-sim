@@ -53,13 +53,9 @@
               <h4  class="display-score" >Score:</h4>
               <h1 class="display-score" id="score-display" data-score-display='<%= @game.score %>'><%= @game.score - @game_event.choice.score_impact %></h1>
             </div>
-            <!-- x2 APPEARS WHEN JOKER IS ON -->
-            <% if @game_event.joker %>
-              <p>x2</p>
-            <% else %>
+            <!-- x2 NOT ON AFTER JOKER IS USED / CHOICE DONE -->
             <!-- x2 APPEARS WHEN JOKER IS CLICKED -->
               <p class="score-multiply">x2</p>
-            <% end %>
           </div>
           <% else %>
           <div>
@@ -67,12 +63,10 @@
               <h4  class="display-score" >Score:</h4>
               <h1 class="display-score" id="score-display" data-score-display='<%= @game.score %>'><%= @game.score %></h1>
             </div>
-            <!-- x2 APPEARS WHEN JOKER IS ON -->
+            <!-- x2 APPEARS WHEN JOKER IS ON BEFORE CHOICE -->
             <% if @game_event.joker %>
               <p>x2</p>
-            <% else %>
             <!-- x2 APPEARS WHEN JOKER IS CLICKED -->
-              <p class="score-multiply">x2</p>
             <% end %>
           </div>
           <% end %>
