@@ -15,10 +15,13 @@ function incrementStress() {
   const stress_impact = document.querySelector("[data-stress-impact]");
     if (stress_impact) {
       let increasedWidth = Number.parseInt(stress.dataset.stressDisplay - stress_impact.dataset.stressImpact);
-      if (Number.parseInt(stress.dataset.stressDisplay) < Number.parseInt(stress.style.width)) {
-        stress.style.width = increasedWidth + "%";
-        increasedWidth --;
-      }
+      setInterval(function() {
+        if (Number.parseInt(stress.dataset.stressDisplay) < Number.parseInt(stress.style.width)) {
+          console.log('walah');
+          stress.style.width = increasedWidth + "%";
+          increasedWidth --;
+        }
+      }, 50 )
         const interval = setInterval(function(){
           if (Number.parseInt(stress.dataset.stressDisplay) > Number.parseInt(stress.style.width)) {
             stress.style.width = increasedWidth + "%";
