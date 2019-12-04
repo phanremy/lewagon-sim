@@ -21,7 +21,7 @@
         <% if @game_event.event.present? %>
           <% if @game_event.choice.present? %>
             <div class="wrapper">
-              <div class="progress" data-stress-display='<%= @game.stress %>' style="width: 0%;"></div>
+              <div class="progress" data-stress-joker='<%= @game.stress - 20 %>' data-stress-display='<%= @game.stress %>' style="width: 0%;"></div>
             </div>
             <% else %>
               <div class="wrapper">
