@@ -27,6 +27,9 @@
 
 # -----------------------------------------------------------------------
 Event.destroy_all
+User.destroy_all
+Game.destroy_all
+GameEvent.destroy_all
 
 puts "Seeding User"
 john = User.new( first_name: "John", last_name: "Lennon", email: "johnlennon@lewagon.org", password:"123456")
@@ -36,10 +39,10 @@ puts "Seeding User Germain"
 germain = User.new( first_name: "Germain", last_name: "Loret", batch: 70, email: "germainloret@lewagon.org", password:"123456")
 germain.save
 
-puts " Creating a party with best score"
-best_game = Game.new( score: 42420 )
-best_game.user = germain
-best_game.save
+puts " Creating a party with best score for Germain"
+germain_game = Game.new( score: 60321 )
+germain_game.user = germain
+germain_game.save
 
 puts "Seeding User Remy"
 remy = User.new( first_name: "Remy", last_name: "Phan", batch: 321, email: "phan.remy@gmail.com", password:"123456")
@@ -51,7 +54,7 @@ remy_game.user = remy
 remy_game.save
 
 puts "Seeding User Nicolas"
-nico = User.new( first_name: "Nicolas", last_name: "Pierson", batch: 321, email: "nicolaspierson57@gmail.com", password:"123456")
+nico = User.new( first_name: "Nicolas", last_name: "Pierson", batch: 321, email: "nicolas.pierson57@gmail.com", password:"123456")
 nico.save
 
 puts " Creating a party with best score"
@@ -59,14 +62,45 @@ nico_game = Game.new( score: 30270 )
 nico_game.user = nico
 nico_game.save
 
-puts "Seeding User Seb"
-seb = User.new( first_name: "Seb", last_name: "Saunier", batch: 1, email: "sebsaunier@lewagon.org", password:"123456")
-seb.save
+puts "Seeding User Thomas"
+thomas = User.new( first_name: "Thomas", last_name: "Caen", batch: 321, email: "thomascaen@hotmail.fr", password:"123456")
+thomas.save
+
+puts "Creating a party with best score"
+thomas_game = Game.new( score: 23 )
+thomas_game.user = thomas
+thomas_game.save
+
+puts "Seeding User Benjamin without game"
+benjamin = User.new( first_name: "Benjamin", last_name: "Leray", batch: 321, email: "b.leray35@gmail.com", password:"123456")
+benjamin.save
+
+puts "Seeding User Thanh"
+thanh = User.new( first_name: "Thanh", last_name: "Tran", batch: 145, email: "thanhtran@lewagon.org", password:"123456")
+thanh.save
 
 puts " Creating a party with best score"
-seb_game = Game.new( score: 60001 )
-seb_game.user = seb
-seb_game.save
+thanh_game = Game.new( score: 42424 )
+thanh_game.user = thanh
+thanh_game.save
+
+puts "Seeding User Louise"
+louise = User.new( first_name: "Louise", last_name: "Darche", batch: 146, email: "louisedarche@lewagon.org", password:"123456")
+louise.save
+
+puts " Creating a party with best score"
+louise_game = Game.new( score: 42423 )
+louise_game.user = louise
+louise_game.save
+
+puts "Seeding User Pierre-Yves"
+pierreyves = User.new( first_name: "Pierre-Yves", last_name: "Le Guennec", batch: 70, email: "pierreyves@lewagon.org", password:"123456")
+pierreyves.save
+
+puts " Creating a party with best score"
+pierreyves_game = Game.new( score: 41070 )
+pierreyves_game.user = pierreyves
+pierreyves_game.save
 
 #-------------------------------------------------------------
 puts "Creating first day event"
@@ -225,7 +259,7 @@ puts "Choices 404 event"
  event_404_choice_1.save
 
 event_404_choice_2 = Choice.new({
-  title: "search for a solution 💡",
+  title: "Search for a solution 💡",
   description: " Don't be so obstinate. you lost your day finding a solution. Good luck for the demo!" ,
   score_impact:  220,
   stress_impact: 30,
@@ -282,8 +316,8 @@ event_demo_day.save
 
 puts "Choices Demo Day Event"
  event_demo_day_choice_1 = Choice.new({
-  title: "Afraid to stutter 🥺",
-  description: "Don't be afraid! Look! they seem captivated 👀",
+  title: "Afraid to stutter 😰",
+  description: "Don't be afraid! Look! They seemed captivated 👀 You did GREAT!",
   score_impact: 305,
   stress_impact: 10,
   image_url: "gameevents/event_demo_day_choice_1.png",
