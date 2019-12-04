@@ -46,24 +46,23 @@
     <div class="arrow-right">
       <%= image_tag('swipe-to-right.png', class:'no-swipe-arrow-right animated') %>
     </div>
-    <div class="kebab-joker d-flex">
-      <% if @game.stress >= 80 && @game.stress < 100 %>
-        <p data-game-stress="<%= @game.score %> "class="opacity" style="font-size: 8px; color: red;">Your stress is too HIGH, eat a kebab !</p>
-      <% end %>
-      <div>
-        <%= image_tag('icons/kebab.png') %>
+    <div class="kebab-joker">
+      <div class="text-right">
+        <div style="opacity:0.2;">
+          <%= image_tag('icons/kebab.png') %>
+        </div>
         <div class="content">
-          <p>Joker Kebab !</p>
+          <p>Joker Kebab not available!</p>
         </div>
       </div>
     </div>
 
-       <!-- ----- ICI C EST L AFFICHAGE DU CHOIX---- -->
+       <!-- ----- ICI C EST L AFFICHAGE DU CHOIX ---- -->
   <% else %>
     <div class="d-flex justify-content-between">
       <div>
-        <p class="impact bounceInDown display-score" style="color: #FD0E14;"; data-stress-impact='<%= @game_event.choice.stress_impact %>'> + <%= @game_event.choice.stress_impact %></p>
-        <p class="impact display-score" style="color: green; visibility: hidden;"; id="stress-kebab"> -20 </p>
+        <p class="impact bounceInDown display-score" style="color: #FD0E14"; data-stress-impact='<%= @game_event.choice.stress_impact %>'>+<%= @game_event.choice.stress_impact %></p>
+        <p class="display-score" style="color: green; visibility: hidden;"; id="stress-kebab"> -20 </p>
       </div>
       <div class="main-container d-flex justify-content-center">
 
@@ -100,27 +99,47 @@
           <% end %>
         </div>
       </div>
-      <p class="impact bounceInDown display-score" data-score-impact='<%= @game_event.choice.score_impact %>'> + <%= @game_event.joker ? @game_event.choice.score_impact * 2 : @game_event.choice.score_impact %></p>
+      <p class="impact bounceInDown display-score" data-score-impact='<%= @game_event.choice.score_impact %>'> +<%= @game_event.joker ? @game_event.choice.score_impact * 2 : @game_event.choice.score_impact %></p>
         <div class='hidden fixe'  id="goodStyle">
           <%= image_tag "Good-Style.png"  %>
         </div>
     </div>
-    <div class="kebab-joker d-flex">
-      <% if @game.stress >= 80 && @game.stress < 100 %>
-        <p data-game-stress="<%= @game.score %> "class="opacity" style="font-size: 8px; color: red;">Your stress is too HIGH, eat a kebab !</p>
-      <% end %>
+    <div class="kebab-joker">
       <div>
-        <%= link_to game_game_event_joker_path(@game, @game_event), remote: true do %>
-          <%= image_tag('icons/kebab.png') %>
+        <% if @game.stress >= 80 && @game.stress < 100 && @game.joker_left > 0%>
+          <p data-game-stress="<%= @game.score %> "class="opacity" style="font-size: 8px; color: red; text-align:right; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;">Your stress is too HIGH! <br>Eat a Joker Kebab!</p>
         <% end %>
-        <div class="content">
-          <p>Joker Kebab !</p>
-        </div>
+        <!-- BIG IF TO PREVENT PEOPLE FROM USING THE KEBAB JOKER -->
+        <% if ((@game.joker_left > 0) && (@game_event.joker_next == false) && (@game.stress < 100)) %>
+          <div class="text-right">
+            <%= link_to game_game_event_joker_path(@game, @game_event), id:"kebab-link", remote: true do %>
+              <%= image_tag('icons/kebab.png', id:"kebab", class:"animated infinite bounce") %>
+            <% end %>
+            <div class="content text-center">
+              <!-- CLASS TO TRY TO UPDATE IN AJAX WHEN JOKER KEBAB IS USED -->
+              <p><span class="joker-left-refresh"><%= @game.joker_left %></span> Joker Kebab left!</p>
+            </div>
+          </div>
+        <% else %>
+          <div class="text-right">
+            <div style="opacity:0.2;">
+              <%= image_tag('icons/kebab.png') %>
+            </div>
+            <div class="content">
+              <!-- CUSTOMIZED MESSAGE -->
+              <% if @game.stress > 100 %>
+                <p>Game Over Man!</p>
+              <% elsif @game.joker_left = 0 %>
+                <p>No more Joker Kebab available!</p>
+              <% else %>
+                <p>Joker Kebab not available!</p>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
-
   <% end %>
-
 
 </div>
 

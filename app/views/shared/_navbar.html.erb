@@ -4,7 +4,7 @@
     <div class="d-flex align-items-center justify-content-around" id="player-stress">
       <li class="nav-item dropdown" >
         <div id="avatar-border">
-          <%= image_tag "http://www.avatarsinpixels.com/minipix/eyJIYWlyTG93ZXIiOiIxIiwiRXllcyI6IjIiLCJNb3V0aCI6IjEyIiwiU2hvZXMiOiIxIiwiUGFudHMiOiIxIiwiVG9wIjoiMyIsIkhhaXIiOiIxMyIsInNraW5Ub25lIjoiZjNhZTgwIiwiZXllc1RvbmUiOiIzMzMzMzMiLCJoYWlyVG9uZSI6IjAwMDAwMCIsInBhbnRzVG9uZSI6IjAwOTlkZCIsInRvcFRvbmUiOiIwMDEyMTkiLCJ0b3BUb25lMiI6IjAwMDAwMCJ9/1/show.png", class: "avatar-char dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "components/navbar-avatar.png", class: "avatar-char dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         </div>
       </li>
       <!--ICONE ET STRESS BAR -->
@@ -15,7 +15,17 @@
     <% end %>
       <%= link_to "Login", new_user_session_path, class: "nav-link" %>
   <% end %>
-    <%= image_tag "stress-bar.png", alt: "stress-icon", id: "stress-icon" %>
+
+  <!-- EMOJI CHANGE -->
+    <% if @game_event.game.stress < 33 %>
+      <%= image_tag "components/navbar-happy.png", alt: "stress-icon", id: "stress-icon" %>
+    <% elsif @game_event.game.stress >= 33 && @game_event.game.stress < 66 %>
+      <%= image_tag "components/navbar-neutral.png", alt: "stress-icon",class:"animated pulse", id: "stress-icon" %>
+    <% elsif @game_event.game.stress >= 66 && @game_event.game.stress < 99 %>
+      <%= image_tag "components/navbar-stress.png", alt: "stress-icon", class:"animated infinite bounce", id: "stress-icon" %>
+    <% else %>
+      <%= image_tag "components/navbar-dead2.png", alt: "stress-icon", class:"animated infinite swing slower", id: "stress-icon" %>
+    <% end %>
       <% if @game_event.nil? %>
       <% else %>
         <% if @game_event.event.present? %>
@@ -43,7 +53,13 @@
               <h4  class="display-score" >Score:</h4>
               <h1 class="display-score" id="score-display" data-score-display='<%= @game.score %>'><%= @game.score - @game_event.choice.score_impact %></h1>
             </div>
+            <!-- x2 APPEARS WHEN JOKER IS ON -->
+            <% if @game_event.joker %>
+              <p>x2</p>
+            <% else %>
+            <!-- x2 APPEARS WHEN JOKER IS CLICKED -->
               <p class="score-multiply">x2</p>
+            <% end %>
           </div>
           <% else %>
           <div>
@@ -51,12 +67,17 @@
               <h4  class="display-score" >Score:</h4>
               <h1 class="display-score" id="score-display" data-score-display='<%= @game.score %>'><%= @game.score %></h1>
             </div>
-            <p class="score-multiply">x2</p>
+            <!-- x2 APPEARS WHEN JOKER IS ON -->
+            <% if @game_event.joker %>
+              <p>x2</p>
+            <% else %>
+            <!-- x2 APPEARS WHEN JOKER IS CLICKED -->
+              <p class="score-multiply">x2</p>
+            <% end %>
           </div>
           <% end %>
         <% else %>
           <% if user_signed_in? %>
-
           <% else %>
             <li class="nav-item">
               <%= link_to "Login", new_user_session_path, class: "nav-link" %>

@@ -3,17 +3,17 @@
   <div class = "top-padding">
     <div class="gameover-container animated fadeInUp slower p-3" id="to-drag">
       <h2>Game over</h2>
-      <h1><%= "your score = #{@game.score}"%></h1>
+      <h1><%= "your score : #{@game.score}"%></h1>
       <% if @game.score >= @own_best_score %>
         <h2><small>New record! </small></h2>
       <% end %>
-      <h2><small>Your best score: <%= @own_best_score %></small></h2>
+      <h2><small>Your best score : <%= @own_best_score %></small></h2>
       <div class="my-5">
         <%= link_to "TRY AGAIN!" ,root_path , class: "restart-btn py-4 px-5"%>
       </div>
     </div>
     <br>
-    <div class="gameover-container animated fadeInUp slower delay-2s p-3" id="to-drag">
+    <div class="gameover-container animated fadeInUp slower delay-2s p-3" id="to-drag" style="height:300px;">
       <table class="fixed_headers">
         <thead>
           <tr>
@@ -27,7 +27,7 @@
           <% @best_score_games.each_with_index do |game, index| %>
             <tr>
               <td class="pr-4 pb-2">#<%= index + 1 %></td>
-              <td class="pr-5 pb-2"><%= ("#{game.user.first_name} #{game.user.last_name}".length > 11) ? "#{game.user.first_name} #{game.user.last_name}"[0..10] : "#{game.user.first_name} #{game.user.last_name}" %></td>
+              <td class="pr-5 pb-2"><%= ("#{game.user.first_name} #{game.user.last_name}".length > 10) ? "#{game.user.first_name} #{game.user.last_name}"[0..9] : "#{game.user.first_name} #{game.user.last_name}" %></td>
               <td class="pr-4 pb-2"><%= game.user.batch %></td>
               <td class="pb-2"><%= game.score %></td>
             </tr>
