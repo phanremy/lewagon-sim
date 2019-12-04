@@ -101,7 +101,7 @@
       </div>
       <p class="impact bounceInDown display-score" data-score-impact='<%= @game_event.choice.score_impact %>'> +<%= @game_event.joker ? @game_event.choice.score_impact * 2 : @game_event.choice.score_impact %></p>
         <div class='hidden fixe'  id="goodStyle">
-          <%= image_tag "Good-Style.png"  %>
+          <%= image_tag "Good-Style.png", height: 50, width:150%>
         </div>
     </div>
     <div class="kebab-joker">
