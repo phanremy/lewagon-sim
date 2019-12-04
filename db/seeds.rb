@@ -207,7 +207,7 @@ puts "Creating 404 event"
 event_404 = Event.new({
   title: "Page not found!",
   description: "1 day before the demo-day, you have a 404 error in your main page, no clue where is the problem..",
-  image_url: "heart-icon.png",
+  image_url: "gameevents/event_404.png",
   })
 
 event_404.save
@@ -218,7 +218,7 @@ puts "Choices 404 event"
   description: " A teacher saw you, and found the solution in 5 minutes. No big deal.",
   score_impact: 321,
   stress_impact: 0,
-  image_url: "heart-icon.png",
+  image_url: "gameevents/event_404.png",
 })
 
  event_404_choice_1.event = event_404
@@ -229,7 +229,7 @@ event_404_choice_2 = Choice.new({
   description: " Don't be so obstinate. you lost your day finding a solution. Good luck for the demo!" ,
   score_impact:  220,
   stress_impact: 20,
-  image_url: "heart-icon.png",
+  image_url: "gameevents/event_404.png",
 })
 
 event_404_choice_2.event = event_404
@@ -276,7 +276,7 @@ puts "Creating Demo Day Event"
 event_demo_day = Event.new({
   title: "Demo Day",
   description: "Few hours left before your speech, how do you handle it?",
-  image_url:"gameevents/event_demo_day.png",
+  image_url:"gameevents/event_demoday.jpg",
   })
 event_demo_day.save
 
@@ -286,7 +286,7 @@ puts "Choices Demo Day Event"
   description: "Don't be affraid, look ! they seem captivate 👀",
   score_impact: 305,
   stress_impact: 10,
-  image_url: "gameevents/event_demo_day.png",
+  image_url: "gameevents/event_demoday.jpg",
   })
  event_demo_day_choice_1.event = event_demo_day
  event_demo_day_choice_1.save
@@ -295,7 +295,7 @@ event_demo_day_choice_2 = Choice.new({
   description: " Hey !! don't be to exited, you should support your teammates before !" ,
   score_impact:  155,
   stress_impact: 30,
-  image_url:"gameevents/event_demo_day.png",
+  image_url:"gameevents/event_demoday.jpg",
   })
   event_demo_day_choice_2.event = event_demo_day
   event_demo_day_choice_2.save
