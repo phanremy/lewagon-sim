@@ -1,6 +1,13 @@
 function decreaseStress() {
   console.log('Excessive consumption of kebab is not good for your health, eat with moderation');
   const stress_kebab = document.querySelector("#stress-kebab");
+  const kebabLink = document.getElementById("kebab-link");
+  const kebab = document.getElementById("kebab");
+  const multiply = document.querySelector('.score-multiply');
+  multiply.classList.add('score-multiply');
+  multiply.classList.toggle('display-multiply');
+  kebab.classList.add('animated');
+  kebab.classList.add('bounce');
 
   if (stress_kebab) {
     stress_kebab.style.visibility = "visible";
@@ -10,6 +17,7 @@ function decreaseStress() {
       stress_kebab.classList.add('animated', 'bounceOutUp', "delay-1s");
     });
   };
+
 }
 
 function decrementStress() {
@@ -18,6 +26,10 @@ function decrementStress() {
   const stress_impact = document.querySelector("[data-stress-impact]");
   let increasedWidth = Number.parseInt(stress.dataset.stressDisplay - 20);
   if (stress_impact) {
+    if (Number.parseInt(stress.dataset.stressDisplay) === 0) {
+
+    } else {
+
     const interval = setInterval(function() {
       if (Number.parseInt(stressJoker.dataset.stressJoker) < Number.parseInt(stress.dataset.stressDisplay)) {
         console.log('walah');
@@ -28,6 +40,7 @@ function decrementStress() {
           clearInterval(interval);
         }
     }, 50 )
+    }
   } else {
     stress.style.width = increasedWidth + "%";
   }
