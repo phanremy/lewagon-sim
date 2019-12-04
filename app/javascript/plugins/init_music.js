@@ -2,8 +2,9 @@ const music = () => {
   const soundStop = document.querySelector('#sound-stop')
   const soundLink = document.getElementById('music').dataset.music;
   const sound = new Audio(soundLink);
-    soundStop.innerHTML = '<i class="fas fa-volume-mute" style="font-size: 30px;"></i>';
+    soundStop.innerHTML = '<i class="fas fa-volume-up" style="font-size: 30px;"></i>';
     sound.volume = 0.5;
+    sound.play();
   soundStop.addEventListener('click', (event) => {
     if (sound.paused) {
       sound.play();
