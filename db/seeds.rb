@@ -229,7 +229,7 @@ event_404_choice_2 = Choice.new({
   description: " Don't be so obstinate. you lost your day finding a solution. Good luck for the demo!" ,
   score_impact:  220,
   stress_impact: 20,
-  image_url: "gameevents/event_404.png",
+  image_url: "gameevents/PYRAMIDEDECUL.png",
 })
 
 event_404_choice_2.event = event_404
