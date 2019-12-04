@@ -139,7 +139,7 @@ puts "Creating Air-BnB event"
 airbnb = Event.new({
   title: "Airbnb Project",
   description: " You have to make a site like AirBnb for a whole week with teammates. Which things do you want to rent?",
-  image_url: "gameevents/event_airbnb.jpg",
+  image_url: "gameevents/event_airbnb.png",
   })
 airbnb.save
 
