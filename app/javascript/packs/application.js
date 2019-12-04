@@ -62,3 +62,15 @@ incrementScore();
 if (document.getElementById("music")) {
   music();
 }
+
+const drags = document.querySelectorAll(".demo__card__drag");
+if (drags) {
+  drags.forEach((drag) => {
+    drag.addEventListener('mousedown', (event) => {
+      drag.style.cursor = "grabbing";
+    });
+    drag.addEventListener('mouseup', (event) => {
+      drag.style.cursor = "grab";
+    });
+  });
+}
