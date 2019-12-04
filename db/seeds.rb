@@ -239,38 +239,38 @@ puts "done"
 
 
 
-puts "Creating Choose you batch Event"
-event_choose_batch = Event.new({
-  title: "Batch",
-  description: "Which Batch are you from?",
-  image_url: "gameevents/event_choose_batch.png",
-  })
+# puts "Creating Choose you batch Event"
+# event_choose_batch = Event.new({
+#   title: "Batch",
+#   description: "Which Batch are you from?",
+#   image_url: "gameevents/event_choose_batch.png",
+#   })
 
-event_choose_batch.save
+# event_choose_batch.save
 
-puts "Choices Choose you batch"
- event_choose_batch_choice_1 = Choice.new({
-  title: "Le Perchoir",
-  description: "There isn't any best choice ✌️",
-  score_impact: 321,
-  stress_impact: 0,
-  image_url: "gameevents/event_choose_batch_choice1_2.jpg",
-})
+# puts "Choices Choose you batch"
+#  event_choose_batch_choice_1 = Choice.new({
+#   title: "Le Perchoir",
+#   description: "There isn't any best choice ✌️",
+#   score_impact: 321,
+#   stress_impact: 0,
+#   image_url: "gameevents/event_choose_batch_choice1_2.jpg",
+# })
 
- event_choose_batch_choice_1.event = event_choose_batch
- event_choose_batch_choice_1.save
+#  event_choose_batch_choice_1.event = event_choose_batch
+#  event_choose_batch_choice_1.save
 
-event_choose_batch_choice_2 = Choice.new({
-  title: "Villa Gaudelet",
-  description: "There isn't any best choice ✌️" ,
-  score_impact:  320,
-  stress_impact: 0,
-  image_url: "gameevents/event_choose_batch_choice1_2.jpg",
-})
-event_choose_batch_choice_2.event = event_choose_batch
-event_choose_batch_choice_2.save
+# event_choose_batch_choice_2 = Choice.new({
+#   title: "Villa Gaudelet",
+#   description: "There isn't any best choice ✌️" ,
+#   score_impact:  320,
+#   stress_impact: 0,
+#   image_url: "gameevents/event_choose_batch_choice1_2.jpg",
+# })
+# event_choose_batch_choice_2.event = event_choose_batch
+# event_choose_batch_choice_2.save
 
-puts "done"
+# puts "done"
 
 puts "Creating Demo Day Event"
 event_demo_day = Event.new({
