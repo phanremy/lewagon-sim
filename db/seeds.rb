@@ -72,7 +72,7 @@ thomas_game.user = thomas
 thomas_game.save
 
 puts "Seeding User Benjamin without game"
-benjamin = User.new( first_name: "Benjamin", last_name: "Leray", batch: 321, email: "b.leray35@gmail.com", password:"123456")
+benjamin = User.new( first_name: "Benjamin", last_name: "Leray", batch: 128, email: "b.leray35@gmail.com", password:"123456")
 benjamin.save
 
 puts "Seeding User Thanh"
@@ -114,7 +114,7 @@ first_day.save
 
 puts "Creating first day choices"
  first_day_choice_1 = Choice.new({
-  title: "With schoolmates 👫" ,
+  title: "Discussing with schoolmates 👫" ,
   description: "Good choice, you’ll spend 9 weeks with them.",
   score_impact: 450 ,
   stress_impact: 0,
@@ -271,41 +271,6 @@ event_404_choice_2.save
 
 puts "done"
 
-
-
-# puts "Creating Choose you batch Event"
-# event_choose_batch = Event.new({
-#   title: "Batch",
-#   description: "Which Batch are you from?",
-#   image_url: "gameevents/event_choose_batch.png",
-#   })
-
-# event_choose_batch.save
-
-# puts "Choices Choose you batch"
-#  event_choose_batch_choice_1 = Choice.new({
-#   title: "Le Perchoir",
-#   description: "There isn't any best choice ✌️",
-#   score_impact: 321,
-#   stress_impact: 0,
-#   image_url: "gameevents/event_choose_batch_choice1_2.jpg",
-# })
-
-#  event_choose_batch_choice_1.event = event_choose_batch
-#  event_choose_batch_choice_1.save
-
-# event_choose_batch_choice_2 = Choice.new({
-#   title: "Villa Gaudelet",
-#   description: "There isn't any best choice ✌️" ,
-#   score_impact:  320,
-#   stress_impact: 0,
-#   image_url: "gameevents/event_choose_batch_choice1_2.jpg",
-# })
-# event_choose_batch_choice_2.event = event_choose_batch
-# event_choose_batch_choice_2.save
-
-# puts "done"
-
 puts "Creating Demo Day Event"
 event_demo_day = Event.new({
   title: "Demo Day",
@@ -334,7 +299,40 @@ event_demo_day_choice_2 = Choice.new({
   event_demo_day_choice_2.event = event_demo_day
   event_demo_day_choice_2.save
 
-  puts "FINISH"
+puts "Creating Choose you batch Event"
+event_choose_batch = Event.new({
+  title: "Batch",
+  description: "Which batch are you from?",
+  image_url: "gameevents/event_choose_batch.png",
+  })
+
+event_choose_batch.save
+
+puts "Choices Choose you batch"
+ event_choose_batch_choice_1 = Choice.new({
+  title: "Le Perchoir",
+  description: "There isn't any best choice ✌️",
+  score_impact: 321,
+  stress_impact: 50,
+  image_url: "gameevents/event_choose_batch_choice1_2.jpg",
+})
+
+ event_choose_batch_choice_1.event = event_choose_batch
+ event_choose_batch_choice_1.save
+
+event_choose_batch_choice_2 = Choice.new({
+  title: "Villa Gaudelet",
+  description: "There isn't any best choice ✌️" ,
+  score_impact:  320,
+  stress_impact: 50,
+  image_url: "gameevents/event_choose_batch_choice1_2.jpg",
+})
+event_choose_batch_choice_2.event = event_choose_batch
+event_choose_batch_choice_2.save
+
+puts "done"
+
+puts "FINISH"
 
 # #-------------------------------------------------------------
 # puts "Creating Flemme Cours event"
