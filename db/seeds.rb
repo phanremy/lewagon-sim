@@ -148,7 +148,7 @@ puts "Creating Air-Bnb choices"
   title: "Manors 🏰" ,
   description: "Pff... This is so  boring !!! Be a 'creative person'.",
   score_impact: 175,
-  stress_impact: 10,
+  stress_impact: 20,
   image_url: "gameevents/event_airbnb_choice1.png",
 })
 
@@ -193,7 +193,7 @@ event_after_work_choice_2 = Choice.new({
   title: "BEER 🍻",
   description: "BIGGEST Hangover of your life! Don't trust your friends...." ,
   score_impact:  350,
-  stress_impact: 25,
+  stress_impact: 30,
   image_url: "gameevents/event_after_work_choice2.jpg",
 })
 event_after_work_choice_2.event = event_after_work
@@ -228,8 +228,8 @@ event_404_choice_2 = Choice.new({
   title: "search for a solution 💡",
   description: " Don't be so obstinate. you lost your day finding a solution. Good luck for the demo!" ,
   score_impact:  220,
-  stress_impact: 20,
-  image_url: "gameevents/PYRAMIDEDECUL.png",
+  stress_impact: 30,
+  image_url: "gameevents/event_404_choice2.png",
 })
 
 event_404_choice_2.event = event_404
@@ -243,7 +243,7 @@ puts "Creating Choose you batch Event"
 event_choose_batch = Event.new({
   title: "Batch",
   description: "Which Batch are you from?",
-  image_url: "gameevents/event_choose_batch.jpg",
+  image_url: "gameevents/event_choose_batch.png",
   })
 
 event_choose_batch.save
@@ -282,8 +282,8 @@ event_demo_day.save
 
 puts "Choices Demo Day Event"
  event_demo_day_choice_1 = Choice.new({
-  title: "Affraid to stutter 🥺",
-  description: "Don't be affraid, look ! they seem captivate 👀",
+  title: "Afraid to stutter 🥺",
+  description: "Don't be afraid! Look! they seem captivated 👀",
   score_impact: 305,
   stress_impact: 10,
   image_url: "gameevents/event_demo_day_choice_1.png",
@@ -292,7 +292,7 @@ puts "Choices Demo Day Event"
  event_demo_day_choice_1.save
 event_demo_day_choice_2 = Choice.new({
   title: "Eager to party! 🎉",
-  description: " Hey !! don't be to exited, you should support your teammates before !" ,
+  description: " Hey !! Don't be to excited, you should support your teammates first!" ,
   score_impact:  155,
   stress_impact: 30,
   image_url:"gameevents/event_demoday.jpg",
