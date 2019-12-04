@@ -106,7 +106,7 @@ pierreyves_game.save
 puts "Creating first day event"
 first_day = Event.new({
   title: "First Day",
-  description: " This is the first day at 'Le Wagon', you just met 30 new buddies and you have to install all the files needed. Where do you spend most time?" ,
+  description: " In the first day at 'Le Wagon', you just met 30 new buddies and you have to install all the setup. How do you spend your time?" ,
   image_url: "gameevents/event_first_day.png",
 
   })
@@ -159,7 +159,7 @@ puts "Choices Yoga"
 event_yoga_choice_2 = Choice.new({
   title: "Keep working 👨‍💻",
 
-  description: " You are too tired, this hour of working is useless, you learned nothing." ,
+  description: " You are too tired, this hour of working is useless, you wasted your time and learned nothing." ,
   score_impact:  10,
   stress_impact: 30,
   image_url: "gameevents/event_yoga_choice2.png",
@@ -172,7 +172,7 @@ puts "done"
 puts "Creating Air-BnB event"
 airbnb = Event.new({
   title: "Airbnb Project",
-  description: " You have to make a site like AirBnb for a whole week with teammates. Which things do you want to rent?",
+  description: " You have to make a site like AirBnb for a whole week with teammates. You can rent whatever you want! Will it be manors or socks?",
   image_url: "gameevents/event_airbnb.png",
   })
 airbnb.save
