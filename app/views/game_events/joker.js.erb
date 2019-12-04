@@ -20,4 +20,34 @@ function decreaseStress() {
 
 }
 
-decreaseStress()
+function decrementStress() {
+  const stress = document.querySelector("[data-stress-display]");
+  const stressJoker = document.querySelector("[data-stress-display]");
+  const stress_impact = document.querySelector("[data-stress-impact]");
+  let increasedWidth = Number.parseInt(stress.dataset.stressDisplay - 20);
+  if (stress_impact) {
+    const interval = setInterval(function() {
+      if (Number.parseInt(stressJoker.dataset.stressJoker) < Number.parseInt(stress.dataset.stressDisplay)) {
+        console.log('walah');
+        stress.style.width = increasedWidth + "%";
+        // increasedWidth --;
+        if (Number.parseInt(stressJoker.dataset.stressJoker) - Number.parseInt(stress.style.width) === 0)
+          console.log('000');
+          clearInterval(interval);
+        }
+    }, 50 )
+  } else {
+    stress.style.width = increasedWidth + "%";
+  }
+}
+
+  const kebab = document.querySelector(".kebab-joker");
+  const stressJoker = document.querySelector("[data-stress-joker]");
+  const stress_impact = document.querySelector("[data-stress-impact]");
+  console.log(kebab);
+  // kebab.addEventListener('click', (event) => {
+  //   decrementStress();
+  // });
+
+decrementStress();
+decreaseStress();
