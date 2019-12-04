@@ -4,10 +4,20 @@ function decreaseStress() {
   const kebabLink = document.getElementById("kebab-link");
   const kebab = document.getElementById("kebab");
   const multiply = document.querySelector('.score-multiply');
+  const kebabText = document.querySelector('.joker-left-refresh');
+  const stressText = document.querySelector('.stress-kebab-text');
+
   multiply.classList.add('score-multiply');
   multiply.classList.toggle('display-multiply');
   kebab.classList.add('animated');
-  kebab.classList.add('bounce');
+  kebab.classList.remove('infinite');
+  kebab.classList.remove('jello');
+  kebab.classList.add('tada');
+  kebabText.innerHTML = "Kebab eaten! Yummy Yummy!";
+
+  if (stressText) {
+    stressText.style.display = "none";
+  }
 
   if (stress_kebab) {
     stress_kebab.style.visibility = "visible";

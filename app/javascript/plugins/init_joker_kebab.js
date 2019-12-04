@@ -13,11 +13,11 @@ function eatAKebab() {
   const stressLvl = document.querySelector("[data-stress-display]")
   console.log(stressLvl.dataset.stressDisplay);
   if (eatAKebab) {
-    if (Number.parseInt(stressLvl.dataset.stressDisplay) >= 80) {
+    if (Number.parseInt(stressLvl.dataset.stressDisplay) >= 66) {
       const interval = setInterval(function() {
         eatAKebab.classList.toggle('opacity');
         eatAKebab.classList.toggle('no-opacity');
-      }, 500);
+      }, 700);
 
     }
   }
