@@ -237,11 +237,13 @@ event_404_choice_2.save
 
 puts "done"
 
+
+
 puts "Creating Choose you batch Event"
 event_choose_batch = Event.new({
   title: "Batch",
-  description: "From which batch are you?",
-  image_url: "heart-icon.png",
+  description: "Which Batch are you from?",
+  image_url: "gameevents/event_choose_batch.jpg",
   })
 
 event_choose_batch.save
@@ -252,7 +254,7 @@ puts "Choices Choose you batch"
   description: "There isn't any best choice ✌️",
   score_impact: 321,
   stress_impact: 0,
-  image_url: "heart-icon.png",
+  image_url: "gameevents/event_choose_batch_choice1_2.jpg",
 })
 
  event_choose_batch_choice_1.event = event_choose_batch
@@ -263,13 +265,42 @@ event_choose_batch_choice_2 = Choice.new({
   description: "There isn't any best choice ✌️" ,
   score_impact:  320,
   stress_impact: 0,
-  image_url: "heart-icon.png",
+  image_url: "gameevents/event_choose_batch_choice1_2.jpg",
 })
 event_choose_batch_choice_2.event = event_choose_batch
 event_choose_batch_choice_2.save
 
 puts "done"
 
+puts "Creating Demo Day Event"
+event_demo_day = Event.new({
+  title: "Demo Day",
+  description: "Few hours left before your speech, how do you handle it?",
+  image_url:"gameevents/event_demo_day.png",
+  })
+event_demo_day.save
+
+puts "Choices Demo Day Event"
+ event_demo_day_choice_1 = Choice.new({
+  title: "Affraid to stutter 🥺",
+  description: "Don't be affraid, look ! they seem captivate 👀",
+  score_impact: 305,
+  stress_impact: 10,
+  image_url: "gameevents/event_demo_day.png",
+  })
+ event_demo_day_choice_1.event = event_demo_day
+ event_demo_day_choice_1.save
+event_demo_day_choice_2 = Choice.new({
+  title: "Eager to party! 🎉",
+  description: " Hey !! don't be to exited, you should support your teammates before !" ,
+  score_impact:  155,
+  stress_impact: 30,
+  image_url:"gameevents/event_demo_day.png",
+  })
+  event_demo_day_choice_2.event = event_demo_day
+  event_demo_day_choice_2.save
+
+  puts "FINISH"
 
 # #-------------------------------------------------------------
 # puts "Creating Flemme Cours event"
