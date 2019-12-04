@@ -1,18 +1,18 @@
 @keyframes movecar {
     0%      { left: 0px; }
-    50%     { left: 93%; }
+    50%     { left: 90%; }
     100%    { left: 0px; }
 }
 
     @-webkit-keyframes movecar {
         0%      { left: 0px; }
-        50%     { left: 93%; }
+        50%     { left: 90%; }
         100%    { left: 0px; }
     }
 
     @-moz-keyframes movecar {
         0%      { left: 0px; }
-        50%     { left: 93%; }
+        50%     { left: 90%; }
         100%    { left: 0px; }
     }
 
@@ -31,7 +31,7 @@
     display: inline;
 
     animation: movecar 10s linear 1s infinite alternate;
-        // -webkit-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
         -webkit-animation: movecar 10s ease-in-out 1s infinite alternate;
         -moz-animation: movecar 10s ease-in-out 1a infinite alternate;
 }

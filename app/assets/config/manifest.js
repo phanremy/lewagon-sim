@@ -4,3 +4,4 @@
 //= link_directory ../stylesheets .css
 //= link_directory ../javascripts .json
 //= link_directory ../audios .mp3
+//= link_directory ../audios .WAV
