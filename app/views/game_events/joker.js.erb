@@ -26,6 +26,10 @@ function decrementStress() {
   const stress_impact = document.querySelector("[data-stress-impact]");
   let increasedWidth = Number.parseInt(stress.dataset.stressDisplay - 20);
   if (stress_impact) {
+    if (Number.parseInt(stress.dataset.stressDisplay) === 0) {
+
+    } else {
+
     const interval = setInterval(function() {
       if (Number.parseInt(stressJoker.dataset.stressJoker) < Number.parseInt(stress.dataset.stressDisplay)) {
         console.log('walah');
@@ -36,6 +40,7 @@ function decrementStress() {
           clearInterval(interval);
         }
     }, 50 )
+    }
   } else {
     stress.style.width = increasedWidth + "%";
   }
