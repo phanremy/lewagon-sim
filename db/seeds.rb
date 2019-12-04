@@ -286,7 +286,7 @@ puts "Choices Demo Day Event"
   description: "Don't be affraid, look ! they seem captivate 👀",
   score_impact: 305,
   stress_impact: 10,
-  image_url: "gameevents/event_demoday.jpg",
+  image_url: "gameevents/event_demo_day_choice_1.png",
   })
  event_demo_day_choice_1.event = event_demo_day
  event_demo_day_choice_1.save
