@@ -51,10 +51,10 @@ class GameEventsController < ApplicationController
       @game.stress -= 20
       @game.save
       @game_event.save
-    end
-    respond_to do |format|
-      format.html { render 'pages/home' }
-      format.js
+      respond_to do |format|
+        format.html { render 'game/home' }
+        format.js
+      end
     end
     # redirect_to game_game_event_path(@game, @game_event)
   end

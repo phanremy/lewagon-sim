@@ -107,13 +107,20 @@
     <div class="kebab-joker">
       <div>
         <% if @game.stress >= 80 && @game.stress < 100 && @game.joker_left > 0%>
-          <p data-game-stress="<%= @game.score %> "class="opacity" style="font-size: 8px; color: red; text-align:right; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;">Your stress is too HIGH! <br>Eat a Joker Kebab!</p>
+          <p data-game-stress="<%= @game.score %> "class="opacity" style="font-size: 12px; color: red; text-align:right; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;">Your stress is too HIGH! <br>Eat a Joker Kebab!</p>
         <% end %>
         <!-- BIG IF TO PREVENT PEOPLE FROM USING THE KEBAB JOKER -->
         <% if ((@game.joker_left > 0) && (@game_event.joker_next == false) && (@game.stress < 100)) %>
           <div class="text-right">
-            <%= link_to game_game_event_joker_path(@game, @game_event), id:"kebab-link", remote: true do %>
-              <%= image_tag('icons/kebab.png', id:"kebab", class:"animated infinite bounce") %>
+            <!-- BOUNCING KEBAB -->
+            <% if @game.stress >= 80 && @game.stress < 100 && @game.joker_left > 0 %>
+              <%= link_to game_game_event_joker_path(@game, @game_event), id:"kebab-link", remote: true do %>
+                <%= image_tag('icons/kebab.png', id:"kebab", class:"animated infinite bounce") %>
+              <% end %>
+            <% else %>
+              <%= link_to game_game_event_joker_path(@game, @game_event), id:"kebab-link", remote: true do %>
+                <%= image_tag('icons/kebab.png', id:"kebab", class:"") %>
+              <% end %>
             <% end %>
             <div class="content text-center">
               <!-- CLASS TO TRY TO UPDATE IN AJAX WHEN JOKER KEBAB IS USED -->
@@ -127,8 +134,8 @@
             </div>
             <div class="content">
               <!-- CUSTOMIZED MESSAGE -->
-              <% if @game.stress > 100 %>
-                <p>Game Over Man!</p>
+              <% if @game.stress >= 100 %>
+                <p>Game Over, Man!</p>
               <% elsif @game.joker_left = 0 %>
                 <p>No more Joker Kebab available!</p>
               <% else %>

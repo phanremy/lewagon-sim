@@ -12,6 +12,7 @@ function eatAKebab() {
   const eatAKebab = document.querySelector('.opacity');
   const stressLvl = document.querySelector("[data-stress-display]")
   console.log(stressLvl.dataset.stressDisplay);
+  if (eatAKebab) {
     if (Number.parseInt(stressLvl.dataset.stressDisplay) >= 80) {
       const interval = setInterval(function() {
         eatAKebab.classList.toggle('opacity');
@@ -19,6 +20,7 @@ function eatAKebab() {
       }, 500);
 
     }
+  }
 }
 
 // export { displayMultiply };
