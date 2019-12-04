@@ -1,33 +1,35 @@
-<div class="container container-home">
-  <h2>Sign up</h2>
+<div class=" container" style="background: linear-gradient(to bottom, rgba(37,48,49,1) 0%, rgba(9,9,121,1) 35%, rgba(8,76,97,1) 100%);">
+  <div class="col-4 offset-4 mt-4">
+    <h2>Sign up</h2>
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :batch,
-                  required: true %>
-      <%= f.input :first_name,
-                  required: true %>
-      <%= f.input :last_name,
-                   required: true %>
-    </div>
+      <div class="form-inputs">
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" }%>
+        <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :batch,
+                    required: true %>
+        <%= f.input :first_name,
+                    required: true %>
+        <%= f.input :last_name,
+                     required: true %>
+      </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
-    </div>
-  <% end %>
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up" %>
+      </div>
+    <% end %>
 
-  <%= render "devise/shared/links" %>
+    <%= render "devise/shared/links" %>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 function decreaseStress() {
-  console.log('Excess consumption of kebab is not good for your health, eat with moderation');
+  console.log('Excessive consumption of kebab is not good for your health, eat with moderation');
   const stress_kebab = document.querySelector("#stress-kebab");
 
   if (stress_kebab) {
@@ -10,6 +10,13 @@ function decreaseStress() {
       stress_kebab.classList.add('animated', 'bounceOutUp', "delay-1s");
     });
   };
+
+  const kebabLink = document.getElementById("kebab-link");
+  const kebab = document.getElementById("kebab");
+  kebabLink,addEventListener('click', (event) => {
+    console.log(event);
+    kebab.classList.toggle('animated', 'bounce')
+  });
 }
 
 // function decrementStress() {

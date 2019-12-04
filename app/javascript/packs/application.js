@@ -11,7 +11,7 @@ import { initGoodStyle } from '../plugins/init_apparition';
 import { initGameoverScoreScrollUp } from '../plugins/init_gameover_score_scroll_up.js';
 import { music } from '../plugins/init_music';
 import { displayMultiply } from '../plugins/init_joker_kebab.js';
-import { eatAKebab } from '../plugins/init_joker_kebab.js';
+// import { eatAKebab } from '../plugins/init_joker_kebab.js';
 
 function decrementStress() {
       const stress = document.querySelector("[data-stress-display]");
@@ -53,6 +53,11 @@ function decrementStress() {
 if (document.querySelector(".kebab-joker")) {
   eatAKebab();
 }
+
+// if (document.querySelector(".kebab-joker")) {
+//   eatAKebab();
+// }
+
 
 
 if (document.querySelector(".kebab-joker")) {
@@ -99,3 +104,7 @@ incrementScore();
 if (document.getElementById("music")) {
   music();
 }
+
+if (document.getElementById("kebab")) {
+}
+
