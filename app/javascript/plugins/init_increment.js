@@ -35,6 +35,6 @@ function incrementStress() {
     }
 };
 
+
 export { incrementStress };
 export { incrementScore };
-// export { addKebabEnergy };
