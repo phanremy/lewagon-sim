@@ -84,3 +84,29 @@
   border: 2px solid black;
   border-left: none;
 }
+
+// style pour l'affichage des effets du joker
+.bonus-score{
+  //temporaire
+ // top: 108px;
+ // left: 734px;
+ // position: absolute;
+    font-size: 11px;
+    color: black;
+    background: rgba(244, 157, 55, 0.88);
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    text-align: center;
+
+}
+
+#stress-kebab{
+   visibility: hidden;
+   padding: 7px 20px;
+   background: green;
+   border: 1px solid rgba(240,240,240, 1);
+   color: rgba(240,240,240, 1);
+   border-radius: 4px;
+
+}

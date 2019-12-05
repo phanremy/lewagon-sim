@@ -7,6 +7,7 @@
     </div>
     <div class="main-container">
       <!-- SWIPEABLE CLASS INCLUDING CARD, SIMPLE FORM CHOICES OPTIONS -->
+
       <div class="demo__card d-flex justify-content-center">
        <!-- ----- ICI C EST L AFFICHAGE DE L'EVENT---- -->
        <div class="event-card animated slideInUp d-flex flex-column justify-content-between">
@@ -62,7 +63,7 @@
     <div class="d-flex justify-content-between">
       <div>
         <p class="impact bounceInDown display-score" style="color: #FD0E14"; data-stress-impact='<%= @game_event.choice.stress_impact %>'>+<%= @game_event.choice.stress_impact %></p>
-        <p class="display-score" style="color: green; visibility: hidden;"; id="stress-kebab"> -20 </p>
+        <p class="display-score bonus-stress" style=""; id="stress-kebab"> Energy +20%! </p>
       </div>
       <div class="main-container d-flex justify-content-center">
 
@@ -70,9 +71,9 @@
           <div class="event-head" id="result-head">
               <% if @game_event.choice.stress_impact <= 0 %>
 
-               <h2 class="text-center no-stress"> No stress! </h2>
+               <h2 class="text-center no-stress"> Cool! </h2>
               <% else %>
-                <h2 class="text-center yes-stress">+<%= @game_event.choice.stress_impact%>% stress!</h3>
+                <h2 class="text-center yes-stress">-<%= @game_event.choice.stress_impact%>% energy!</h3>
               <% end %>
             </h3>
           </div>
@@ -107,7 +108,7 @@
     <div class="kebab-joker">
       <div>
         <% if @game.stress >= 80 && @game.stress < 100 && @game.joker_left > 0%>
-          <p data-game-stress="<%= @game.score %> "class="opacity stress-kebab-text" style="font-size: 12px; color: red; text-align:right; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;">Your stress is too HIGH! <br>Eat a Joker Kebab!</p>
+          <p data-game-stress="<%= @game.score %> "class="opacity stress-kebab-text" style="font-size: 12px; color: red; text-align:right; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;">Energy too LOW! <br>Eat a Kebab!</p>
         <% end %>
         <!-- BIG IF TO PREVENT PEOPLE FROM USING THE KEBAB JOKER -->
         <% if ((@game.joker_left > 0) && (@game_event.joker_next == false) && (@game.stress < 100)) %>

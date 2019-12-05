@@ -27,18 +27,29 @@ const typedShow = () => {
       loop: false,
       loopCount: Infinity,
       onComplete: (self) => {
-        const arrowLeft = document.querySelector('.no-swipe-arrow-left');
+        const arrowLeft = document.querySelector('.fadeOutLeft');
           setTimeout(function() {
+            console.log('test');
+            arrowLeft.classList.remove("fadeOutLeft");
+            arrowLeft.classList.remove("no-swipe-arrow-left");
+            arrowLeft.classList.remove("swipe-arrow");
             arrowLeft.classList.toggle("no-swipe-arrow-left");
-            arrowLeft.classList.toggle("swipe-arrow");
+            setTimeout(function() {
+              arrowLeft.classList.toggle("swipe-arrow");
+            },3000)
           }, 1000);
           setTimeout(function() {
             arrowLeft.classList.toggle("fadeOutLeft");
           }, 2000);
 
-        const arrowRight = document.querySelector('.no-swipe-arrow-right');
+        const arrowRight = document.querySelector('.fadeOutRight');
+        console.log(arrowRight);
           setTimeout(function() {
+            arrowRight.classList.remove("fadeOutRight");
+            arrowRight.classList.remove("no-swipe-arrow-right");
+            arrowRight.classList.remove("swipe-arrow");
             arrowRight.classList.toggle("no-swipe-arrow-right");
+            sleep
             arrowRight.classList.toggle("swipe-arrow");
 
           }, 1000);

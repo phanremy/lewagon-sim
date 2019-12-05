@@ -4,7 +4,7 @@
     <div class="d-flex align-items-center justify-content-around" id="player-stress">
       <li class="nav-item dropdown" >
         <div id="avatar-border">
-          <%= image_tag "components/navbar-avatar-head-gla.png", class: "avatar-char dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "components/navbar-avatar-head-ben.png", class: "avatar-char dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         </div>
       </li>
       <!--ICONE ET STRESS BAR -->
@@ -31,11 +31,11 @@
         <% if @game_event.event.present? %>
           <% if @game_event.choice.present? %>
             <div class="wrapper">
-              <div class="progress" data-stress-joker='<%= @game.stress - 20 %>' data-stress-display='<%= @game.stress %>' style="width: 0%;"></div>
+              <div class="progress" data-stress-joker='<%= ( 100 - @game.stress ) + 20 %>' data-stress-display='<%= @game.stress %>' style="width: 100%;"></div>
             </div>
             <% else %>
               <div class="wrapper">
-                <div class="progress" data-stress-display='<%= @game.stress %>' style="width: 0%;"></div>
+                <div class="progress" data-stress-display='<%= @game.stress %>' style="width: 100%;"></div>
               </div>
           <% end %>
         <% end %>
@@ -55,7 +55,7 @@
             </div>
             <!-- x2 NOT ON AFTER JOKER IS USED / CHOICE DONE -->
             <!-- x2 APPEARS WHEN JOKER IS CLICKED -->
-              <p class="score-multiply">x2</p>
+              <span class="score-multiply bonus-score">Next Round: Score x2</span>
           </div>
           <% else %>
           <div>
@@ -65,7 +65,7 @@
             </div>
             <!-- x2 APPEARS WHEN JOKER IS ON BEFORE CHOICE -->
             <% if @game_event.joker %>
-              <p>x2</p>
+              <span class="bonus-score">Next Round: Score x2</span>
             <!-- x2 APPEARS WHEN JOKER IS CLICKED -->
             <% end %>
           </div>
