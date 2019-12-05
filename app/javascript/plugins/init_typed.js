@@ -29,7 +29,6 @@ const typedShow = () => {
       onComplete: (self) => {
         const arrowLeft = document.querySelector('.fadeOutLeft');
           setTimeout(function() {
-            console.log('test');
             arrowLeft.classList.remove("fadeOutLeft");
             arrowLeft.classList.remove("no-swipe-arrow-left");
             arrowLeft.classList.remove("swipe-arrow");
@@ -43,7 +42,6 @@ const typedShow = () => {
           }, 2000);
 
         const arrowRight = document.querySelector('.fadeOutRight');
-        console.log(arrowRight);
           setTimeout(function() {
             arrowRight.classList.remove("fadeOutRight");
             arrowRight.classList.remove("no-swipe-arrow-right");
