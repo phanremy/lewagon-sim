@@ -225,7 +225,7 @@ puts "Choices After Work"
 
 event_after_work_choice_2 = Choice.new({
   title: "BEERS! 🍻",
-  description: "BIGGEST Hangover of your life!! Don't trust your friends..." ,
+  description: "BIGGEST hangover of your life!! Don't trust your friends..." ,
   score_impact:  350,
   stress_impact: 30,
   image_url: "gameevents/event_after_work_choice2.jpg",
@@ -240,7 +240,7 @@ puts "Creating 404 event"
 
 event_404 = Event.new({
   title: "Page not found!",
-  description: "1 day before the demo-day, you have a 404 error in your main page, no clue what's the problem...",
+  description: "1 day before the Demo Day, you have a 404 error in your main page, and you have no clue what's the problem...",
   image_url: "gameevents/event_404.png",
   })
 
@@ -292,7 +292,7 @@ puts "Choices Demo Day Event"
  event_demo_day_choice_1.save
 event_demo_day_choice_2 = Choice.new({
   title: "Eager to party! 🎉",
-  description: " Hey !! Don't be to excited, you should support your teammates first!" ,
+  description: " Hey !! Don't be too excited, you should support your teammates first!" ,
   score_impact:  155,
   stress_impact: 30,
   image_url:"gameevents/event_demoday.jpg",
