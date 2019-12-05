@@ -168,7 +168,7 @@ puts "done"
 puts "Creating Air-BnB event"
 airbnb = Event.new({
   title: "Airbnb Project",
-  description: " You have to make a site like AirBnb for a whole week with teammates. You can rent whatever you want! Will it be manors or socks?",
+  description: " You have to make a site like AirBnb for a whole week. You can rent whatever you want!",
   image_url: "gameevents/event_airbnb.png",
   })
 airbnb.save
@@ -220,8 +220,8 @@ puts "Choices After Work"
  event_after_work_choice_1.save
 
 event_after_work_choice_2 = Choice.new({
-  title: "BEER 🍻",
-  description: "BIGGEST Hangover of your life! Don't trust your friends...." ,
+  title: "BEERS! 🍻",
+  description: "BIGGEST Hangover of your life!! Don't trust your friends...." ,
   score_impact:  350,
   stress_impact: 30,
   image_url: "gameevents/event_after_work_choice2.jpg",
@@ -236,7 +236,7 @@ puts "Creating 404 event"
 
 event_404 = Event.new({
   title: "Page not found!",
-  description: "1 day before the demo-day, you have a 404 error in your main page, no clue where is the problem..",
+  description: "1 day before the demo-day, you have a 404 error in your main page, no clue where's the problem..",
   image_url: "gameevents/event_404.png",
   })
 
@@ -256,7 +256,7 @@ puts "Choices 404 event"
 
 event_404_choice_2 = Choice.new({
   title: "Look for a solution 💡",
-  description: " Don't be so obstinate. you lost your day finding a solution. Good luck for the demo!" ,
+  description: " Don't be so obstinate. you lost your day finding a solution. " ,
   score_impact:  220,
   stress_impact: 30,
   image_url: "gameevents/event_404_choice2.png",
@@ -270,7 +270,7 @@ puts "done"
 puts "Creating Demo Day Event"
 event_demo_day = Event.new({
   title: "Demo Day",
-  description: "Few hours left before your speech, how do you handle it?",
+  description: "Few hours left before your speech... how do you handle it?",
   image_url:"gameevents/event_demoday.jpg",
   })
 event_demo_day.save
