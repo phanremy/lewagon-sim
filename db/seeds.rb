@@ -106,7 +106,7 @@ pierreyves_game.save
 puts "Creating first day event"
 first_day = Event.new({
   title: "First Day",
-  description: " In the first day at 'Le Wagon', you just met 30 new buddies and you have to install all the setup. How do you spend your time?" ,
+  description: "During the first day at 'Le Wagon', you just met 30 new buddies and you have to do all the setup. How do you spend your time?" ,
   image_url: "gameevents/event_first_day.png",
 
   })
@@ -159,7 +159,7 @@ puts "Choices Yoga"
 event_yoga_choice_2 = Choice.new({
   title: "Keep working 👨‍💻",
 
-  description: " You are too tired, this hour of working is useless, you wasted your time and learned nothing." ,
+  description: " You are too tired, this hour of working was useless, you wasted your time and learned nothing." ,
   score_impact:  10,
   stress_impact: 30,
   image_url: "gameevents/event_yoga_choice2.png",
@@ -205,7 +205,7 @@ puts "done"
 puts "Creating After work event"
 event_after_work = Event.new({
   title: "After work!",
-  description: "It's the end of long working day. Before leaving, a buddy asks you to drink a beer..",
+  description: "It's the end of a long working day. Before leaving, a buddy asks you to drink a beer...",
   image_url: "gameevents/event_after_work.png",
   })
 
@@ -225,7 +225,7 @@ puts "Choices After Work"
 
 event_after_work_choice_2 = Choice.new({
   title: "BEERS! 🍻",
-  description: "BIGGEST Hangover of your life!! Don't trust your friends...." ,
+  description: "BIGGEST Hangover of your life!! Don't trust your friends..." ,
   score_impact:  350,
   stress_impact: 30,
   image_url: "gameevents/event_after_work_choice2.jpg",
@@ -240,7 +240,7 @@ puts "Creating 404 event"
 
 event_404 = Event.new({
   title: "Page not found!",
-  description: "1 day before the demo-day, you have a 404 error in your main page, no clue where's the problem..",
+  description: "1 day before the demo-day, you have a 404 error in your main page, no clue what's the problem...",
   image_url: "gameevents/event_404.png",
   })
 
@@ -260,7 +260,7 @@ puts "Choices 404 event"
 
 event_404_choice_2 = Choice.new({
 
-  title: "Try to look for a solution 💡",
+  title: "Trying to find a solution 💡",
   description: " Don't be so obstinate. you lost your day finding a solution. " ,
   score_impact:  220,
   stress_impact: 30,
