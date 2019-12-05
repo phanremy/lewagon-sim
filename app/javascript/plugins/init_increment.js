@@ -27,15 +27,6 @@ function incrementStress() {
           }
         }
       }, 50 )
-        // const interval = setInterval(function(){
-        //   if ( 101 > Number.parseInt(stress.style.width)) {
-        //     stress.style.width = increasedWidth + "%";
-        //     increasedWidth --;
-        //     if (Number.parseInt(stress.style.width) === 101 - Number.parseInt(stress.dataset.stressDisplay)) {
-        //       clearInterval(interval);
-        //     }
-        //   }
-        // }, 50 )
     } else {
       if (document.querySelector("#score-display")) {
         let increasedWidth = Number.parseInt(100 - stress.dataset.stressDisplay);
@@ -49,12 +40,10 @@ function addKebabEnergy() {
   const energyAfterKebab = document.querySelector('[data-stress-joker]');
   if (energyAfterKebab) {
     const kebab = document.querySelector('.kebab-joker');
-    console.log(energyAfterKebab.dataset.stressJoker);
-    console.log(kebab);
     const stress = document.querySelector("[data-stress-display]");
-    let newWidth = energyAfterKebab.dataset.stressJoker;
+    let newEnergy = energyAfterKebab.dataset.stressJoker;
     kebab.addEventListener('click', (event) => {
-      stress.style.width = newWidth + "%";
+      stress.style.width = newEnergy + "%";
     })
 
   }
