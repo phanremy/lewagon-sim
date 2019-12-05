@@ -134,10 +134,17 @@
   transition: opacity 2.5s ease ;
 }
 
-.fixe {
+.fixe-goodstyle {
   position:absolute;
   right:70px;
   top: 130px;
+  width: 195px
+}
+
+.goodstyletext {
+  color: #22C3B5;
+  padding:0px;
+  margin:0px;
 }
 
 // .joker-kebab-used {
