@@ -12,11 +12,11 @@ import { initGameoverScoreScrollUp } from '../plugins/init_gameover_score_scroll
 import { music } from '../plugins/init_music';
 import { eatAKebab } from '../plugins/init_joker_kebab.js';
 import { addKebabEnergy } from '../plugins/init_increment.js';
-// import { swipeLeftArrow } from '../plugins/init_arrow_swipe.js';
-// import { swipeRightArrow } from '../plugins/init_arrow_swipe.js';
+import { swipeLeftArrow } from '../plugins/init_arrow_swipe.js';
+import { swipeRightArrow } from '../plugins/init_arrow_swipe.js';
 
-// swipeRightArrow();
-// swipeLeftArrow();
+swipeRightArrow();
+swipeLeftArrow();
 
 addKebabEnergy();
 
