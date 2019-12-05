@@ -1,8 +1,7 @@
 @keyframes movecar {
     0%      { left: 0px; transform: scaleX(-1) }
-    49%     { left: 85%; transform: scaleX(-1) }
+    49%     { left: 89%; transform: scaleX(-1) }
     50%     { left: 90%; transform: scaleX(1) }
-    99%     { left: 5%; transform: scaleX(1) }
     100%    { left: 0px; transform: scaleX(1) }
 }
 
