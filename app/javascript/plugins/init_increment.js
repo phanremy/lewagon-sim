@@ -35,20 +35,6 @@ function incrementStress() {
     }
 };
 
-
-function addKebabEnergy() {
-  const energyAfterKebab = document.querySelector('[data-stress-joker]');
-  if (energyAfterKebab) {
-    const kebab = document.querySelector('.kebab-joker');
-    const stress = document.querySelector("[data-stress-display]");
-    let newEnergy = energyAfterKebab.dataset.stressJoker;
-    kebab.addEventListener('click', (event) => {
-      stress.style.width = newEnergy + "%";
-    })
-
-  }
-}
-
 export { incrementStress };
 export { incrementScore };
 export { addKebabEnergy };
