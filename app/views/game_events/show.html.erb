@@ -101,8 +101,10 @@
         </div>
       </div>
       <p class="impact bounceInDown display-score" data-score-impact='<%= @game_event.choice.score_impact %>'> +<%= @game_event.joker ? @game_event.choice.score_impact * 2 : @game_event.choice.score_impact %></p>
-        <div class='hidden fixe'  id="goodStyle">
-          <%= image_tag "Good-Style.png", height: 50, width:150%>
+        <div class='hidden fixe-goodstyle d-flex justify-content-around align-items-top' id="goodStyle">
+          <!-- <%= image_tag "Good-Style.png", height: 50, width:150%> -->
+          <i class="fas fa-thumbs-up" style="color: #22C3B5"></i>
+          <p class="goodstyletext">Good Style</p>
         </div>
     </div>
     <div class="kebab-joker">
