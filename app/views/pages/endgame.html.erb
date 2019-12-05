@@ -4,15 +4,15 @@
     <div class="gameover-container animated fadeInUp slower p-3" id="to-drag">
       <h2>Game over</h2>
       <% if @game.score >= @own_best_score %>
-        <h1 >  Your score :  <span style="color:#F49D37;"><%="#{@game.score}"%></span> </h1>
+        <h1 >  Your score:  <span style="color:#F49D37;"><%="#{@game.score}"%></span> </h1>
         <h2 ><small>New record! </small></h2>
-        <h2>Your best score :<span style="color:#F49D37;"><small> <%= @own_best_score %></small></span></h2>
+        <h2>Your best score:<span style="color:#F49D37;"><small> <%= @own_best_score %></small></span></h2>
       <% else %>
-        <h1 > Your score : <span style="color:green;"> <%="#{@game.score}"%></span> </h1>
+        <h1 > Your score: <span style="color:green;"> <%="#{@game.score}"%></span> </h1>
         <br>
-        <h2>Your best score :<h2 style="color:#F49D37;"> <%= @own_best_score %> </h2></h2>
+        <h2>Your best score:<h2 style="color:#F49D37;"> <%= @own_best_score %> </h2></h2>
       <% end %>
-      <div class="my-5">
+      <div class="my-4">
         <%= link_to "TRY AGAIN!" ,root_path , class: "restart-btn py-4 px-5"%>
       </div>
     </div>
