@@ -71,9 +71,9 @@
           <div class="event-head" id="result-head">
               <% if @game_event.choice.stress_impact <= 0 %>
 
-               <h2 class="text-center no-stress"> No stress! </h2>
+               <h2 class="text-center no-stress"> Cool! </h2>
               <% else %>
-                <h2 class="text-center yes-stress">+<%= @game_event.choice.stress_impact%>% stress!</h3>
+                <h2 class="text-center yes-stress">-<%= @game_event.choice.stress_impact%>% energy!</h3>
               <% end %>
             </h3>
           </div>
@@ -108,7 +108,7 @@
     <div class="kebab-joker">
       <div>
         <% if @game.stress >= 80 && @game.stress < 100 && @game.joker_left > 0%>
-          <p data-game-stress="<%= @game.score %> "class="opacity stress-kebab-text" style="font-size: 12px; color: red; text-align:right; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;">Your stress is too HIGH! <br>Eat a Joker Kebab!</p>
+          <p data-game-stress="<%= @game.score %> "class="opacity stress-kebab-text" style="font-size: 12px; color: red; text-align:right; text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;">Energy too LOW! <br>Eat a Kebab!</p>
         <% end %>
         <!-- BIG IF TO PREVENT PEOPLE FROM USING THE KEBAB JOKER -->
         <% if ((@game.joker_left > 0) && (@game_event.joker_next == false) && (@game.stress < 100)) %>
