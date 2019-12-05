@@ -31,15 +31,11 @@ User.destroy_all
 Game.destroy_all
 GameEvent.destroy_all
 
-puts "Seeding User"
-john = User.new( first_name: "John", last_name: "Lennon", email: "johnlennon@lewagon.org", password:"123456")
-john.save
-
 puts "Seeding User Germain"
 germain = User.new( first_name: "Germain", last_name: "Loret", batch: 70, email: "germainloret@lewagon.org", password:"123456")
 germain.save
 
-puts " Creating a party with best score for Germain"
+puts " Creating a game for for Germain"
 germain_game = Game.new( score: 60321 )
 germain_game.user = germain
 germain_game.save
@@ -48,7 +44,7 @@ puts "Seeding User Remy"
 remy = User.new( first_name: "Remy", last_name: "Phan", batch: 321, email: "phan.remy@gmail.com", password:"123456")
 remy.save
 
-puts " Creating a party with best score"
+puts " Creating a game for Remy"
 remy_game = Game.new( score: 4440 )
 remy_game.user = remy
 remy_game.save
@@ -57,7 +53,7 @@ puts "Seeding User Nicolas"
 nico = User.new( first_name: "Nicolas", last_name: "Pierson", batch: 321, email: "nicolas.pierson57@gmail.com", password:"123456")
 nico.save
 
-puts " Creating a party with best score"
+puts " Creating a game for Nicolas"
 nico_game = Game.new( score: 30270 )
 nico_game.user = nico
 nico_game.save
@@ -66,20 +62,20 @@ puts "Seeding User Thomas"
 thomas = User.new( first_name: "Thomas", last_name: "Caen", batch: 321, email: "thomascaen@hotmail.fr", password:"123456")
 thomas.save
 
-puts "Creating a party with best score"
+puts "Creating a game for Thomas"
 thomas_game = Game.new( score: 23 )
 thomas_game.user = thomas
 thomas_game.save
 
 puts "Seeding User Benjamin without game"
-benjamin = User.new( first_name: "Benjamin", last_name: "Leray", batch: 128, email: "b.leray35@gmail.com", password:"123456")
+benjamin = User.new( first_name: "Benjamin", last_name: "Leray", batch: 321, email: "b.leray35@gmail.com", password:"123456")
 benjamin.save
 
 puts "Seeding User Thanh"
 thanh = User.new( first_name: "Thanh", last_name: "Tran", batch: 145, email: "thanhtran@lewagon.org", password:"123456")
 thanh.save
 
-puts " Creating a party with best score"
+puts " Creating a game for Thanh"
 thanh_game = Game.new( score: 42424 )
 thanh_game.user = thanh
 thanh_game.save
@@ -88,7 +84,7 @@ puts "Seeding User Louise"
 louise = User.new( first_name: "Louise", last_name: "Darche", batch: 146, email: "louisedarche@lewagon.org", password:"123456")
 louise.save
 
-puts " Creating a party with best score"
+puts " Creating a game for Louise"
 louise_game = Game.new( score: 42423 )
 louise_game.user = louise
 louise_game.save
@@ -97,7 +93,7 @@ puts "Seeding User Pierre-Yves"
 pierreyves = User.new( first_name: "Pierre-Yves", last_name: "Le Guennec", batch: 70, email: "pierreyves@lewagon.org", password:"123456")
 pierreyves.save
 
-puts " Creating a party with best score"
+puts " Creating a game for Pierre-Yves"
 pierreyves_game = Game.new( score: 41070 )
 pierreyves_game.user = pierreyves
 pierreyves_game.save
@@ -106,7 +102,7 @@ pierreyves_game.save
 puts "Creating first day event"
 first_day = Event.new({
   title: "First Day",
-  description: " In the first day at 'Le Wagon', you just met 30 new buddies and you have to install all the setup. How do you spend your time?" ,
+  description: " In the first day at 'Le Wagon', you just met 30 new buddies and you have to set up your laptop. How do you spend your time?" ,
   image_url: "gameevents/event_first_day.png",
 
   })
@@ -213,7 +209,7 @@ event_after_work.save
 
 puts "Choices After Work"
  event_after_work_choice_1 = Choice.new({
-  title: "I'm going home !🚶‍♀️",
+  title: "I'm going home!🚶‍♀️",
   description: "Good choice, you’ll have time to do your flash cards and sleep well, because you obviously need it.",
   score_impact: 150,
   stress_impact: 0,
@@ -248,8 +244,8 @@ event_404.save
 
 puts "Choices 404 event"
  event_404_choice_1 = Choice.new({
-  title: "Cry 😭",
-  description: " A teacher saw you, and found the solution in 5 minutes. No big deal.",
+  title: "Cry for help 😭",
+  description: "A teacher saw you, and found the solution in 5 minutes. No big deal.",
   score_impact: 321,
   stress_impact: 0,
   image_url: "gameevents/event_404.png",
@@ -259,7 +255,7 @@ puts "Choices 404 event"
  event_404_choice_1.save
 
 event_404_choice_2 = Choice.new({
-  title: "Search for a solution 💡",
+  title: "Look for a solution 💡",
   description: " Don't be so obstinate. you lost your day finding a solution. Good luck for the demo!" ,
   score_impact:  220,
   stress_impact: 30,

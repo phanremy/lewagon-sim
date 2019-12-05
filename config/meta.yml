@@ -1,5 +1,5 @@
 meta_product_name: "Le Wagon Simulator"
-meta_title: "Le Wagon Simulator - Relive your Le Wagon experience through a game"
-meta_description: "A simple game"
-meta_image: "stress.png" # should exist in `app/assets/images/`
+meta_title: "Le Wagon Simulator"
+meta_description: "Change your life, learn to play. Le Wagon Simulator is a game which makes you relive your Le Wagon experience."
+meta_image: "components/og-image-menu" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
