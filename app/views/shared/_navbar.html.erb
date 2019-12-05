@@ -55,7 +55,7 @@
             </div>
             <!-- x2 NOT ON AFTER JOKER IS USED / CHOICE DONE -->
             <!-- x2 APPEARS WHEN JOKER IS CLICKED -->
-              <p class="score-multiply bonus-score">Next Round: Score x2</p>
+              <span class="score-multiply bonus-score">Next Round: Score x2</span>
           </div>
           <% else %>
           <div>
@@ -65,7 +65,7 @@
             </div>
             <!-- x2 APPEARS WHEN JOKER IS ON BEFORE CHOICE -->
             <% if @game_event.joker %>
-              <p class="bonus-score">Next Round: Score x2</p>
+              <span class="bonus-score">Next Round: Score x2</span>
             <!-- x2 APPEARS WHEN JOKER IS CLICKED -->
             <% end %>
           </div>
