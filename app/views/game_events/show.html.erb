@@ -62,7 +62,7 @@
   <% else %>
     <div class="d-flex justify-content-between">
       <div>
-        <p class="impact bounceInDown display-score" style="color: #FD0E14"; data-stress-impact='<%= @game_event.choice.stress_impact %>'>+<%= @game_event.choice.stress_impact %></p>
+        <p class="impact bounceInDown display-score" style="color: #FD0E14"; data-stress-impact='<%= @game_event.choice.stress_impact %>'><%= @game_event.choice.stress_impact == 0 ? "" : "- #{@game_event.choice.stress_impact}" %></p>
         <p class="display-score bonus-stress" style=""; id="stress-kebab"> Energy +20%! </p>
       </div>
       <div class="main-container d-flex justify-content-center">

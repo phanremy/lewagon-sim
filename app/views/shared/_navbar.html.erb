@@ -62,10 +62,10 @@
             <div class="d-flex align-items-center justify-content-around">
               <h4  class="display-score" >Score:</h4>
               <h1 class="display-score" id="score-display" data-score-display='<%= @game.score %>'><%= @game.score %></h1>
-            </div>
+            </div >
             <!-- x2 APPEARS WHEN JOKER IS ON BEFORE CHOICE -->
             <% if @game_event.joker %>
-              <span class="bonus-score">Next Round: Score x2</span>
+              <span class="bonus-score">This Round: Score x2</span>
             <!-- x2 APPEARS WHEN JOKER IS CLICKED -->
             <% end %>
           </div>
