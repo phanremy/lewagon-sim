@@ -11,10 +11,19 @@ import { initGoodStyle } from '../plugins/init_apparition';
 import { initGameoverScoreScrollUp } from '../plugins/init_gameover_score_scroll_up.js';
 import { music } from '../plugins/init_music';
 import { eatAKebab } from '../plugins/init_joker_kebab.js';
+import { addKebabEnergy } from '../plugins/init_increment.js';
+// import { swipeLeftArrow } from '../plugins/init_arrow_swipe.js';
+// import { swipeRightArrow } from '../plugins/init_arrow_swipe.js';
+
+// swipeRightArrow();
+// swipeLeftArrow();
+
+addKebabEnergy();
 
 if (document.querySelector(".kebab-joker")) {
   eatAKebab();
 }
+
 
 // display Multiply transfered to joker.js.erb
 // import { displayMultiply } from '../plugins/init_joker_kebab.js';
