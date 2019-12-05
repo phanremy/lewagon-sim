@@ -30,55 +30,18 @@ function decreaseStress() {
 
 }
 
-function eatAKebab() {
-  const eatAKebab = document.querySelector('.opacity');
-  const stressLvl = document.querySelector("[data-stress-display]")
-  // console.log(stressLvl.dataset.stressDisplay);
-  if (eatAKebab) {
-    if (Number.parseInt(stressLvl.dataset.stressDisplay) >= 66) {
-      const interval = setInterval(function() {
-        eatAKebab.classList.toggle('opacity');
-        eatAKebab.classList.toggle('no-opacity');
-      }, 700);
 
-    }
+function addKebabEnergy() {
+  const energyAfterKebab = document.querySelector('[data-stress-joker]');
+  if (energyAfterKebab) {
+    const kebab = document.querySelector('.kebab-joker');
+    const stress = document.querySelector("[data-stress-display]");
+    let newEnergy = energyAfterKebab.dataset.stressJoker;
+    stress.style.width = newEnergy + "%";
+
   }
 }
 
-eatAKebab();
-
-// function decrementStress() {
-//   const stress = document.querySelector("[data-stress-display]");
-//   const stressJoker = document.querySelector("[data-stress-display]");
-//   const stress_impact = document.querySelector("[data-stress-impact]");
-//   let increasedWidth = Number.parseInt(stress.dataset.stressDisplay - 20);
-//   if (stress_impact) {
-//     if (Number.parseInt(stress.dataset.stressDisplay) === 0) {
-
-//     } else {
-
-//     const interval = setInterval(function() {
-//       if (Number.parseInt(stressJoker.dataset.stressJoker) < Number.parseInt(stress.dataset.stressDisplay)) {
-//         console.log('walah');
-//         stress.style.width = increasedWidth + "%";
-//         // increasedWidth --;
-//         if (Number.parseInt(stressJoker.dataset.stressJoker) - Number.parseInt(stress.style.width) === 0)
-//           console.log('000');
-//           clearInterval(interval);
-//         }
-//     }, 50 )
-//     }
-//   } else {
-//     stress.style.width = increasedWidth + "%";
-//   }
-// }
-
-  const kebab = document.querySelector(".kebab-joker");
-  const stressJoker = document.querySelector("[data-stress-joker]");
-  const stress_impact = document.querySelector("[data-stress-impact]");
-  // kebab.addEventListener('click', (event) => {
-  //   decrementStress();
-  // });
-
-// decrementStress();
+addKebabEnergy();
 decreaseStress();
+eatAKebab();

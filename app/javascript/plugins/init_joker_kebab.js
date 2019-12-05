@@ -26,4 +26,4 @@ function eatAKebab() {
 
 
 // export { displayMultiply };
-// export { eatAKebab };
+export { eatAKebab };
