@@ -11,7 +11,7 @@
 function eatAKebab() {
   const eatAKebab = document.querySelector('.opacity');
   const stressLvl = document.querySelector("[data-stress-display]")
-  console.log(stressLvl.dataset.stressDisplay);
+  // console.log(stressLvl.dataset.stressDisplay);
   if (eatAKebab) {
     if (Number.parseInt(stressLvl.dataset.stressDisplay) >= 66) {
       const interval = setInterval(function() {
