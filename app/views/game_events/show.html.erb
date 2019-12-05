@@ -52,7 +52,7 @@
           <%= image_tag('icons/kebab.png') %>
         </div>
         <div class="content">
-          <p>Joker Kebab not available!</p>
+          <p class="joker-indication">Joker Kebab not available!</p>
         </div>
       </div>
     </div>
@@ -124,7 +124,7 @@
             <% end %>
             <div class="content text-center">
               <!-- CLASS TO TRY TO UPDATE IN AJAX WHEN JOKER KEBAB IS USED -->
-              <p class="joker-left-refresh text-right"><%= @game.joker_left %> Joker Kebab left!</p>
+              <p class="joker-left-refresh text-right joker-indication"><%= @game.joker_left %> Joker Kebab left!</p>
             </div>
           </div>
         <% else %>

@@ -3,11 +3,15 @@
   <div class = "top-padding">
     <div class="gameover-container animated fadeInUp slower p-3" id="to-drag">
       <h2>Game over</h2>
-      <h1><%= "your score : #{@game.score}"%></h1>
       <% if @game.score >= @own_best_score %>
+        <h1 style="color:#F49D37;"><%= "your score : #{@game.score}"%></h1>
+        <h2 style="color:#F49D37;"><small>New record! </small></h2>
+        <h2 style="color:#F49D37;"><small>Your best score : <%= @own_best_score %></small></h2>
+      <% else %>
+        <h1 style="color:green;"><%= "your score : #{@game.score}"%></h1>
         <h2><small>New record! </small></h2>
+        <h2 style="color:#F49D37;"><small>Your best score : <%= @own_best_score %></small></h2>
       <% end %>
-      <h2><small>Your best score : <%= @own_best_score %></small></h2>
       <div class="my-5">
         <%= link_to "TRY AGAIN!" ,root_path , class: "restart-btn py-4 px-5"%>
       </div>
@@ -25,12 +29,28 @@
         </thead>
         <tbody class="best-score-games">
           <% @best_score_games.each_with_index do |game, index| %>
-            <tr>
-              <td class="pr-4 pb-2">#<%= index + 1 %></td>
-              <td class="pr-5 pb-2"><%= ("#{game.user.first_name} #{game.user.last_name}".length > 10) ? "#{game.user.first_name} #{game.user.last_name}"[0..9] : "#{game.user.first_name} #{game.user.last_name}" %></td>
-              <td class="pr-4 pb-2"><%= game.user.batch %></td>
-              <td class="pb-2"><%= game.score %></td>
-            </tr>
+            <% if game == @own_best_game %>
+              <tr>
+                <td class="pr-4 pb-2" style="color:#F49D37;">#<%= index + 1 %></td>
+                <td class="pr-5 pb-2" style="color:#F49D37;"><%= ("#{game.user.first_name} #{game.user.last_name}".length > 10) ? "#{game.user.first_name} #{game.user.last_name}"[0..9] : "#{game.user.first_name} #{game.user.last_name}" %></td>
+                <td class="pr-4 pb-2" style="color:#F49D37;"><%= game.user.batch %></td>
+                <td class="pb-2" style="color:#F49D37;"><%= game.score %></td>
+              </tr>
+            <% elsif game == @game %>
+                <tr>
+                <td class="pr-4 pb-2" style="color:green;">#<%= index + 1 %></td>
+                <td class="pr-5 pb-2" style="color:green;"><%= ("#{game.user.first_name} #{game.user.last_name}".length > 10) ? "#{game.user.first_name} #{game.user.last_name}"[0..9] : "#{game.user.first_name} #{game.user.last_name}" %></td>
+                <td class="pr-4 pb-2" style="color:green;"><%= game.user.batch %></td>
+                <td class="pb-2" style="color:green;"><%= game.score %></td>
+              </tr>
+            <% else %>
+              <tr>
+                <td class="pr-4 pb-2">#<%= index + 1 %></td>
+                <td class="pr-5 pb-2"><%= ("#{game.user.first_name} #{game.user.last_name}".length > 10) ? "#{game.user.first_name} #{game.user.last_name}"[0..9] : "#{game.user.first_name} #{game.user.last_name}" %></td>
+                <td class="pr-4 pb-2"><%= game.user.batch %></td>
+                <td class="pb-2"><%= game.score %></td>
+              </tr>
+            <% end %>
           <% end %>
         </tbody>
       </table>
