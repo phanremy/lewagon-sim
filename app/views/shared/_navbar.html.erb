@@ -24,7 +24,7 @@
     <% elsif @game_event.game.stress >= 66 && @game_event.game.stress < 99 %>
       <%= image_tag "components/navbar-stress.png", alt: "stress-icon", class:"animated infinite bounce", id: "stress-icon" %>
     <% else %>
-      <%= image_tag "components/navbar-dead2.png", alt: "stress-icon", class:"animated infinite swing slower", id: "stress-icon" %>
+      <%= image_tag "components/navbar-dead2.png", alt: "stress-icon", class:"animated swing slower", id: "stress-icon" %>
     <% end %>
       <% if @game_event.nil? %>
       <% else %>
