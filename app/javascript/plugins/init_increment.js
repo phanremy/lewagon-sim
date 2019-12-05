@@ -17,12 +17,12 @@ function incrementStress() {
       let increasedWidth = (100 - Number.parseInt(stress.dataset.stressDisplay)) + Number.parseInt(stress_impact.dataset.stressImpact);
       const firstInterval = setInterval(function() {
         if (Number.parseInt(100 - (stress.dataset.stressDisplay)) < Number.parseInt(stress.style.width) ) {
-          console.log(stress_impact);
-          console.log('premier if');
+          // console.log(stress_impact);
+          // console.log('premier if');
           stress.style.width = increasedWidth + "%";
           increasedWidth --;
           if (Number.parseInt(stress.style.width) === 100 - Number.parseInt(stress.dataset.stressDisplay)) {
-            console.log('if egality');
+            // console.log('if egality');
             clearInterval(firstInterval);
           }
         }
