@@ -7,6 +7,7 @@
     </div>
     <div class="main-container">
       <!-- SWIPEABLE CLASS INCLUDING CARD, SIMPLE FORM CHOICES OPTIONS -->
+
       <div class="demo__card d-flex justify-content-center">
        <!-- ----- ICI C EST L AFFICHAGE DE L'EVENT---- -->
        <div class="event-card animated slideInUp d-flex flex-column justify-content-between">
@@ -62,7 +63,7 @@
     <div class="d-flex justify-content-between">
       <div>
         <p class="impact bounceInDown display-score" style="color: #FD0E14"; data-stress-impact='<%= @game_event.choice.stress_impact %>'>+<%= @game_event.choice.stress_impact %></p>
-        <p class="display-score" style="color: green; visibility: hidden;"; id="stress-kebab"> -20 </p>
+        <p class="display-score bonus-stress" style=""; id="stress-kebab"> Energy +20%! </p>
       </div>
       <div class="main-container d-flex justify-content-center">
 
