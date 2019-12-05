@@ -37,4 +37,4 @@ function incrementStress() {
 
 export { incrementStress };
 export { incrementScore };
-export { addKebabEnergy };
+// export { addKebabEnergy };
