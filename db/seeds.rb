@@ -146,7 +146,7 @@ event_yoga.save
 
 puts "Choices Yoga"
  event_yoga_choice_1 = Choice.new({
-  title: "Time to Yoga! 🧘‍♀️",
+  title: "Time for Yoga! 🧘‍♀️",
   description: " It was very effective! You didn't finish your day-work, but you are way more efficient the next day.",
   score_impact: 320,
   stress_impact: 5,
@@ -248,7 +248,7 @@ event_404.save
 
 puts "Choices 404 event"
  event_404_choice_1 = Choice.new({
-  title: "Crying for help 😭",
+  title: "Cry for help 😭",
   description: " A teacher saw you, and found the solution in 5 minutes. No big deal.",
   score_impact: 321,
   stress_impact: 0,
@@ -260,7 +260,7 @@ puts "Choices 404 event"
 
 event_404_choice_2 = Choice.new({
 
-  title: "Look for a solution 💡",
+  title: "Try to look for a solution 💡",
   description: " Don't be so obstinate. you lost your day finding a solution. " ,
   score_impact:  220,
   stress_impact: 30,
