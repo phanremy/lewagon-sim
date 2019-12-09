@@ -12,13 +12,13 @@ class GameEventsController < ApplicationController
     @game_event.joker = true if @game.game_events.last.joker_next
     # ONE OF THE NEXT METHOD HAS TO BE SELECTED, THE OTHER COMMENTED
     # Event in random order (can repeat)
-    # @game_event.event = event_random
+    @game_event.event = event_random
 
     # Event in random order (will not repeat, to use when we have enough events in real production usage)
     # @game_event.event = event_random_no_repeat
 
     # Event in sequence
-    @game_event.event = event_in_sequence
+    # @game_event.event = event_in_sequence
 
     # END
 
