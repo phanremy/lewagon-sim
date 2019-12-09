@@ -27,7 +27,7 @@ const typedShow = () => {
       loop: false,
       loopCount: Infinity,
       onComplete: (self) => {
-        const arrowLeft = document.querySelector('.fadeOutLeft');
+        const arrowLeft = document.querySelector('.coucou');
           setTimeout(function() {
             arrowLeft.classList.remove("fadeOutLeft");
             arrowLeft.classList.remove("no-swipe-arrow-left");
